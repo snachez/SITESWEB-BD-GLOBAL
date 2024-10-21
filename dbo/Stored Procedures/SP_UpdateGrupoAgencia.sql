@@ -141,20 +141,20 @@ BEGIN
 						DECLARE @iteradorEliminar INT = 1
 						DECLARE @ContadorEliminar INT = (SELECT COUNT(1) FROM  @p_Tbl_Temp_Cuentas_Internas_Eliminar_Insert)
 
-						IF @ContadorEliminar > 0 WHILE (@iteradorEliminar <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Cuentas_Internas_Eliminar_Insert))
-						BEGIN
-						       --OBTIENE UN ITEM
-							   SELECT @p_Id_Divisa_Iterador = IdDivisa, @p_Numero_Cuenta_Iterador = NumeroCuenta FROM @p_Tbl_Temp_Cuentas_Internas_Eliminar_Insert WHERE ID = @iteradorEliminar
+						IF @ContadorEliminar > 0 BEGIN WHILE (@iteradorEliminar <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Cuentas_Internas_Eliminar_Insert))
+							BEGIN
+								   --OBTIENE UN ITEM
+								   SELECT @p_Id_Divisa_Iterador = IdDivisa, @p_Numero_Cuenta_Iterador = NumeroCuenta FROM @p_Tbl_Temp_Cuentas_Internas_Eliminar_Insert WHERE ID = @iteradorEliminar
 							
-							   --OBTIENE LA CUENTA SI EXISTE
-							   SELECT @p_Id_Insert_Cuenta = Id  FROM tblCuentaInterna WHERE NumeroCuenta = @p_Numero_Cuenta_Iterador;
+								   --OBTIENE LA CUENTA SI EXISTE
+								   SELECT @p_Id_Insert_Cuenta = Id  FROM tblCuentaInterna WHERE NumeroCuenta = @p_Numero_Cuenta_Iterador;
 
-							   --UPDATE EN LA TABLA tblCuentaInterna_x_Agencia PARA INACTIVARLA
-							   UPDATE [tblCuentaInterna_x_GrupoAgencias] SET Activo =  0 WHERE FkIdCuentaInterna = @p_Id_Insert_Cuenta AND FkIdGrupoAgencias = @p_Id_Grupo_Agencia;
+								   --UPDATE EN LA TABLA tblCuentaInterna_x_Agencia PARA INACTIVARLA
+								   UPDATE [tblCuentaInterna_x_GrupoAgencias] SET Activo =  0 WHERE FkIdCuentaInterna = @p_Id_Insert_Cuenta AND FkIdGrupoAgencias = @p_Id_Grupo_Agencia;
 
-				   		   SET @iteradorEliminar = @iteradorEliminar + 1
-					    END
-						
+				   			   SET @iteradorEliminar = @iteradorEliminar + 1
+							END
+						END
 						
 						------------------------------ INICIO DEL RECORRIDO Y SETEO DE DATA DE LA TABLA TEMPORAL CUENTAS INTERNAS  ------------------------------------
 

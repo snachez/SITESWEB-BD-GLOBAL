@@ -228,7 +228,7 @@ BEGIN
 						DECLARE @ExisteFirma INT = 0;
 						DECLARE @Conta INT = (SELECT COUNT(1) FROM  @p_Tbl_Temp_Firmas_Update	 )
 
-						IF @Conta > 0 WHILE (@iter <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Firmas_Update	 ))
+						IF @Conta > 0 BEGIN WHILE (@iter <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Firmas_Update	 ))
 						BEGIN
 
 							--OBTIENE UN ITEM
@@ -281,7 +281,7 @@ BEGIN
 							  
 							SET @iter = @iter + 1
 						END --FIN DEL CICLO
-
+						END
 					END
 
 											

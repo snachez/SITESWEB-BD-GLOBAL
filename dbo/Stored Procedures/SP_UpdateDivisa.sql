@@ -233,7 +233,6 @@ BEGIN
 					ELSE
 					BEGIN
 					    SET @JSON_OUT = ( SELECT @Resp_2  );
-						;
 					END
 				END
 				ELSE
@@ -246,7 +245,6 @@ BEGIN
 					ELSE
 					BEGIN
 					    SET @JSON_OUT = ( SELECT @Resp_2  );
-						;
 					END
 				END
 			END			
@@ -334,7 +332,6 @@ BEGIN
 					ELSE
 					BEGIN
 					    SET @JSON_OUT = ( SELECT @Resp_2  );
-						;
 					END
 				END
 				ELSE
@@ -347,7 +344,6 @@ BEGIN
 					ELSE
 					BEGIN
 					    SET @JSON_OUT = ( SELECT @Resp_2  );
-						;
 					END
 				END
 			END
@@ -376,7 +372,7 @@ BEGIN
 						DECLARE @iter INT = 1
 						DECLARE @Conta INT = (SELECT COUNT(1) FROM  @p_Tbl_Temp_Presentaciones_Habilitadas_Nuevas	 )
 
-						IF @Conta > 0 WHILE (@iter <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Presentaciones_Habilitadas_Nuevas	 ))
+						IF @Conta > 0 BEGIN WHILE (@iter <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Presentaciones_Habilitadas_Nuevas	 ))
 						BEGIN
 
 								--OBTIENE UN ITEM
@@ -392,7 +388,7 @@ BEGIN
 
 								SET @iter = @iter + 1
 							END --FIN DEL CICLO
-										
+						END				
 					------------------------------ FIN DEL RECORRIDO Y SETEO DE DATA DE LA TABLA TEMPORAL PRESENTACIONES DEL EFECTIVO  ------------------------------------
 
 					END

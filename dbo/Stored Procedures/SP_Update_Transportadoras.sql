@@ -32,6 +32,7 @@ DECLARE @Resp_1 VARCHAR(MAX)
       DECLARE @MetodoTemporal VARCHAR(MAX) = 'SP_Update_Transportadora';
 	  DECLARE @ERROR_MESSAGE VARCHAR(MAX);
 	  DECLARE @ERROR_NUMBER INT;
+	  DECLARE @ERROR VARCHAR(MAX) = 'Error';
 
 	  -- Declarar una tabla temporal para almacenar los resultados del procedimiento almacenado de mensajes
 	  CREATE TABLE #Mensajes (
@@ -143,7 +144,7 @@ DECLARE @Resp_1 VARCHAR(MAX)
 						@ID = 0,
 						@ROW = NULL,
 						@Metodo = @MetodoTemporal, 
-						@TipoMensaje = 'Error', 
+						@TipoMensaje = @ERROR, 
 						@ErrorMensaje  = 'Unique_Nombre_Transportadora_By_Pais_And_Modulo',
 						@ModeJson = 0;
 
@@ -184,7 +185,7 @@ DECLARE @Resp_1 VARCHAR(MAX)
 									@ID = 0,
 									@ROW = NULL,
 									@Metodo = @MetodoTemporal, 
-									@TipoMensaje = 'Error', 
+									@TipoMensaje = @ERROR, 
 									@ErrorMensaje  = 'Constrains_Validate_Relaciones_Activas_Inactivas_Contra_Transportadoras_2',
 									@ModeJson = 0;
 
@@ -224,7 +225,7 @@ DECLARE @Resp_1 VARCHAR(MAX)
 									@ID = 0,
 									@ROW = NULL,
 									@Metodo = @MetodoTemporal, 
-									@TipoMensaje = 'Error', 
+									@TipoMensaje = @ERROR, 
 									@ErrorMensaje  = 'Constrains_Validate_Valores_Activos_Inactivos_Contra_Transportadoras',
 									@ModeJson = 0;
 
@@ -290,23 +291,23 @@ DECLARE @Resp_1 VARCHAR(MAX)
 						DECLARE @iter INT = 1
 						DECLARE @Conta INT = (SELECT COUNT(1) FROM  @p_Tbl_Temp_Modulo_Nuevas	 )
 
-						IF @Conta > 0 WHILE (@iter <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Modulo_Nuevas	 ))
-						BEGIN
+						IF @Conta > 0 BEGIN WHILE (@iter <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Modulo_Nuevas	 ))
+							BEGIN
 
-							--OBTIENE UN ITEM
-							SELECT 								
-							 @p_Id_Modulo_Iterador = Id_Modulo
-							,@p_Nombre_Modulo_Iterador = Nombre									
-							FROM @p_Tbl_Temp_Modulo_Nuevas 
-							WHERE ID = @iter
+								--OBTIENE UN ITEM
+								SELECT 								
+								 @p_Id_Modulo_Iterador = Id_Modulo
+								,@p_Nombre_Modulo_Iterador = Nombre									
+								FROM @p_Tbl_Temp_Modulo_Nuevas 
+								WHERE ID = @iter
 						
-							--INSERTA EN LA TABLA tblTransportadoras_x_Modulo
-							INSERT INTO dbo.[tblTransportadoras_x_Modulo] (      [Fk_Id_Transportadora],      	        [Fk_Id_Modulo],      [Activo],    [Fecha_Creacion]   )
-																   VALUES (   @p_Id_Transportadora,    @p_Id_Modulo_Iterador,       1,            GETDATE()     )
+								--INSERTA EN LA TABLA tblTransportadoras_x_Modulo
+								INSERT INTO dbo.[tblTransportadoras_x_Modulo] (      [Fk_Id_Transportadora],      	        [Fk_Id_Modulo],      [Activo],    [Fecha_Creacion]   )
+																	   VALUES (   @p_Id_Transportadora,    @p_Id_Modulo_Iterador,       1,            GETDATE()     )
 			    											
-							SET @iter = @iter + 1
-						END --FIN DEL CICLO
-
+								SET @iter = @iter + 1
+							END --FIN DEL CICLO
+						END
 						------------------------------ FIN DEL RECORRIDO Y SETEO DE DATA DE LA TABLA TEMPORAL MODULO (TABLA HIJO) ------------------------------------
 						SET @CONTINUAR_TRANSACCION = 1
 					END
@@ -369,7 +370,7 @@ DECLARE @Resp_1 VARCHAR(MAX)
 								@ID = 0,
 								@ROW = NULL,
 								@Metodo = @MetodoTemporal, 
-								@TipoMensaje = 'Error', 
+								@TipoMensaje = @ERROR, 
 								@ErrorMensaje  = 'SP_Update_Transportadora_VALORES_NULL',
 								@ModeJson = 0;
 
@@ -396,16 +397,18 @@ DECLARE @Resp_1 VARCHAR(MAX)
 				
 						------------------------------ RESPUESTA A LA APP MSJ: 3200 3201 ------------------------------------
 					
-						SET @ERROR_NUMBER = ERROR_NUMBER()				
+						SET @ERROR_NUMBER = ERROR_NUMBER()	
+						DECLARE @ERROR_NUMBER2 VARCHAR(MAX)= '%515%';
+						DECLARE @ERROR_NUMBER3 VARCHAR(MAX)= '%2627%';
 
-						IF  @ERROR_NUMBER LIKE '%515%' 
+						IF  @ERROR_NUMBER LIKE @ERROR_NUMBER2
 						BEGIN 
 						
 							SET @ERROR_MESSAGE = 'SP_Update_Transportadora_VALORES_NULL'
 						
 						END	
 
-						IF  @ERROR_NUMBER LIKE '%2627%'
+						IF  @ERROR_NUMBER LIKE @ERROR_NUMBER3
 						BEGIN 
 						
 							SET @ERROR_MESSAGE = ERROR_MESSAGE() 
@@ -421,7 +424,7 @@ DECLARE @Resp_1 VARCHAR(MAX)
 						@ID = 0,
 						@ROW = NULL,
 						@Metodo = @MetodoTemporal, 
-						@TipoMensaje = 'Error', 
+						@TipoMensaje = @ERROR, 
 						@ErrorMensaje = @ERROR_MESSAGE,
 						@ModeJson = 0;
 
