@@ -170,9 +170,6 @@ BEGIN
 					SELECT @p_Id_Insert_Agencia_Bancaria = CONVERT(INT, ISNULL(SCOPE_IDENTITY(), -1))
 					SELECT @p_UsaCuentasGrupo_Insert_Agencia_Bancaria = USA_CUENTAS_GRUPO, @p_Id_Insert_Grupo_Agencia = Codigo_GrupoAgencias from @p_Tbl_Temp_Agencia_Bancaria_Insert;
 
-					IF(@p_Id_Insert_Agencia_Bancaria IS NOT NULL)
-					BEGIN   
-				   		
 						--------------------------------------------------- VALIDACION DE CUENTAS INTERNAS VACIAS -----------------------------------------------------
 						IF(@p_UsaCuentasGrupo_Insert_Agencia_Bancaria = 1)
 					    BEGIN
@@ -189,46 +186,45 @@ BEGIN
 						DECLARE @Contador INT = (SELECT COUNT(1) FROM  @p_Tbl_Temp_Cuentas_Internas_Insert)
 
 						IF @Contador > 0 BEGIN WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Cuentas_Internas_Insert))
-						BEGIN
+							BEGIN
 
-							--OBTIENE UN ITEM
-							SELECT @p_Id_Divisa_Iterador = IdDivisa, @p_Numero_Cuenta_Iterador = NumeroCuenta FROM @p_Tbl_Temp_Cuentas_Internas_Insert WHERE ID = @i
+								--OBTIENE UN ITEM
+								SELECT @p_Id_Divisa_Iterador = IdDivisa, @p_Numero_Cuenta_Iterador = NumeroCuenta FROM @p_Tbl_Temp_Cuentas_Internas_Insert WHERE ID = @i
 							
-							--OBTIENE LA CUENTA SI EXISTE Y SI EXISTE RELACION CON LA AGENCIA
-							SELECT @p_Id_Insert_Cuenta = Id  FROM tblCuentaInterna WHERE NumeroCuenta = @p_Numero_Cuenta_Iterador;
-							SELECT @p_Id_Insert_CuentaxAgencia = Id  FROM tblCuentaInterna_x_Agencia WHERE FkIdCuentaInterna = @p_Id_Insert_Cuenta AND FkIdAgencia = @p_Id_Insert_Agencia_Bancaria;
-							SELECT @p_Iterador_Insert_Grupo_Agencia = Id  FROM tblCuentaInterna_x_GrupoAgencias WHERE FkIdGrupoAgencias = @p_Id_Insert_Grupo_Agencia AND FkIdCuentaInterna = @p_Id_Insert_Cuenta AND Activo = 1;
+								--OBTIENE LA CUENTA SI EXISTE Y SI EXISTE RELACION CON LA AGENCIA
+								SELECT @p_Id_Insert_Cuenta = Id  FROM tblCuentaInterna WHERE NumeroCuenta = @p_Numero_Cuenta_Iterador;
+								SELECT @p_Id_Insert_CuentaxAgencia = Id  FROM tblCuentaInterna_x_Agencia WHERE FkIdCuentaInterna = @p_Id_Insert_Cuenta AND FkIdAgencia = @p_Id_Insert_Agencia_Bancaria;
+								SELECT @p_Iterador_Insert_Grupo_Agencia = Id  FROM tblCuentaInterna_x_GrupoAgencias WHERE FkIdGrupoAgencias = @p_Id_Insert_Grupo_Agencia AND FkIdCuentaInterna = @p_Id_Insert_Cuenta AND Activo = 1;
 
-							--VALIDACION 1(SI LA CUENTA EXISTE Y NO ESTA EN GRUPO AGENCIA Y USA CUENTAS DE GRUPO)
-							--VALIDACION 1(SI LA CUENTA EXISTE Y NO USA CUENTAS DE GRUPO)
-							--VALIDACION 3(SI LA CUENTA NO EXISTE Y  EL NUMERO DE CUENTA NO ESTA VACIO)
-							IF((@p_Id_Insert_Cuenta IS NOT NULL AND @p_Iterador_Insert_Grupo_Agencia IS NULL AND @p_UsaCuentasGrupo_Insert_Agencia_Bancaria = 1) OR (@p_Id_Insert_Cuenta IS NOT NULL AND @p_UsaCuentasGrupo_Insert_Agencia_Bancaria = 0))
-							BEGIN
+								--VALIDACION 1(SI LA CUENTA EXISTE Y NO ESTA EN GRUPO AGENCIA Y USA CUENTAS DE GRUPO)
+								--VALIDACION 1(SI LA CUENTA EXISTE Y NO USA CUENTAS DE GRUPO)
+								--VALIDACION 3(SI LA CUENTA NO EXISTE Y  EL NUMERO DE CUENTA NO ESTA VACIO)
+								IF((@p_Id_Insert_Cuenta IS NOT NULL AND @p_Iterador_Insert_Grupo_Agencia IS NULL AND @p_UsaCuentasGrupo_Insert_Agencia_Bancaria = 1) OR (@p_Id_Insert_Cuenta IS NOT NULL AND @p_UsaCuentasGrupo_Insert_Agencia_Bancaria = 0))
+								BEGIN
 
-							    --INSERTA EN LA TABLA tblCuentaInterna_x_Agencia
-							      INSERT INTO dbo.[tblCuentaInterna_x_Agencia] ( FkIdCuentaInterna, FkIdAgencia )
-																        VALUES ( @p_Id_Insert_Cuenta, @p_Id_Insert_Agencia_Bancaria )
+									--INSERTA EN LA TABLA tblCuentaInterna_x_Agencia
+									  INSERT INTO dbo.[tblCuentaInterna_x_Agencia] ( FkIdCuentaInterna, FkIdAgencia )
+																			VALUES ( @p_Id_Insert_Cuenta, @p_Id_Insert_Agencia_Bancaria )
 
-							END
-							ELSE IF(@p_Id_Insert_Cuenta IS NULL AND @p_Numero_Cuenta_Iterador IS NOT NULL)
-							BEGIN
+								END
+								ELSE IF(@p_Id_Insert_Cuenta IS NULL AND @p_Numero_Cuenta_Iterador IS NOT NULL)
+								BEGIN
 							      
-								  --INSERTA EN LA TABLA tblCuentaInterna
-							      INSERT INTO dbo.[tblCuentaInterna] ( NumeroCuenta, FkIdDivisa )
-														      VALUES ( @p_Numero_Cuenta_Iterador, @p_Id_Divisa_Iterador )
+									  --INSERTA EN LA TABLA tblCuentaInterna
+									  INSERT INTO dbo.[tblCuentaInterna] ( NumeroCuenta, FkIdDivisa )
+																  VALUES ( @p_Numero_Cuenta_Iterador, @p_Id_Divisa_Iterador )
 
-                                  SELECT @p_Id_Insert_Cuenta = CONVERT(INT, ISNULL(SCOPE_IDENTITY(), -1))
+									  SELECT @p_Id_Insert_Cuenta = CONVERT(INT, ISNULL(SCOPE_IDENTITY(), -1))
 
-							      --INSERTA EN LA TABLA tblCuentaInterna_x_Agencia
-							      INSERT INTO dbo.[tblCuentaInterna_x_Agencia] ( FkIdCuentaInterna, FkIdAgencia )
-																        VALUES ( @p_Id_Insert_Cuenta, @p_Id_Insert_Agencia_Bancaria )
+									  --INSERTA EN LA TABLA tblCuentaInterna_x_Agencia
+									  INSERT INTO dbo.[tblCuentaInterna_x_Agencia] ( FkIdCuentaInterna, FkIdAgencia )
+																			VALUES ( @p_Id_Insert_Cuenta, @p_Id_Insert_Agencia_Bancaria )
 
-							END
+								END
 
-							SET @i = @i + 1
-						END --FIN DEL CICLO
-						END								
-					END
+								SET @i = @i + 1
+							END --FIN DEL CICLO
+						END	
 					
 					SELECT @ROW = (SELECT * FROM tblAgenciaBancaria WHERE Id = @p_Id_Insert_Agencia_Bancaria FOR JSON PATH, INCLUDE_NULL_VALUES)
 					
