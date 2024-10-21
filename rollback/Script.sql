@@ -1,177 +1,77 @@
 ﻿PRINT N'Inicio de reversiones en [Sites-Global]';
-
 GO
 
 PRINT N'Inicio de eliminar SP, FUNCIONES, VIEW, TABLAS, SEQUENCES';
-
 GO
 
-DECLARE @ObjectName NVARCHAR(500)
+DECLARE @ObjectNameProd NVARCHAR(500)
+DECLARE @ObjectSchema NVARCHAR(500)
+DECLARE @DropCommand NVARCHAR(MAX)
 
-DECLARE objectCursor CURSOR FOR SELECT [name]
-
-FROM sys.objects
-
-WHERE type IN ('U', 'P', 'FN', 'IF', 'SO')
-
+DECLARE objectCursorProd CURSOR FOR 
+SELECT s.name AS SchemaName, o.name AS ObjectName
+FROM sys.objects o
+INNER JOIN sys.schemas s ON o.schema_id = s.schema_id
+WHERE TYPE IN ('U', 'P', 'FN', 'IF', 'SO', 'V') AND 
+s.name IN ('dbo')
 ORDER BY 
-
     CASE 
-
-        WHEN type = 'U' THEN 1 -- Tablas de usuario primero
-
+        WHEN o.type = 'U' THEN 1 -- Tablas de usuario primero
         ELSE 2 -- Otros tipos de objetos después
-
     END;
 
-OPEN objectCursor
-
-FETCH NEXT FROM objectCursor INTO @ObjectName
+OPEN objectCursorProd
+FETCH NEXT FROM objectCursorProd INTO @ObjectSchema, @ObjectNameProd
 
 WHILE @@FETCH_STATUS = 0
-
 BEGIN
+    IF OBJECTPROPERTY(OBJECT_ID(@ObjectSchema + '.' + @ObjectNameProd), 'IsTable') = 1 BEGIN
+        -- Eliminar tabla y restricciones de clave externa
+        DECLARE @DropForeignKeySQLProd NVARCHAR(MAX) = ''
+        DECLARE @DropTableSQLProd NVARCHAR(MAX) = 'DROP TABLE ' + @ObjectSchema + '.' + @ObjectNameProd + ';'
 
-IF OBJECTPROPERTY(OBJECT_ID(@ObjectName), 'IsTable') = 1
+        -- Generar el SQL para eliminar las restricciones de clave externa de la tabla actual
+        SELECT @DropForeignKeySQLProd +=
+            'ALTER TABLE ' + OBJECT_SCHEMA_NAME(parent_object_id) + '.' + OBJECT_NAME(parent_object_id) +
+            ' DROP CONSTRAINT ' + fk.name + ';'
+        FROM sys.foreign_keys fk
+        WHERE fk.referenced_object_id = OBJECT_ID(@ObjectSchema + '.' + @ObjectNameProd)
 
-BEGIN
-
-  -- Eliminar tabla y restricciones de clave externa
-
-  DECLARE @DropForeignKeySQL NVARCHAR(MAX)
-
-  DECLARE @DropTableSQL NVARCHAR(MAX)
-
-  SET @DropForeignKeySQL = ''
-
-  SET @DropTableSQL = ''
-
-  -- Generar el SQL para eliminar las restricciones de clave externa de la tabla actual
-
-  SELECT
-
-    @DropForeignKeySQL = @DropForeignKeySQL +
-
-    'ALTER TABLE ' + OBJECT_SCHEMA_NAME(parent_object_id) + '.' + OBJECT_NAME(parent_object_id) +
-
-    ' DROP CONSTRAINT ' + name + ';'
-
-  FROM sys.foreign_keys
-
-  WHERE referenced_object_id = OBJECT_ID(@ObjectName)
-
-  -- Generar el SQL para eliminar la tabla actual
-
-  SET @DropTableSQL = 'DROP TABLE ' + @ObjectName + ';'
-
-  -- Ejecutar el SQL generado para eliminar las restricciones de clave externa
-
-  EXEC sp_executesql @DropForeignKeySQL
-
-  -- Ejecutar el SQL generado para eliminar la tabla
-
-  EXEC sp_executesql @DropTableSQL
-
-END
-
-ELSE
-
-BEGIN
-
-  -- Eliminar procedimiento almacenado, función o vista
-
-  DECLARE @ObjectType INT = 0;
-
-  -- Obtener el tipo de objeto utilizando OBJECTPROPERTY
-
-  SET @ObjectType = OBJECTPROPERTY(OBJECT_ID(@ObjectName), 'IsProcedure')
-
-  -- Verificar el tipo de objeto y construir el comando DROP correspondiente
-
-  IF @ObjectType = 1
-
-  BEGIN
-
-    EXEC ('DROP PROCEDURE ' + @ObjectName)
-
-  END
-
-  ELSE
-
-  BEGIN
-
-    SET @ObjectType = OBJECTPROPERTY(OBJECT_ID(@ObjectName), 'IsScalarFunction')
-
-    IF @ObjectType = 1
-
-    BEGIN
-
-      EXEC ('DROP FUNCTION ' + @ObjectName)
-
-    END
-
-    ELSE
-
-    BEGIN
-
-      SET @ObjectType = OBJECTPROPERTY(OBJECT_ID(@ObjectName), 'IsView')
-
-      IF @ObjectType = 1
-
-      BEGIN
-
-        EXEC ('DROP VIEW ' + @ObjectName)
-
-      END
-
-      ELSE
-
-      BEGIN
-
-        SET @ObjectType = OBJECTPROPERTY(OBJECT_ID(@ObjectName), 'IsSequence')
-
-        IF @ObjectType = 1
-
-        BEGIN
-
-          EXEC ('DROP SEQUENCE ' + @ObjectName)
-
+        -- Ejecutar el SQL generado para eliminar las restricciones de clave externa
+        IF @DropForeignKeySQLProd <> '' BEGIN
+            EXEC sp_executesql @DropForeignKeySQLProd
         END
 
-        ELSE
+        -- Ejecutar el SQL generado para eliminar la tabla
+        EXEC sp_executesql @DropTableSQLProd
+    END ELSE BEGIN
+        -- Eliminar procedimiento almacenado, función, vista o secuencia
+        SET @DropCommand = NULL
 
-        BEGIN
-
-          SET @ObjectType = OBJECTPROPERTY(OBJECT_ID(@ObjectName), 'IsFunction')
-
-          IF @ObjectType = 1
-
-          BEGIN
-
-            EXEC ('DROP FUNCTION ' + @ObjectName)
-
-          END
-
+        SET @DropCommand = CASE WHEN OBJECTPROPERTY(OBJECT_ID(@ObjectSchema + '.' + @ObjectNameProd), 'IsProcedure') = 1
+                                  THEN CONCAT('DROP PROCEDURE ', @ObjectSchema, '.', @ObjectNameProd)
+                                WHEN OBJECTPROPERTY(OBJECT_ID(@ObjectSchema + '.' + @ObjectNameProd), 'IsScalarFunction') = 1 
+                                  OR OBJECTPROPERTY(OBJECT_ID(@ObjectSchema + '.' + @ObjectNameProd), 'IsFunction') = 1
+                                  OR OBJECTPROPERTY(OBJECT_ID(@ObjectSchema + '.' + @ObjectNameProd), 'IsInlineFunction') = 1
+                                    THEN CONCAT('DROP FUNCTION ', @ObjectSchema, '.', @ObjectNameProd)
+                                WHEN OBJECTPROPERTY(OBJECT_ID(@ObjectSchema + '.' + @ObjectNameProd), 'IsView') = 1
+                                  THEN CONCAT('DROP VIEW ', @ObjectSchema, '.', @ObjectNameProd)
+                                WHEN OBJECTPROPERTY(OBJECT_ID(@ObjectSchema + '.' + @ObjectNameProd), 'IsSequence') = 1
+                                  THEN CONCAT('DROP SEQUENCE ', @ObjectSchema, '.', @ObjectNameProd)
+                                END
+             
+        -- Ejecutar el comando DROP si se encontró el tipo de objeto
+        IF @DropCommand IS NOT NULL BEGIN
+            EXEC sp_executesql @DropCommand
         END
-
-      END
-
     END
 
-  END
-
+    FETCH NEXT FROM objectCursorProd INTO @ObjectSchema, @ObjectNameProd
 END
 
-FETCH NEXT FROM objectCursor INTO @ObjectName
-
-END
-
-CLOSE objectCursor
-
-DEALLOCATE objectCursor
-
+CLOSE objectCursorProd
+DEALLOCATE objectCursorProd
 GO
 
 PRINT N'Fin de eliminar SP, FUNCIONES, VIEW, TABLAS, SEQUENCES';
-
 GO
