@@ -9,7 +9,7 @@ SELECT schema_name(schema_id), name
 FROM sys.external_tables 
 
 OPEN cur
-
+ 
 FETCH NEXT FROM cur INTO @schemaName, @tableName
 
 WHILE @@FETCH_STATUS = 0
