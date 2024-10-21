@@ -10,6 +10,8 @@ BEGIN
 	---
 	BEGIN TRY
 		---
+			SET @ID = ISNULL(@ID, 1)
+
 		UPDATE tblDenominaciones_x_Modulo SET 
 		FkIdModulo = @FK_ID_Modulo,
 		FkIdDenominaciones = @FK_ID_DENOMINACIONES,
@@ -31,9 +33,10 @@ BEGIN
 	END TRY    
 	BEGIN CATCH
 		--
-		DECLARE @ERROR_MESSAGE VARCHAR(MAX) = ERROR_MESSAGE()
+		DECLARE @ERROR_MESSAGE VARCHAR(MAX) = ERROR_MESSAGE();
+		DECLARE @ERROR_MESSAGE1 VARCHAR(MAX) = '%Unique_denominacion_x_area%';
 		--
-		IF @ERROR_MESSAGE LIKE '%Unique_denominacion_x_area%' BEGIN 
+		IF @ERROR_MESSAGE LIKE @ERROR_MESSAGE1 BEGIN 
 			---
 			SET @ERROR_MESSAGE = 'La combinacion de denominacion y area ya esta registrada'
 			---

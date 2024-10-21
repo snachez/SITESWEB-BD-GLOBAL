@@ -16,6 +16,7 @@ BEGIN
 	---
 	SET @PAGE = ISNULL(@PAGE, 1)
 	SET @SIZE = ISNULL(@SIZE, 10)
+	SET @NOMBRE = ISNULL(@NOMBRE, '')
 	----------------------------------------------------------------------------------------
 	--- V A R I A B L E S		F O R M A T E O		F E C H A . . .
 	----------------------------------------------------------------------------------------
@@ -29,7 +30,6 @@ BEGIN
 	---	FULL DATA ...
 	SELECT     A.Id							AS [Id]
 			, A.Nombre						AS [Nombre]
-			--, A.Fk_Id_Departamento			AS [Fk_Id_Departamento]
 			, CONVERT(VARCHAR(36),NEWID())	AS [Codigo]
 			, A.Activo						AS [Activo]
 			, A.FechaCreacion				AS [FechaCreacion]
@@ -147,15 +147,8 @@ BEGIN
 										AND [Departamento.Id] = ISNULL(@Fk_Id_Departamento, [Departamento.Id])
 										AND Codigo = ISNULL(@CODIGO, Codigo)
 										AND Activo = ISNULL(@ACTIVO, Activo)
-										--AND (
-										--	   Nombre LIKE CONCAT('%', ISNULL(@SEARCHING, Nombre), '%')
-										--	OR [Departamento.Nombre] LIKE CONCAT('%', ISNULL(@SEARCHING, [Departamento.Nombre]), '%')
-										--	OR Id LIKE CONCAT('%', ISNULL(@SEARCHING, Id), '%')
-										--)
 									)
 	SELECT * INTO #tmpTblDataIndexed FROM DATA_INDEXED ORDER BY [INDEX]
-	--
-	--SELECT * FROM #tmpTblDataIndexed ORDER BY [INDEX]
 	--
 
 	--- TOTAL DE FILAS SIN PAGINAR

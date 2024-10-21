@@ -55,9 +55,7 @@ BEGIN
 	  DECLARE @p_Iterador_Insert_Grupo_Agencia INT;
 	  DECLARE @p_UsaCuentasGrupo_Insert_Agencia_Bancaria BIT;
 	  DECLARE @p_Id_Insert_Cuenta INT;
-	  DECLARE @p_Id_Insert_CuentaxAgencia INT;
 	  DECLARE @Id INT;
-      DECLARE @Codigo_Agencia VARCHAR(25);
 
 	  --------------------------- DECLARACION DE TABLA PARA INSERTAR LOS REGISTROS DE AGENCIAS BANCARIAS (TABLA PADRE) ----------------------------------------
 	  DECLARE @p_Tbl_Temp_Agencia_Bancaria_Insert TABLE   
@@ -205,25 +203,26 @@ BEGIN
 						DECLARE @iteradorEliminar INT = 1
 						DECLARE @ContadorEliminar INT = (SELECT COUNT(1) FROM  @p_Tbl_Temp_Cuentas_Internas_Eliminar_Insert)
 
-						IF @ContadorEliminar > 0 WHILE (@iteradorEliminar <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Cuentas_Internas_Eliminar_Insert))
-						BEGIN
-						       --OBTIENE UN ITEM
-							   SELECT @p_Id_Divisa_Iterador = IdDivisa, @p_Numero_Cuenta_Iterador = NumeroCuenta FROM @p_Tbl_Temp_Cuentas_Internas_Eliminar_Insert WHERE ID = @iteradorEliminar
+						IF @ContadorEliminar > 0 BEGIN WHILE (@iteradorEliminar <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Cuentas_Internas_Eliminar_Insert))
+							BEGIN
+								   --OBTIENE UN ITEM
+								   SELECT @p_Id_Divisa_Iterador = IdDivisa, @p_Numero_Cuenta_Iterador = NumeroCuenta FROM @p_Tbl_Temp_Cuentas_Internas_Eliminar_Insert WHERE ID = @iteradorEliminar
 							
-							   --OBTIENE LA CUENTA SI EXISTE
-							   SELECT @p_Id_Insert_Cuenta = Id  FROM tblCuentaInterna WHERE NumeroCuenta = @p_Numero_Cuenta_Iterador;
+								   --OBTIENE LA CUENTA SI EXISTE
+								   SELECT @p_Id_Insert_Cuenta = Id  FROM tblCuentaInterna WHERE NumeroCuenta = @p_Numero_Cuenta_Iterador;
 
-							   --UPDATE EN LA TABLA tblCuentaInterna_x_Agencia PARA INACTIVARLA
-							   UPDATE [tblCuentaInterna_x_Agencia] SET Activo =  0 WHERE FkIdCuentaInterna = @p_Id_Insert_Cuenta AND FkIdAgencia = @p_Id_Insert_Agencia_Bancaria;
+								   --UPDATE EN LA TABLA tblCuentaInterna_x_Agencia PARA INACTIVARLA
+								   UPDATE [tblCuentaInterna_x_Agencia] SET Activo =  0 WHERE FkIdCuentaInterna = @p_Id_Insert_Cuenta AND FkIdAgencia = @p_Id_Insert_Agencia_Bancaria;
 
-				   		   SET @iteradorEliminar = @iteradorEliminar + 1
-					    END
+				   			   SET @iteradorEliminar = @iteradorEliminar + 1
+							END
+						END
 						
 						--------------------------------------------------- VALIDACION DE CUENTAS INTERNAS VACIAS -----------------------------------------------------
 						DECLARE @iTERADOR INT = 1
 						DECLARE @ContadorGrupo INT = (SELECT COUNT(1) FROM tblCuentaInterna_x_GrupoAgencias WHERE FkIdGrupoAgencias = @p_Id_Insert_Grupo_Agencia AND Activo = 1)
 
-						IF @ContadorGrupo > 0 WHILE (@iTERADOR <= (SELECT MAX(FkIdCuentaInterna) FROM tblCuentaInterna_x_GrupoAgencias WHERE FkIdGrupoAgencias = @p_Id_Insert_Grupo_Agencia AND Activo = 1))
+						IF @ContadorGrupo > 0 BEGIN WHILE (@iTERADOR <= (SELECT MAX(FkIdCuentaInterna) FROM tblCuentaInterna_x_GrupoAgencias WHERE FkIdGrupoAgencias = @p_Id_Insert_Grupo_Agencia AND Activo = 1))
 						BEGIN
 
                              --OBTIENE UN ITEM
@@ -257,7 +256,7 @@ BEGIN
 
 							  SET @iTERADOR = @iTERADOR + 1
 					     END
-
+						 END
 						------------------------------ INICIO DEL RECORRIDO Y SETEO DE DATA DE LA TABLA TEMPORAL CUENTAS INTERNAS  ------------------------------------
 
 						DECLARE @i INT = 1

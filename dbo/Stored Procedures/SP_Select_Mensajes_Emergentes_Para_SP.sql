@@ -21,9 +21,27 @@ BEGIN
 	DECLARE @DoubleQuoteIndex INT = CHARINDEX('"', @CONSTRAINT_TRIGGER_NAME);
 
 	-- Utilizar IIF para verificar si se encontraron comillas simples o dobles
-	DECLARE @StartIndex INT = IIF(@SingleQuoteIndex > 0 AND @DoubleQuoteIndex > 0, 
-		CASE WHEN @SingleQuoteIndex < @DoubleQuoteIndex THEN @SingleQuoteIndex ELSE @DoubleQuoteIndex END,
-		IIF(@SingleQuoteIndex > 0, @SingleQuoteIndex, @DoubleQuoteIndex));
+	DECLARE @StartIndex INT;
+	DECLARE @MinIndex INT;
+
+	-- Step 1: Determine the smaller index if both are positive
+	IF @SingleQuoteIndex > 0 AND @DoubleQuoteIndex > 0
+	BEGIN
+		SET @MinIndex = CASE 
+			WHEN @SingleQuoteIndex < @DoubleQuoteIndex THEN @SingleQuoteIndex 
+			ELSE @DoubleQuoteIndex 
+		END;
+	END
+
+	-- Step 2: If only one is positive, use that one, otherwise use the other
+	ELSE
+	BEGIN
+		SET @MinIndex = IIF(@SingleQuoteIndex > 0, @SingleQuoteIndex, @DoubleQuoteIndex);
+	END
+
+	-- Step 3: Assign the final result to @StartIndex
+	SET @StartIndex = @MinIndex;
+
 
 	DECLARE @EndIndex INT = CHARINDEX(IIF(@StartIndex = @SingleQuoteIndex, '''', '"'), @CONSTRAINT_TRIGGER_NAME, @StartIndex + 1);
 
@@ -39,9 +57,26 @@ BEGIN
 	DECLARE @DobleQuoteIndex INT = CHARINDEX('"', @ErrorMensaje);
 
 	-- Utilizar IIF para verificar si se encontraron comillas simples o dobles
-	DECLARE @InicioIndex INT = IIF(@SoloQuoteIndex > 0 AND @DobleQuoteIndex > 0, 
-		CASE WHEN @SoloQuoteIndex < @DobleQuoteIndex THEN @SoloQuoteIndex ELSE @DobleQuoteIndex END,
-		IIF(@SoloQuoteIndex > 0, @SoloQuoteIndex, @DobleQuoteIndex));
+	DECLARE @InicioIndex INT;
+	DECLARE @MinIndex2 INT;
+
+	-- Step 1: Check if both indices are greater than zero and find the smaller one
+	IF @SoloQuoteIndex > 0 AND @DobleQuoteIndex > 0
+	BEGIN
+		SET @MinIndex2 = CASE 
+			WHEN @SoloQuoteIndex < @DobleQuoteIndex THEN @SoloQuoteIndex 
+			ELSE @DobleQuoteIndex 
+		END;
+	END
+	-- Step 2: If only one index is greater than zero, use that one
+	ELSE
+	BEGIN
+		SET @MinIndex2 = IIF(@SoloQuoteIndex > 0, @SoloQuoteIndex, @DobleQuoteIndex);
+	END
+
+	-- Step 3: Assign the final result to @InicioIndex
+	SET @InicioIndex = @MinIndex2;
+
 
 	DECLARE @FinalIndex INT = CHARINDEX(IIF(@InicioIndex = @SoloQuoteIndex, '''', '"'), @ErrorMensaje, @InicioIndex + 1);
 

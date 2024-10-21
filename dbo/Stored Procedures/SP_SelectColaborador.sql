@@ -5,7 +5,16 @@ CREATE   PROCEDURE [dbo].[SP_SelectColaborador] (	  @USER_ACTIVE_DIRECTORY VARCH
 AS
 BEGIN
 	---
-	SELECT *
+	SELECT     [Id]                  ,
+    [Nombre]              ,
+    [Apellido1]           ,
+    [Apellido2]           ,
+    [Cedula]              ,
+    [UserActiveDirectory] ,
+    [Activo]              ,
+    [Correo]              ,
+    [FechaCreacion]       ,
+    [FechaModificacion]  
 	FROM tblColaborador
 	WHERE	ISNULL(@ACTIVO, Activo)		= Activo
 	AND		ISNULL(@USER_ACTIVE_DIRECTORY, UserActiveDirectory)	= UserActiveDirectory

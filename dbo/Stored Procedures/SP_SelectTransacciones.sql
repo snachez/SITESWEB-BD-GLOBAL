@@ -14,7 +14,6 @@ BEGIN
 	----------------------------------------------------------------------------------------
     ---
 	SELECT @SEARCH = (CASE WHEN @SEARCH is null THEN '' ELSE @SEARCH END);
-	DECLARE @sql NVARCHAR(max);
 	---
 	;WITH DATA_INDEXED AS (SELECT  T.[Id]
 								 , T.[Nombre]
