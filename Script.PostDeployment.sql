@@ -16,7 +16,7 @@ WHILE @@FETCH_STATUS = 0
 BEGIN
     SET @QUERY = N'DROP EXTERNAL TABLE ' + QUOTENAME(@schemaName) + N'.' + QUOTENAME(@tableName)
     EXEC sp_executesql @QUERY
-    FETCH NEXT FROM cur INTO @schemaName, @tableName
+    FETCH NEXT FROM cur INTO @schemaName, @tableName 
 END
 
 CLOSE cur
