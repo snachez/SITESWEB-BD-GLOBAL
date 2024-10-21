@@ -98,24 +98,24 @@ BEGIN
 						DECLARE @i INT = 1
 						DECLARE @Contador INT = (SELECT COUNT(1) FROM  @p_Tbl_Temp_Modulo)
 
-						IF @Contador > 0 WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Modulo))
-						BEGIN
+						IF @Contador > 0 BEGIN WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Modulo))
+							BEGIN
 
-							--OBTIENE UN ITEM
-							SELECT 								
-							 @p_Id_Modulo_Denominaciones_Iterador = FK_ID_Modulo								
-							FROM @p_Tbl_Temp_Modulo 
-							WHERE ID = @i
+								--OBTIENE UN ITEM
+								SELECT 								
+								 @p_Id_Modulo_Denominaciones_Iterador = FK_ID_Modulo								
+								FROM @p_Tbl_Temp_Modulo 
+								WHERE ID = @i
 
 
-								--INSERTA EN LA TABLA tblDenominaciones_x_Modulo
-								INSERT INTO dbo.[tblDenominaciones_x_Modulo] (FkIdDenominaciones, FkIdModulo, Activo, FechaCreacion)
-																	VALUES (  @Id_Denominaciones_Insertada,    @p_Id_Modulo_Denominaciones_Iterador, 1, (CONVERT([smalldatetime],getdate())) )
+									--INSERTA EN LA TABLA tblDenominaciones_x_Modulo
+									INSERT INTO dbo.[tblDenominaciones_x_Modulo] (FkIdDenominaciones, FkIdModulo, Activo, FechaCreacion)
+																		VALUES (  @Id_Denominaciones_Insertada,    @p_Id_Modulo_Denominaciones_Iterador, 1, (CONVERT([smalldatetime],getdate())) )
 			    				
 
-							SET @i = @i + 1
-						END --FIN DEL CICLO
-														
+								SET @i = @i + 1
+							END --FIN DEL CICLO
+						END								
 					END
 
 					SELECT @ROW = (SELECT * FROM tblDenominaciones WHERE Id = @Id_Denominaciones_Insertada FOR JSON PATH, INCLUDE_NULL_VALUES)

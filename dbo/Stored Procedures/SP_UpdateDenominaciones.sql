@@ -99,31 +99,31 @@ BEGIN
 						DECLARE @i INT = 1
 						DECLARE @Contador INT = (SELECT COUNT(1) FROM  @p_Tbl_Temp_Modulo)
 
-						IF @Contador > 0 WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Modulo))
-						BEGIN
+						IF @Contador > 0 BEGIN WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Modulo))
+							BEGIN
 
-							--OBTIENE UN ITEM
-							SELECT 								
-							 @p_Id_Modulo_Denominaciones_Iterador = FK_ID_Modulo								
-							FROM @p_Tbl_Temp_Modulo 
-							WHERE ID = @i
+								--OBTIENE UN ITEM
+								SELECT 								
+								 @p_Id_Modulo_Denominaciones_Iterador = FK_ID_Modulo								
+								FROM @p_Tbl_Temp_Modulo 
+								WHERE ID = @i
 
-							IF EXISTS(SELECT 1 FROM [tblDenominaciones_x_Modulo]  WHERE FkIdDenominaciones = @p_Id_Denominaciones AND FkIdModulo = @p_Id_Modulo_Denominaciones_Iterador) 	BEGIN
+								IF EXISTS(SELECT 1 FROM [tblDenominaciones_x_Modulo]  WHERE FkIdDenominaciones = @p_Id_Denominaciones AND FkIdModulo = @p_Id_Modulo_Denominaciones_Iterador) 	BEGIN
 
-							    UPDATE dbo.[tblDenominaciones_x_Modulo] SET Activo = 1 WHERE FkIdDenominaciones = @p_Id_Denominaciones AND FkIdModulo = @p_Id_Modulo_Denominaciones_Iterador;
+									UPDATE dbo.[tblDenominaciones_x_Modulo] SET Activo = 1 WHERE FkIdDenominaciones = @p_Id_Denominaciones AND FkIdModulo = @p_Id_Modulo_Denominaciones_Iterador;
 
-							END
-							ELSE  BEGIN
+								END
+								ELSE  BEGIN
 
-								--INSERTA EN LA TABLA tblDenominaciones_x_Modulo
-								INSERT INTO dbo.[tblDenominaciones_x_Modulo] (FkIdDenominaciones, FkIdModulo, Activo, FechaCreacion)
-																	VALUES (  @p_Id_Denominaciones,    @p_Id_Modulo_Denominaciones_Iterador, 1, (CONVERT([smalldatetime],getdate())) )
+									--INSERTA EN LA TABLA tblDenominaciones_x_Modulo
+									INSERT INTO dbo.[tblDenominaciones_x_Modulo] (FkIdDenominaciones, FkIdModulo, Activo, FechaCreacion)
+																		VALUES (  @p_Id_Denominaciones,    @p_Id_Modulo_Denominaciones_Iterador, 1, (CONVERT([smalldatetime],getdate())) )
 			    				
-							END
+								END
 
-							SET @i = @i + 1
-						END --FIN DEL CICLO
-														
+								SET @i = @i + 1
+							END --FIN DEL CICLO
+						END								
 					END
 
 					SELECT @ROW = (SELECT * FROM tblDenominaciones WHERE Id = @p_Id_Denominaciones FOR JSON PATH, INCLUDE_NULL_VALUES)

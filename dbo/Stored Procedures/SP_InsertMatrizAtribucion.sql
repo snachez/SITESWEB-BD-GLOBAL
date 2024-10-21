@@ -181,25 +181,26 @@ BEGIN
 						DECLARE @i INT = 1
 						DECLARE @Contador INT = (SELECT COUNT(1) FROM  @p_Tbl_Temp_Transacciones_Insert)
 
-						IF @Contador > 0 WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Transacciones_Insert))
-						BEGIN
+						IF @Contador > 0 BEGIN WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Transacciones_Insert))
+							BEGIN
 
-							--OBTIENE UN ITEM
-							SELECT 								
-							 @p_Id_Transaccion_Iterador = IdTransacciones
-							,@p_Nombre_Transaccion_Iterador = Nombre									
-							FROM @p_Tbl_Temp_Transacciones_Insert 
-							WHERE ID = @i
+								--OBTIENE UN ITEM
+								SELECT 								
+								 @p_Id_Transaccion_Iterador = IdTransacciones
+								,@p_Nombre_Transaccion_Iterador = Nombre									
+								FROM @p_Tbl_Temp_Transacciones_Insert 
+								WHERE ID = @i
 								
-							--INSERTA EN LA TABLA tblMatrizAtribucion_Transaccion
-							INSERT INTO tblMatrizAtribucion_Transaccion ( [Fk_Id_MatrizAtribucion], [Fk_Id_Transaccion], [Activo], [FechaCreacion] )
-																       VALUES ( @p_Id_Insert_Matriz_Atribucion, @p_Id_Transaccion_Iterador, 1, CURRENT_TIMESTAMP )
+								--INSERTA EN LA TABLA tblMatrizAtribucion_Transaccion
+								INSERT INTO tblMatrizAtribucion_Transaccion ( [Fk_Id_MatrizAtribucion], [Fk_Id_Transaccion], [Activo], [FechaCreacion] )
+																		   VALUES ( @p_Id_Insert_Matriz_Atribucion, @p_Id_Transaccion_Iterador, 1, CURRENT_TIMESTAMP )
 			    				
-							SELECT @Id_Matriz_Por_Transaccion_Insertada = CONVERT(INT, ISNULL(SCOPE_IDENTITY(), -1)) 
+								SELECT @Id_Matriz_Por_Transaccion_Insertada = CONVERT(INT, ISNULL(SCOPE_IDENTITY(), -1)) 
 							
-							SET @i = @i + 1
+								SET @i = @i + 1
 
-						END --FIN DEL CICLO								
+							END --FIN DEL CICLO		
+						END
 					END
 					------------------------------ FIN DEL RECORRIDO Y SETEO DE DATA DE LA TABLA TEMPORAL TRANSACCIONES  ------------------------------------
 

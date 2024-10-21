@@ -70,22 +70,22 @@ BEGIN
 					DECLARE @i INT = 1
 					DECLARE @Contador INT = (SELECT COUNT(1) FROM @p_Tbl_Temp_Departamento)
 
-					IF @Contador > 0 WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Departamento))
-					BEGIN
+					IF @Contador > 0 BEGIN WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Departamento))
+						BEGIN
 
-						--OBTIENE UN ITEM
-						SELECT 								
-						 @p_Nombre_Departamento_Cursor = Nombre_Departamento 
-						,@p_Activo_Cursor = Activo								
-						FROM @p_Tbl_Temp_Departamento 
-						WHERE ID = @i
+							--OBTIENE UN ITEM
+							SELECT 								
+							 @p_Nombre_Departamento_Cursor = Nombre_Departamento 
+							,@p_Activo_Cursor = Activo								
+							FROM @p_Tbl_Temp_Departamento 
+							WHERE ID = @i
 								
-								INSERT INTO tblDepartamento(Nombre, Activo) VALUES(@p_Nombre_Departamento_Cursor, @p_Activo_Cursor)
-								SET @ROW = (SELECT * FROM tblDepartamento WHERE Nombre = @p_Nombre_Departamento_Cursor FOR JSON PATH)												  
-								SELECT @p_Id_Departamento_Insertada = CONVERT(INT, ISNULL(SCOPE_IDENTITY(), -1))										
-						 SET @i = @i + 1
-					END --FIN DEL CICLO
-
+									INSERT INTO tblDepartamento(Nombre, Activo) VALUES(@p_Nombre_Departamento_Cursor, @p_Activo_Cursor)
+									SET @ROW = (SELECT * FROM tblDepartamento WHERE Nombre = @p_Nombre_Departamento_Cursor FOR JSON PATH)												  
+									SELECT @p_Id_Departamento_Insertada = CONVERT(INT, ISNULL(SCOPE_IDENTITY(), -1))										
+							 SET @i = @i + 1
+						END --FIN DEL CICLO
+					END
 					------------------------------ RESPUESTA A LA APP  ------------------------------------
 						INSERT INTO #Mensajes 
 						EXEC SP_Select_Mensajes_Emergentes_Para_SP 

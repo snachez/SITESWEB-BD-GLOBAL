@@ -77,36 +77,36 @@ BEGIN
 					DECLARE @i INT = 1
 					DECLARE @Contador INT = (SELECT COUNT(1) FROM @p_Tbl_Temp_Cedis)
 
-					IF @Contador > 0 WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Cedis))
-					BEGIN			
+					IF @Contador > 0 BEGIN WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Cedis))
+						BEGIN			
  
-					 SELECT @Id = ISNULL(MAX(Id_Cedis),0) + 1 FROM tblCedis
-					 --SELECT @NewCedisCodigo_Cedis = @PreFix + RIGHT('0000' + CAST(@Id AS VARCHAR(4)), 4)
-					 	 SELECT @NewCedisCodigo_Cedis = RIGHT('0000' + CAST(@Id AS VARCHAR(4)), 4)
+						 SELECT @Id = ISNULL(MAX(Id_Cedis),0) + 1 FROM tblCedis
+						 --SELECT @NewCedisCodigo_Cedis = @PreFix + RIGHT('0000' + CAST(@Id AS VARCHAR(4)), 4)
+					 		 SELECT @NewCedisCodigo_Cedis = RIGHT('0000' + CAST(@Id AS VARCHAR(4)), 4)
 
-						--OBTIENE UN ITEM
-						SELECT 								
-						 @p_Nombre_Cedis_Cursor = Nombre 	
-						,@p_Fk_Id_Pais_Cursor = Fk_Id_Pais
-						,@p_Activo_Cursor = Activo								
-						FROM @p_Tbl_Temp_Cedis
-						WHERE ID = @i
+							--OBTIENE UN ITEM
+							SELECT 								
+							 @p_Nombre_Cedis_Cursor = Nombre 	
+							,@p_Fk_Id_Pais_Cursor = Fk_Id_Pais
+							,@p_Activo_Cursor = Activo								
+							FROM @p_Tbl_Temp_Cedis
+							WHERE ID = @i
 								
-								INSERT INTO tblCedis(Nombre, Fk_Id_Pais, Activo, Codigo_Cedis) VALUES(RTRIM(@p_Nombre_Cedis_Cursor),@p_Fk_Id_Pais_Cursor, @p_Activo_Cursor, @NewCedisCodigo_Cedis)
-								SET @ROW = (SELECT * FROM tblCedis WHERE Nombre = @p_Nombre_Cedis_Cursor FOR JSON PATH)												  
+									INSERT INTO tblCedis(Nombre, Fk_Id_Pais, Activo, Codigo_Cedis) VALUES(RTRIM(@p_Nombre_Cedis_Cursor),@p_Fk_Id_Pais_Cursor, @p_Activo_Cursor, @NewCedisCodigo_Cedis)
+									SET @ROW = (SELECT * FROM tblCedis WHERE Nombre = @p_Nombre_Cedis_Cursor FOR JSON PATH)												  
 						
-							DECLARE @FKIDCEDIS INT = CONVERT(INT, ISNULL(SCOPE_IDENTITY(), -1))
-							INSERT INTO tblDiasHabilesEntregaPedidosInternos(FkIdCedis, Dia, NombreDia, HoraDesde, HoraCorteDia, HoraLimiteAprobacion)
-							VALUES(	@FKIDCEDIS, '1', 'Lunes','00:00', '23:59', '23:59'),
-							(@FKIDCEDIS, '2', 'Martes', '00:00', '23:59', '23:59'),
-							(@FKIDCEDIS, '3', 'Miercoles', '00:00', '23:59', '23:59'),
-							(@FKIDCEDIS, '4', 'Jueves', '00:00', '23:59', '23:59'),
-							(@FKIDCEDIS, '5', 'Viernes', '00:00', '23:59', '23:59'),
-							(@FKIDCEDIS, '6', 'Sábado', '00:00', '23:59', '23:59'),
-							(@FKIDCEDIS, '7', 'Domingo', '00:00', '23:59', '23:59')
-						 SET @i = @i + 1
-					END --FIN DEL CICLO
-
+								DECLARE @FKIDCEDIS INT = CONVERT(INT, ISNULL(SCOPE_IDENTITY(), -1))
+								INSERT INTO tblDiasHabilesEntregaPedidosInternos(FkIdCedis, Dia, NombreDia, HoraDesde, HoraCorteDia, HoraLimiteAprobacion)
+								VALUES(	@FKIDCEDIS, '1', 'Lunes','00:00', '23:59', '23:59'),
+								(@FKIDCEDIS, '2', 'Martes', '00:00', '23:59', '23:59'),
+								(@FKIDCEDIS, '3', 'Miercoles', '00:00', '23:59', '23:59'),
+								(@FKIDCEDIS, '4', 'Jueves', '00:00', '23:59', '23:59'),
+								(@FKIDCEDIS, '5', 'Viernes', '00:00', '23:59', '23:59'),
+								(@FKIDCEDIS, '6', 'Sábado', '00:00', '23:59', '23:59'),
+								(@FKIDCEDIS, '7', 'Domingo', '00:00', '23:59', '23:59')
+							 SET @i = @i + 1
+						END --FIN DEL CICLO
+					END
 					------------------------------ RESPUESTA A LA APP  ------------------------------------
 						INSERT INTO #Mensajes 
 						EXEC SP_Select_Mensajes_Emergentes_Para_SP 

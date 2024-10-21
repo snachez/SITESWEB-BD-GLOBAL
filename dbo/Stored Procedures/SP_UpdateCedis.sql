@@ -75,25 +75,25 @@ BEGIN
 					DECLARE @i INT = 1
 					DECLARE @Contador INT = (SELECT COUNT(1) FROM @p_Tbl_Temp_cedis)
 
-					IF @Contador > 0 WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_cedis))
-					BEGIN
+					IF @Contador > 0 BEGIN WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_cedis))
+						BEGIN
 
-						--OBTIENE UN ITEM
-						SELECT 		
-						 @p_Id_Cedis_Cursor = Id_Cedis
-						,@p_Nombre_Cedis_Cursor = Nombre_Cedis 
-						,@p_Fk_Id_Cedis_Cursor = Fk_Id_Pais
-						,@p_Activo_Cursor = Activo								
-						FROM @p_Tbl_Temp_cedis 
-						WHERE ID = @i
+							--OBTIENE UN ITEM
+							SELECT 		
+							 @p_Id_Cedis_Cursor = Id_Cedis
+							,@p_Nombre_Cedis_Cursor = Nombre_Cedis 
+							,@p_Fk_Id_Cedis_Cursor = Fk_Id_Pais
+							,@p_Activo_Cursor = Activo								
+							FROM @p_Tbl_Temp_cedis 
+							WHERE ID = @i
 
-						UPDATE tblCedis SET Nombre = RTRIM(@p_Nombre_Cedis_Cursor), Fk_Id_Pais = @p_Fk_Id_Cedis_Cursor, Activo = @p_Activo_Cursor WHERE Id_Cedis = @p_Id_Cedis_Cursor
-						SET @ROW = (SELECT * FROM tblCedis WHERE Id_Cedis = @p_Id_Cedis_Cursor FOR JSON PATH)		
-						SELECT @p_Id_Cedis_Cursor = CONVERT(INT, ISNULL(SCOPE_IDENTITY(), -1))
+							UPDATE tblCedis SET Nombre = RTRIM(@p_Nombre_Cedis_Cursor), Fk_Id_Pais = @p_Fk_Id_Cedis_Cursor, Activo = @p_Activo_Cursor WHERE Id_Cedis = @p_Id_Cedis_Cursor
+							SET @ROW = (SELECT * FROM tblCedis WHERE Id_Cedis = @p_Id_Cedis_Cursor FOR JSON PATH)		
+							SELECT @p_Id_Cedis_Cursor = CONVERT(INT, ISNULL(SCOPE_IDENTITY(), -1))
 
-						 SET @i = @i + 1
-					END --FIN DEL CICLO
-				
+							 SET @i = @i + 1
+						END --FIN DEL CICLO
+					END
 					------------------------------ RESPUESTA A LA APP  ------------------------------------
 						INSERT INTO #Mensajes 
 						EXEC SP_Select_Mensajes_Emergentes_Para_SP 

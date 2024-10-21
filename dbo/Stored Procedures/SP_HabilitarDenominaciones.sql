@@ -72,22 +72,23 @@ BEGIN
 						DECLARE @i INT = 1
 						DECLARE @Contador INT = (SELECT COUNT(1) FROM  @p_Tbl_Temp_Habilitar_Denominaciones_Insert)
 
-						IF @Contador > 0 WHILE (@i <= (SELECT MAX(IDTEMPORAL) FROM @p_Tbl_Temp_Habilitar_Denominaciones_Insert))
-						BEGIN
+						IF @Contador > 0 BEGIN WHILE (@i <= (SELECT MAX(IDTEMPORAL) FROM @p_Tbl_Temp_Habilitar_Denominaciones_Insert))
+							BEGIN
 
-							--OBTIENE UN ITEM
-							SELECT 								
-							 @Id_Denominaciones_Habilitar = ID,
-							 @Activo_Denominaciones_Habilitar = ACTIVO
-							FROM @p_Tbl_Temp_Habilitar_Denominaciones_Insert 
-							WHERE IDTEMPORAL = @i
+								--OBTIENE UN ITEM
+								SELECT 								
+								 @Id_Denominaciones_Habilitar = ID,
+								 @Activo_Denominaciones_Habilitar = ACTIVO
+								FROM @p_Tbl_Temp_Habilitar_Denominaciones_Insert 
+								WHERE IDTEMPORAL = @i
 
-							UPDATE dbo.[tblDenominaciones] SET Activo = IIF(@Activo_Denominaciones_Habilitar = 1, 0, 1) 
-							WHERE Id = @Id_Denominaciones_Habilitar;
+								UPDATE dbo.[tblDenominaciones] SET Activo = IIF(@Activo_Denominaciones_Habilitar = 1, 0, 1) 
+								WHERE Id = @Id_Denominaciones_Habilitar;
 
-							SET @i = @i + 1
-						END --FIN DEL CICLO
-							
+								SET @i = @i + 1
+							END --FIN DEL CICLO
+						END	
+
 					SELECT @ROW = (SELECT * FROM tblDenominaciones WHERE Id = @Id_Denominaciones_Habilitar FOR JSON PATH, INCLUDE_NULL_VALUES)
 					------------------------------ FIN DEL RECORRIDO Y SETEO DE DATA DE LA TABLA TEMPORAL MODULO  ------------------------------------
 															

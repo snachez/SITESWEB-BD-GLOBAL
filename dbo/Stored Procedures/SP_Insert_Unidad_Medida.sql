@@ -124,27 +124,27 @@ BEGIN
 						DECLARE @i INT = 1
 						DECLARE @Contador INT = (SELECT COUNT(1) FROM  @p_Tbl_Temp_Divisa)
 
-						IF @Contador > 0 WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Divisa))
-						BEGIN
+						IF @Contador > 0 BEGIN WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Divisa))
+							BEGIN
 
-							--OBTIENE UN ITEM
-							SELECT 								
-							 @p_Id_Divisa_Iterador = Id_Divisa
-							,@p_Nombre_Divisa_Iterador = Nombre									
-							FROM @p_Tbl_Temp_Divisa 
-							WHERE ID = @i
+								--OBTIENE UN ITEM
+								SELECT 								
+								 @p_Id_Divisa_Iterador = Id_Divisa
+								,@p_Nombre_Divisa_Iterador = Nombre									
+								FROM @p_Tbl_Temp_Divisa 
+								WHERE ID = @i
 								
-							--INSERTA EN LA TABLA tblUnidadMedida_x_Divisa
-							INSERT INTO dbo.[tblUnidadMedida_x_Divisa] (    [Fk_Id_Unidad_Medida],          [Fk_Id_Divisa],     [Activo],    [Fecha_Creacion]   )
-																VALUES (  @Id_Unidad_Medida_Insertada,    @p_Id_Divisa_Iterador,    1,          GETDATE()       )
+								--INSERTA EN LA TABLA tblUnidadMedida_x_Divisa
+								INSERT INTO dbo.[tblUnidadMedida_x_Divisa] (    [Fk_Id_Unidad_Medida],          [Fk_Id_Divisa],     [Activo],    [Fecha_Creacion]   )
+																	VALUES (  @Id_Unidad_Medida_Insertada,    @p_Id_Divisa_Iterador,    1,          GETDATE()       )
 			    			
-							SELECT @Id_Unidad_Medida_Por_Divisa_Insertada = CONVERT(INT, ISNULL(SCOPE_IDENTITY(), -1)) 
-							SELECT @p_Id_Divisa_Insertada = (SELECT Fk_Id_Divisa FROM tblUnidadMedida_x_Divisa WHERE Id = @Id_Unidad_Medida_Por_Divisa_Insertada)
+								SELECT @Id_Unidad_Medida_Por_Divisa_Insertada = CONVERT(INT, ISNULL(SCOPE_IDENTITY(), -1)) 
+								SELECT @p_Id_Divisa_Insertada = (SELECT Fk_Id_Divisa FROM tblUnidadMedida_x_Divisa WHERE Id = @Id_Unidad_Medida_Por_Divisa_Insertada)
 
 
-							SET @i = @i + 1
-						END --FIN DEL CICLO
-														
+								SET @i = @i + 1
+							END --FIN DEL CICLO
+						END								
 					END
 
 					------------------------------ FIN DEL RECORRIDO Y SETEO DE DATA DE LA TABLA TEMPORAL DIVISA  ------------------------------------

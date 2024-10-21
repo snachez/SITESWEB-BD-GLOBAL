@@ -74,25 +74,25 @@ BEGIN
 					DECLARE @i INT = 1
 					DECLARE @Contador INT = (SELECT COUNT(1) FROM @p_Tbl_Temp_Pais)
 
-					IF @Contador > 0 WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Pais))
-					BEGIN
+					IF @Contador > 0 BEGIN WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Pais))
+						BEGIN
 
-					 SELECT @Id = ISNULL(MAX(Id),0) + 1 FROM tblPais
-					 SELECT @NewPaisCodigo_Pais = RIGHT('0000' + CAST(@Id AS VARCHAR(4)), 4)
+						 SELECT @Id = ISNULL(MAX(Id),0) + 1 FROM tblPais
+						 SELECT @NewPaisCodigo_Pais = RIGHT('0000' + CAST(@Id AS VARCHAR(4)), 4)
 
-						--OBTIENE UN ITEM
-						SELECT 								
-						 @p_Nombre_Pais_Cursor = Nombre 						 	
-						,@p_Activo_Cursor = Activo								
-						FROM @p_Tbl_Temp_Pais 
-						WHERE ID = @i
+							--OBTIENE UN ITEM
+							SELECT 								
+							 @p_Nombre_Pais_Cursor = Nombre 						 	
+							,@p_Activo_Cursor = Activo								
+							FROM @p_Tbl_Temp_Pais 
+							WHERE ID = @i
 								
-								INSERT INTO tblPais(Nombre, Activo, Codigo) VALUES(@p_Nombre_Pais_Cursor, @p_Activo_Cursor, @NewPaisCodigo_Pais)
-								SET @ROW = (SELECT * FROM tblPais WHERE Nombre = @p_Nombre_Pais_Cursor FOR JSON PATH)												  
+									INSERT INTO tblPais(Nombre, Activo, Codigo) VALUES(@p_Nombre_Pais_Cursor, @p_Activo_Cursor, @NewPaisCodigo_Pais)
+									SET @ROW = (SELECT * FROM tblPais WHERE Nombre = @p_Nombre_Pais_Cursor FOR JSON PATH)												  
 																		
-						 SET @i = @i + 1
-					END --FIN DEL CICLO
-
+							 SET @i = @i + 1
+						END --FIN DEL CICLO
+					END
 					------------------------------ RESPUESTA A LA APP  ------------------------------------
 						INSERT INTO #Mensajes 
 						EXEC SP_Select_Mensajes_Emergentes_Para_SP 

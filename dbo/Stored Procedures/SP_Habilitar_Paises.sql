@@ -69,38 +69,38 @@ BEGIN
 					DECLARE @i INT = 1
 					DECLARE @Contador INT = (SELECT COUNT(1) FROM @p_Tbl_Temp_Paises)
 
-					IF @Contador > 0 WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Paises))
-					BEGIN
+					IF @Contador > 0 BEGIN WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Paises))
+						BEGIN
 
-						--OBTIENE UN ITEM
-						SELECT 								
-						 @p_Id_Paises_Cursor = Id_Pais 
-						,@p_Activo_Cursor = Activo								
-						FROM @p_Tbl_Temp_Paises 
-						WHERE ID = @i
+							--OBTIENE UN ITEM
+							SELECT 								
+							 @p_Id_Paises_Cursor = Id_Pais 
+							,@p_Activo_Cursor = Activo								
+							FROM @p_Tbl_Temp_Paises 
+							WHERE ID = @i
 								
-						SET @p_Aux_Activo = NULL	
-						SELECT @p_Aux_Activo = (SELECT Activo FROM tblPais WHERE Id = @p_Id_Paises_Cursor)	
-						--SELECT @Aux_1_Existe 
+							SET @p_Aux_Activo = NULL	
+							SELECT @p_Aux_Activo = (SELECT Activo FROM tblPais WHERE Id = @p_Id_Paises_Cursor)	
+							--SELECT @Aux_1_Existe 
 						
-						   IF(@p_Aux_Activo = 1)
-						   BEGIN   
+							   IF(@p_Aux_Activo = 1)
+							   BEGIN   
 				   				
-								UPDATE tblPais SET Activo = 0, FechaModificacion = CURRENT_TIMESTAMP WHERE Id = @p_Id_Paises_Cursor
-								SET @ROW = (SELECT * FROM tblPais WHERE Id = @p_Id_Paises_Cursor FOR JSON PATH)												  
+									UPDATE tblPais SET Activo = 0, FechaModificacion = CURRENT_TIMESTAMP WHERE Id = @p_Id_Paises_Cursor
+									SET @ROW = (SELECT * FROM tblPais WHERE Id = @p_Id_Paises_Cursor FOR JSON PATH)												  
 								
-						   END
-						   ELSE 
-						   BEGIN					      									
+							   END
+							   ELSE 
+							   BEGIN					      									
 																		
-								UPDATE tblPais SET Activo = 1, FechaModificacion = CURRENT_TIMESTAMP WHERE Id = @p_Id_Paises_Cursor
-								SET @ROW = (SELECT * FROM tblPais WHERE Id = @p_Id_Paises_Cursor FOR JSON PATH)		
+									UPDATE tblPais SET Activo = 1, FechaModificacion = CURRENT_TIMESTAMP WHERE Id = @p_Id_Paises_Cursor
+									SET @ROW = (SELECT * FROM tblPais WHERE Id = @p_Id_Paises_Cursor FOR JSON PATH)		
 
-						   END
+							   END
 			    															
-						 SET @i = @i + 1
-					END --FIN DEL CICLO
-
+							 SET @i = @i + 1
+						END --FIN DEL CICLO
+					END
 					------------------------------ RESPUESTA A LA APP  ------------------------------------
 						INSERT INTO #Mensajes 
 						EXEC SP_Select_Mensajes_Emergentes_Para_SP 

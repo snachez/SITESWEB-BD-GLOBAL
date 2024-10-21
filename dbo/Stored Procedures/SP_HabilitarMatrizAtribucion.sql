@@ -64,22 +64,22 @@ BEGIN
 					DECLARE @i INT = 1
 					DECLARE @Contador INT = (SELECT COUNT(1) FROM @p_Tbl_Temp_Matriz)
 
-					IF @Contador > 0 WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Matriz))
-					BEGIN
+					IF @Contador > 0 BEGIN WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Matriz))
+						BEGIN
 
-						--OBTIENE UN ITEM
-						SELECT 								
-						 @p_Id_Matriz_Cursor = Id_Matriz 
-						,@p_Activo_Cursor = Activo								
-						FROM @p_Tbl_Temp_Matriz 
-						WHERE ID = @i
+							--OBTIENE UN ITEM
+							SELECT 								
+							 @p_Id_Matriz_Cursor = Id_Matriz 
+							,@p_Activo_Cursor = Activo								
+							FROM @p_Tbl_Temp_Matriz 
+							WHERE ID = @i
 						
-						UPDATE tblMatrizAtribucion SET Activo = IIF(@p_Activo_Cursor = 1, 0, 1), FechaModificacion = CURRENT_TIMESTAMP WHERE Id = @p_Id_Matriz_Cursor
-						SET @ROW = (SELECT * FROM tblMatrizAtribucion WHERE Id = @p_Id_Matriz_Cursor FOR JSON PATH);
+							UPDATE tblMatrizAtribucion SET Activo = IIF(@p_Activo_Cursor = 1, 0, 1), FechaModificacion = CURRENT_TIMESTAMP WHERE Id = @p_Id_Matriz_Cursor
+							SET @ROW = (SELECT * FROM tblMatrizAtribucion WHERE Id = @p_Id_Matriz_Cursor FOR JSON PATH);
 																		
-						 SET @i = @i + 1
-					END --FIN DEL CICLO
-
+							 SET @i = @i + 1
+						END --FIN DEL CICLO
+					END
 					------------------------------ RESPUESTA A LA APP  ------------------------------------
 						INSERT INTO #Mensajes 
 						EXEC SP_Select_Mensajes_Emergentes_Para_SP 

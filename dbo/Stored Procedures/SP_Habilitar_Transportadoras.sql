@@ -73,7 +73,7 @@ BEGIN
 					DECLARE @i INT = 1
 					DECLARE @Contador INT = (SELECT COUNT(1) FROM @p_Tbl_Temp_Transportadoras)
 
-					IF @Contador > 0 WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Transportadoras))
+					IF @Contador > 0 BEGIN WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Transportadoras))
 					BEGIN
 
 							--OBTIENE UN ITEM
@@ -176,7 +176,7 @@ BEGIN
 			    															
 						SET @i = @i + 1
 					END --FIN DEL CICLO
-
+					END
 					------------------------------ RESPUESTA A LA APP MSJ: 3223  ------------------------------------							
 							
 							INSERT INTO #Mensajes 

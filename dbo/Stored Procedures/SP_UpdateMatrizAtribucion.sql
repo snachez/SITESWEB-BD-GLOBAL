@@ -158,7 +158,7 @@ BEGIN
 						DECLARE @Existe INT = 0;
 						DECLARE @Contador INT = (SELECT COUNT(1) FROM  @p_Tbl_Temp_Transacciones_Update)
 
-						IF @Contador > 0 WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Transacciones_Update))
+						IF @Contador > 0 BEGIN WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Transacciones_Update))
 						BEGIN
 
 							--OBTIENE UN ITEM
@@ -190,7 +190,8 @@ BEGIN
 							
 							SET @i = @i + 1
 
-						END --FIN DEL CICLO								
+						END --FIN DEL CICLO		
+						END
 					END
 					------------------------------ FIN DEL RECORRIDO Y SETEO DE DATA DE LA TABLA TEMPORAL TRANSACCIONES  ------------------------------------
 

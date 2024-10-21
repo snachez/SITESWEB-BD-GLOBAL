@@ -69,38 +69,38 @@ BEGIN
 					DECLARE @i INT = 1
 					DECLARE @Contador INT = (SELECT COUNT(1) FROM @p_Tbl_Temp_Unidad_Medidas)
 
-					IF @Contador > 0 WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Unidad_Medidas))
-					BEGIN
+					IF @Contador > 0 BEGIN WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Unidad_Medidas))
+						BEGIN
 
-						--OBTIENE UN ITEM
-						SELECT 								
-						 @p_Id_Unidad_Medida_Cursor = Id_Unidad_Medida 
-						,@p_Activo_Cursor = Activo								
-						FROM @p_Tbl_Temp_Unidad_Medidas 
-						WHERE ID = @i
+							--OBTIENE UN ITEM
+							SELECT 								
+							 @p_Id_Unidad_Medida_Cursor = Id_Unidad_Medida 
+							,@p_Activo_Cursor = Activo								
+							FROM @p_Tbl_Temp_Unidad_Medidas 
+							WHERE ID = @i
 								
-						SET @p_Aux_Activo = NULL	
-						SELECT @p_Aux_Activo = (SELECT Activo FROM tblUnidadMedida WHERE Id = @p_Id_Unidad_Medida_Cursor)	
-						--SELECT @Aux_1_Existe 
+							SET @p_Aux_Activo = NULL	
+							SELECT @p_Aux_Activo = (SELECT Activo FROM tblUnidadMedida WHERE Id = @p_Id_Unidad_Medida_Cursor)	
+							--SELECT @Aux_1_Existe 
 						
-						   IF(@p_Aux_Activo = 1)
-						   BEGIN   
+							   IF(@p_Aux_Activo = 1)
+							   BEGIN   
 				   				
-								UPDATE tblUnidadMedida SET Activo = 0, Fecha_Modificacion = CURRENT_TIMESTAMP WHERE Id = @p_Id_Unidad_Medida_Cursor
-								SET @ROW = (SELECT * FROM tblUnidadMedida WHERE Id = @p_Id_Unidad_Medida_Cursor FOR JSON PATH)												  
+									UPDATE tblUnidadMedida SET Activo = 0, Fecha_Modificacion = CURRENT_TIMESTAMP WHERE Id = @p_Id_Unidad_Medida_Cursor
+									SET @ROW = (SELECT * FROM tblUnidadMedida WHERE Id = @p_Id_Unidad_Medida_Cursor FOR JSON PATH)												  
 								
-						   END
-						   ELSE 
-						   BEGIN					      									
+							   END
+							   ELSE 
+							   BEGIN					      									
 																		
-								UPDATE tblUnidadMedida SET Activo = 1, Fecha_Modificacion = CURRENT_TIMESTAMP WHERE Id = @p_Id_Unidad_Medida_Cursor
-								SET @ROW = (SELECT * FROM tblUnidadMedida WHERE Id = @p_Id_Unidad_Medida_Cursor FOR JSON PATH)		
+									UPDATE tblUnidadMedida SET Activo = 1, Fecha_Modificacion = CURRENT_TIMESTAMP WHERE Id = @p_Id_Unidad_Medida_Cursor
+									SET @ROW = (SELECT * FROM tblUnidadMedida WHERE Id = @p_Id_Unidad_Medida_Cursor FOR JSON PATH)		
 
-						   END
+							   END
 			    															
-						 SET @i = @i + 1
-					END --FIN DEL CICLO
-
+							 SET @i = @i + 1
+						END --FIN DEL CICLO
+					END
 					------------------------------ RESPUESTA A LA APP  ------------------------------------
 						INSERT INTO #Mensajes 
 						EXEC SP_Select_Mensajes_Emergentes_Para_SP 

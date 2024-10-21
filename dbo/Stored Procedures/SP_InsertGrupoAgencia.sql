@@ -97,7 +97,7 @@ BEGIN
 						DECLARE @i INT = 1
 						DECLARE @Contador INT = (SELECT COUNT(1) FROM  @p_Tbl_Temp_Cuentas_Internas_Insert)
 
-						IF @Contador > 0 WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Cuentas_Internas_Insert))
+						IF @Contador > 0 BEGIN WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Cuentas_Internas_Insert))
 						BEGIN
 
 							--OBTIENE UN ITEM
@@ -134,7 +134,7 @@ BEGIN
 
 							SET @i = @i + 1
 						END --FIN DEL CICLO
-														
+						END								
 					END
 					
 					SELECT @ROW = (SELECT * FROM tblGrupoAgencia WHERE Id = @p_Id_Insert_Grupo_Agencia FOR JSON PATH, INCLUDE_NULL_VALUES)

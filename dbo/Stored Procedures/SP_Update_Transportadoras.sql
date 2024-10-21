@@ -248,23 +248,23 @@ DECLARE @Resp_1 VARCHAR(MAX)
 						DECLARE @i INT = 1
 						DECLARE @Contador INT = (SELECT COUNT(1) FROM  @p_Tbl_Temp_Pais_Nuevas	 )
 
-						IF @Contador > 0 WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Pais_Nuevas	 ))
-						BEGIN
+						IF @Contador > 0 BEGIN WHILE (@i <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Pais_Nuevas	 ))
+							BEGIN
 
-							--OBTIENE UN ITEM
-							SELECT 								
-							 @p_Id_Pais_Iterador = Id_Pais
-							,@p_Nombre_Pais_Iterador = Nombre									
-							FROM @p_Tbl_Temp_Pais_Nuevas 
-							WHERE ID = @i
+								--OBTIENE UN ITEM
+								SELECT 								
+								 @p_Id_Pais_Iterador = Id_Pais
+								,@p_Nombre_Pais_Iterador = Nombre									
+								FROM @p_Tbl_Temp_Pais_Nuevas 
+								WHERE ID = @i
 												
-							--INSERTA EN LA TABLA tblTransportadoras_x_Pais
-							INSERT INTO dbo.[tblTransportadoras_x_Pais] (    [Fk_Id_Transportadora],          [Fk_Id_Pais],     [Fecha_Creacion],  [Activo]  )
-															 VALUES (   @p_Id_Transportadora,    @p_Id_Pais_Iterador,    GETDATE(),          1  )			    												
+								--INSERTA EN LA TABLA tblTransportadoras_x_Pais
+								INSERT INTO dbo.[tblTransportadoras_x_Pais] (    [Fk_Id_Transportadora],          [Fk_Id_Pais],     [Fecha_Creacion],  [Activo]  )
+																 VALUES (   @p_Id_Transportadora,    @p_Id_Pais_Iterador,    GETDATE(),          1  )			    												
 
-							SET @i = @i + 1
-						END --FIN DEL CICLO
-					
+								SET @i = @i + 1
+							END --FIN DEL CICLO
+						END
 						------------------------------ FIN DEL RECORRIDO Y SETEO DE DATA DE LA TABLA TEMPORAL PAISES (TABLA HIJO) ------------------------------------			
 						------------------------------ INICIO DEL RECORRIDO Y SETEO DE DATA DE LA TABLA TEMPORAL MODULOS  ------------------------------------
 
