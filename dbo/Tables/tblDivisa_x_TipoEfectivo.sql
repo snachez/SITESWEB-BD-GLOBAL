@@ -28,7 +28,7 @@ CREATE TABLE [dbo].[tblDivisa_x_TipoEfectivo] (
     [FkIdDivisa]         INT           NULL,
     [FechaCreacion]      SMALLDATETIME CONSTRAINT [CT_tblDivisa_x_TipoEfectivo_FechaCreacion] DEFAULT (CONVERT([smalldatetime],getdate())) NULL,
     [FechaModificacion]  SMALLDATETIME NULL,
-    [Activo]             BIT           CONSTRAINT [CT_tblDivisa_x_TipoEfectivo_Activo] DEFAULT ((1)) NULL,
+    [Activo]             BIT           CONSTRAINT [CT_tblDivisa_x_TipoEfectivo_Activo] DEFAULT (1) NULL,
     [NombreTipoEfectivo] VARCHAR (150) NULL,
     [NombreDivisa]       VARCHAR (150) NULL,
     CONSTRAINT [PK_tblDivisa_x_TipoEfectivo] PRIMARY KEY CLUSTERED ([Id] ASC),

@@ -26,7 +26,7 @@ CREATE TABLE [dbo].[tblTransacciones] (
     [Nombre]            VARCHAR (50)  NOT NULL,
     [Fk_Id_Modulo]      INT           NULL,
     [Codigo]            VARCHAR (50)  NULL,
-    [Activo]            BIT           CONSTRAINT [DF_tblTransacciones_Activo] DEFAULT ((1)) NOT NULL,
+    [Activo]            BIT           CONSTRAINT [DF_tblTransacciones_Activo] DEFAULT (1) NOT NULL,
     [FechaCreacion]     SMALLDATETIME CONSTRAINT [DF_tblTransacciones_FechaCreacion] DEFAULT (CONVERT([smalldatetime],getdate())) NOT NULL,
     [FechaModificacion] SMALLDATETIME NULL,
     CONSTRAINT [PK_tblTransacciones] PRIMARY KEY CLUSTERED ([Id] ASC),

@@ -28,7 +28,7 @@ CREATE TABLE [dbo].[tblUnidadMedida] (
     [Nombre]             VARCHAR (250) NOT NULL,
     [Simbolo]            VARCHAR (250) NOT NULL,
     [Cantidad_Unidades]  INT           NOT NULL,
-    [Activo]             BIT           CONSTRAINT [CT_tblUnidadMedida_Activo] DEFAULT ((1)) NOT NULL,
+    [Activo]             BIT           CONSTRAINT [CT_tblUnidadMedida_Activo] DEFAULT (1) NOT NULL,
     [Fecha_Creacion]     SMALLDATETIME CONSTRAINT [CT_tblUnidadMedida_FechaCreacion] DEFAULT (CONVERT([smalldatetime],getdate())) NOT NULL,
     [Fecha_Modificacion] SMALLDATETIME NULL,
     CONSTRAINT [PK_tblUnidadMedida] PRIMARY KEY CLUSTERED ([Id] ASC),

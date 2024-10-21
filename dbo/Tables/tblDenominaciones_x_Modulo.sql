@@ -27,7 +27,7 @@ CREATE TABLE [dbo].[tblDenominaciones_x_Modulo] (
     [FkIdDenominaciones] INT           NULL,
     [FechaCreacion]      SMALLDATETIME CONSTRAINT [CT_tblDenominaciones_x_Modulo_FechaCreacion] DEFAULT (CONVERT([smalldatetime],getdate())) NULL,
     [FechaModificacion]  SMALLDATETIME NULL,
-    [Activo]             BIT           CONSTRAINT [CT_tblDenominaciones_x_Modulo_Activo] DEFAULT ((1)) NOT NULL,
+    [Activo]             BIT           CONSTRAINT [CT_tblDenominaciones_x_Modulo_Activo] DEFAULT (1) NOT NULL,
     CONSTRAINT [PK_tblDenominaciones_x_Modulo] PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_tblDenominaciones_x_Modulo_tblDenominaciones] FOREIGN KEY ([FkIdDenominaciones]) REFERENCES [dbo].[tblDenominaciones] ([Id]),
     CONSTRAINT [FK_tblDenominaciones_x_Modulo_tblModulo] FOREIGN KEY ([FkIdModulo]) REFERENCES [dbo].[tblModulo] ([Id]),

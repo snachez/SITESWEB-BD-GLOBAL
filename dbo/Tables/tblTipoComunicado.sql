@@ -25,7 +25,7 @@ CREATE TABLE [dbo].[tblTipoComunicado] (
     [Id]                INT           IDENTITY (1, 1) NOT NULL,
     [Nombre]            VARCHAR (50)  NOT NULL,
     [Imagen]            VARCHAR (50)  NOT NULL,
-    [Activo]            BIT           CONSTRAINT [CT_tblTipoComunicado_Activo] DEFAULT ((1)) NOT NULL,
+    [Activo]            BIT           CONSTRAINT [CT_tblTipoComunicado_Activo] DEFAULT (1) NOT NULL,
     [FechaCreacion]     SMALLDATETIME CONSTRAINT [CT_tblTipoComunicado_FechaCreacion] DEFAULT (CONVERT([smalldatetime],getdate())) NOT NULL,
     [FechaModificacion] SMALLDATETIME NULL,
     CONSTRAINT [PK_tblTipoComunicado] PRIMARY KEY CLUSTERED ([Id] ASC)

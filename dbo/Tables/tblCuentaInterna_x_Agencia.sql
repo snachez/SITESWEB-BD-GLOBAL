@@ -27,7 +27,7 @@ CREATE TABLE [dbo].[tblCuentaInterna_x_Agencia] (
     [FkIdCuentaInterna] BIGINT        NOT NULL,
     [FkIdAgencia]       INT           NOT NULL,
     [Codigo]            VARCHAR (90)  CONSTRAINT [CT_tblCuentaInterna_x_Agencia_Codigo] DEFAULT (newid()) NOT NULL,
-    [Activo]            BIT           CONSTRAINT [CT_tblCuentaInterna_x_Agencia_Activo] DEFAULT ((1)) NOT NULL,
+    [Activo]            BIT           CONSTRAINT [CT_tblCuentaInterna_x_Agencia_Activo] DEFAULT (1) NOT NULL,
     [FechaCreacion]     SMALLDATETIME CONSTRAINT [CT_tblCuentaInterna_x_Agencia_FechaCreacion] DEFAULT (CONVERT([smalldatetime],getdate())) NOT NULL,
     [FechaModificacion] SMALLDATETIME NULL,
     CONSTRAINT [PK_tblCuentaInterna_x_Agencia] PRIMARY KEY CLUSTERED ([Id] ASC),

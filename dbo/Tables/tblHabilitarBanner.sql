@@ -23,7 +23,7 @@
 
 CREATE TABLE [dbo].[tblHabilitarBanner] (
     [Id]                INT           IDENTITY (1, 1) NOT NULL,
-    [Activo]            BIT           CONSTRAINT [CT_tblHabilitarBanner_Activo] DEFAULT ((1)) NOT NULL,
+    [Activo]            BIT           CONSTRAINT [CT_tblHabilitarBanner_Activo] DEFAULT (1) NOT NULL,
     [FechaCreacion]     SMALLDATETIME CONSTRAINT [CT_tblHabilitarBanner_FechaCreacion] DEFAULT (CONVERT([smalldatetime],getdate())) NOT NULL,
     [FechaModificacion] SMALLDATETIME NULL,
     CONSTRAINT [PK_tblHabilitarBanner] PRIMARY KEY CLUSTERED ([Id] ASC)

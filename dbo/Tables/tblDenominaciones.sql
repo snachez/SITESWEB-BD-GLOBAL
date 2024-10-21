@@ -29,7 +29,7 @@ CREATE TABLE [dbo].[tblDenominaciones] (
     [IdDivisa]          INT           NOT NULL,
     [BMO]               INT           NOT NULL,
     [Imagen]            VARCHAR (MAX) NULL,
-    [Activo]            BIT           CONSTRAINT [CT_tblDenominaciones_Activo] DEFAULT ((1)) NOT NULL,
+    [Activo]            BIT           CONSTRAINT [CT_tblDenominaciones_Activo] DEFAULT (1) NOT NULL,
     [FechaCreacion]     SMALLDATETIME CONSTRAINT [CT_tblDenominaciones_FechaCreacion] DEFAULT (CONVERT([smalldatetime],getdate())) NULL,
     [FechaModificacion] SMALLDATETIME NULL,
     CONSTRAINT [PK_tblDenominaciones] PRIMARY KEY CLUSTERED ([Id] ASC),

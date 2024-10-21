@@ -29,7 +29,7 @@ CREATE TABLE [dbo].[tblArea] (
     [Id]                 INT           IDENTITY (1, 1) NOT NULL,
     [Nombre]             VARCHAR (30)  NOT NULL,
     [Fk_Id_Departamento] INT           NOT NULL,
-    [Activo]             BIT           CONSTRAINT [CT_tblArea_Activo] DEFAULT ((1)) NOT NULL,
+    [Activo]             BIT           CONSTRAINT [CT_tblArea_Activo] DEFAULT (1) NOT NULL,
     [FechaCreacion]      SMALLDATETIME CONSTRAINT [CT_tblArea_FechaCreacion] DEFAULT (CONVERT([smalldatetime],getdate())) NOT NULL,
     [FechaModificacion]  SMALLDATETIME NULL,
     CONSTRAINT [PK_tblArea] PRIMARY KEY CLUSTERED ([Id] ASC),

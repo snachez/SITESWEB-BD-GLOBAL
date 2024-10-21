@@ -27,7 +27,7 @@ CREATE TABLE [dbo].[tblParametros] (
     [Nombre]            VARCHAR (200)  NOT NULL,
     [Descripcion]       VARCHAR (2000) NOT NULL,
     [Valor]             VARCHAR (MAX)  NOT NULL,
-    [Activo]            BIT             CONSTRAINT [DF_tblParametros_Activo] DEFAULT ((1)) NOT NULL,
+    [Activo]            BIT             CONSTRAINT [DF_tblParametros_Activo] DEFAULT (1) NOT NULL,
     [FechaCreacion]     SMALLDATETIME   CONSTRAINT [DF_tblParametros_FechaCreacion] DEFAULT (CONVERT([smalldatetime],getdate())) NOT NULL,
     [FechaModificacion] SMALLDATETIME   NULL,
     CONSTRAINT [PK_tblParametros] PRIMARY KEY CLUSTERED ([Id] ASC)

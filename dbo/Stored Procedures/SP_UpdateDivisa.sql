@@ -361,9 +361,6 @@ BEGIN
 					UPDATE tblDivisa SET Nombre = @p_Nombre_Divisa, Nomenclatura = @p_Nomenclatura_Divisa, Descripcion = @p_Descripcion_Divisa, Activo = @p_Activo_Divisa, FechaModificacion = GETDATE()
 					WHERE tblDivisa.Id = @p_Id_Divisa
 
-					IF(@p_Id_Divisa IS NOT NULL)
-					BEGIN   
-				   	
 						------------------------------ INICIO DEL RECORRIDO Y SETEO DE DATA DE LA TABLA TEMPORAL PRESENTACIONES DEL EFECTIVO  ------------------------------------
 						--ELIMINE LOS QUE YA ESTABAN POR EL ID DE LA TABLA PAPA OSEA TABLA DIVISA
 
@@ -390,10 +387,7 @@ BEGIN
 							END --FIN DEL CICLO
 						END				
 					------------------------------ FIN DEL RECORRIDO Y SETEO DE DATA DE LA TABLA TEMPORAL PRESENTACIONES DEL EFECTIVO  ------------------------------------
-
-					END
-
-										
+				
 					SELECT @ROW = (SELECT * FROM tblDivisa WHERE Id = @p_Id_Divisa FOR JSON PATH, INCLUDE_NULL_VALUES)
 				
 					------------------------------ RESPUESTA A LA APP  ------------------------------------

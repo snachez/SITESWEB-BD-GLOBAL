@@ -14,15 +14,18 @@ BEGIN
 	END
 	ELSE
 	BEGIN
+	DECLARE @HoraDesde VARCHAR(MAX) = '00:00';
+	DECLARE @HoraCorteDia VARCHAR(MAX) = '23:59';
+	DECLARE @HoraLimiteAprobacion VARCHAR(MAX) = '23:59';
 
 	INSERT INTO tblDiasHabilesEntregaPedidosInternos(FkIdCedis, Dia, NombreDia, HoraDesde, HoraCorteDia, HoraLimiteAprobacion)
-	VALUES(	@FKIDCEDIS, '1', 'Lunes','00:00', '23:59', '23:59'),
-	(@FKIDCEDIS, '2', 'Martes', '00:00', '23:59', '23:59'),
-	(@FKIDCEDIS, '3', 'Miercoles', '00:00', '23:59', '23:59'),
-	(@FKIDCEDIS, '4', 'Jueves', '00:00', '23:59', '23:59'),
-	(@FKIDCEDIS, '5', 'Viernes', '00:00', '23:59', '23:59'),
-	(@FKIDCEDIS, '6', 'Sábado', '00:00', '23:59', '23:59'),
-	(@FKIDCEDIS, '7', 'Domingo', '00:00', '23:59', '23:59')
+	VALUES(	@FKIDCEDIS, '1', 'Lunes',@HoraDesde, @HoraCorteDia, @HoraLimiteAprobacion),
+	(@FKIDCEDIS, '2', 'Martes', @HoraDesde, @HoraCorteDia, @HoraLimiteAprobacion),
+	(@FKIDCEDIS, '3', 'Miercoles', @HoraDesde, @HoraCorteDia, @HoraLimiteAprobacion),
+	(@FKIDCEDIS, '4', 'Jueves', @HoraDesde, @HoraCorteDia, @HoraLimiteAprobacion),
+	(@FKIDCEDIS, '5', 'Viernes', @HoraDesde, @HoraCorteDia, @HoraLimiteAprobacion),
+	(@FKIDCEDIS, '6', 'Sábado', @HoraDesde, @HoraCorteDia, @HoraLimiteAprobacion),
+	(@FKIDCEDIS, '7', 'Domingo', @HoraDesde, @HoraCorteDia, @HoraLimiteAprobacion)
 
 	SET @JSON_RESULT  = (SELECT * FROM tblDiasHabilesEntregaPedidosInternos WHERE FkIdCedis = @FKIDCEDIS FOR JSON PATH)
 	

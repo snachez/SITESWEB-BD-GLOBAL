@@ -25,6 +25,6 @@ CREATE TABLE [dbo].[tblModulo] (
     [Nombre]            VARCHAR (100) NULL,
     [FechaCreacion]     SMALLDATETIME CONSTRAINT [CT_tblModulo_FechaCreacion] DEFAULT (CONVERT([smalldatetime],getdate())) NULL,
     [FechaModificacion] SMALLDATETIME NULL,
-    [Activo]            BIT           CONSTRAINT [CT_tblModulo_Activo] DEFAULT ((1)) NOT NULL,
+    [Activo]            BIT           CONSTRAINT [CT_tblModulo_Activo] DEFAULT (1) NOT NULL,
     CONSTRAINT [PK_tblModulo] PRIMARY KEY CLUSTERED ([Id] ASC)
 );

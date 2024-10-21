@@ -25,7 +25,7 @@ CREATE TABLE [dbo].[tblTransportadoras_x_Modulo] (
     [Id]                   INT           IDENTITY (1, 1) NOT NULL,
     [Fk_Id_Transportadora] INT           NOT NULL,
     [Fk_Id_Modulo]         INT           NOT NULL,
-    [Activo]               BIT           CONSTRAINT [CT_tblTransportadoras_x_Modulo_Activo] DEFAULT ((1)) NOT NULL,
+    [Activo]               BIT           CONSTRAINT [CT_tblTransportadoras_x_Modulo_Activo] DEFAULT (1) NOT NULL,
     [Fecha_Creacion]       SMALLDATETIME CONSTRAINT [CT_tblTransportadoras_x_Modulo_FechaCreacion] DEFAULT (CONVERT([smalldatetime],getdate())) NULL,
     [Fecha_Modificacion]   SMALLDATETIME NULL,
     CONSTRAINT [PK_tblTransportadoras_x_Modulo] PRIMARY KEY CLUSTERED ([Id] ASC),

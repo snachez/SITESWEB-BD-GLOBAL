@@ -27,7 +27,7 @@ CREATE TABLE [dbo].[tblUnidadMedida_x_TipoEfectivo] (
     [Fk_Id_Unidad_Medida] INT      NULL,
     [Fk_Id_Divisa]        INT      NULL,
     [Fk_Id_Tipo_Efectivo] INT      NULL,
-    [Activo]              BIT      CONSTRAINT [CT_tblUnidadMedida_x_TipoEfectivo_Activo] DEFAULT ((1)) NOT NULL,
+    [Activo]              BIT      CONSTRAINT [CT_tblUnidadMedida_x_TipoEfectivo_Activo] DEFAULT (1) NOT NULL,
     [Fecha_Creacion]      DATETIME CONSTRAINT [CT_tblUnidadMedida_x_TipoEfectivo_FechaCreacion] DEFAULT (CONVERT([smalldatetime],getdate())) NOT NULL,
     [Fecha_Modificacion]  DATETIME NULL,
     CONSTRAINT [PK_tblUnidadMedida_x_TipoEfectivo] PRIMARY KEY CLUSTERED ([Id] ASC),

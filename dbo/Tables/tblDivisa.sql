@@ -28,7 +28,7 @@ CREATE TABLE [dbo].[tblDivisa] (
     [Nomenclatura]      VARCHAR (4)   NOT NULL,
     [Simbolo]           VARCHAR (3)   NULL,
     [Descripcion]       VARCHAR (300) NULL,
-    [Activo]            BIT           CONSTRAINT [CT_tblDivisa_Activo] DEFAULT ((1)) NOT NULL,
+    [Activo]            BIT           CONSTRAINT [CT_tblDivisa_Activo] DEFAULT (1) NOT NULL,
     [FechaCreacion]     SMALLDATETIME CONSTRAINT [CT_tblDivisa_FechaCreacion] DEFAULT (CONVERT([smalldatetime],getdate())) NOT NULL,
     [FechaModificacion] SMALLDATETIME NULL,
     CONSTRAINT [PK_tblDivisa] PRIMARY KEY CLUSTERED ([Id] ASC),

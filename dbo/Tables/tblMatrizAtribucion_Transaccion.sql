@@ -24,7 +24,7 @@ CREATE TABLE [dbo].[tblMatrizAtribucion_Transaccion] (
     [Id]                     INT           IDENTITY (1, 1) NOT NULL,
     [Fk_Id_MatrizAtribucion] INT           NOT NULL,
     [Fk_Id_Transaccion]      INT           NOT NULL,
-    [Activo]                 BIT           CONSTRAINT [DF_tblMatrizAtribucion_x_Transaccion_Activo] DEFAULT ((1)) NOT NULL,
+    [Activo]                 BIT           CONSTRAINT [DF_tblMatrizAtribucion_x_Transaccion_Activo] DEFAULT (1) NOT NULL,
     [FechaCreacion]          SMALLDATETIME CONSTRAINT [DF_tblMatrizAtribucion_x_Transaccion_FechaCreacion] DEFAULT (CONVERT([smalldatetime],getdate())) NOT NULL,
     [FechaModificacion]      SMALLDATETIME NULL,
     CONSTRAINT [PK_tblMatrizAtribucion_x_Transaccion] PRIMARY KEY CLUSTERED ([Id] ASC),

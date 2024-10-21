@@ -26,7 +26,7 @@ CREATE TABLE [dbo].[tblTipoCambio] (
     [fk_Id_DivisaCotizada] INT          NOT NULL,
     [CompraColones]        DECIMAL (18) NOT NULL,
     [VentaColones]         DECIMAL (18) NOT NULL,
-    [Activo]               BIT          CONSTRAINT [CT_tblTipoCambio_Activo] DEFAULT ((1)) NOT NULL,
+    [Activo]               BIT          CONSTRAINT [CT_tblTipoCambio_Activo] DEFAULT (1) NOT NULL,
     [FechaCreacion]        DATETIME     CONSTRAINT [CT_tblTipoCambio_FechaCreacion] DEFAULT (getdate()) NOT NULL,
     [FechaModificacion]    DATETIME     NULL,
     CONSTRAINT [PK_tblTipoCambio] PRIMARY KEY CLUSTERED ([Id] ASC),

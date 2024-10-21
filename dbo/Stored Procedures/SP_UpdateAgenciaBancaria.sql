@@ -196,9 +196,6 @@ BEGIN
 					SELECT @p_Id_Insert_Agencia_Bancaria = IDAGENCIA from @p_Tbl_Temp_Agencia_Bancaria_Insert
 					SELECT @p_UsaCuentasGrupo_Insert_Agencia_Bancaria = USA_CUENTAS_GRUPO, @p_Id_Insert_Grupo_Agencia = Codigo_GrupoAgencias from @p_Tbl_Temp_Agencia_Bancaria_Insert;
 
-					IF(@p_Id_Insert_Agencia_Bancaria IS NOT NULL)
-					BEGIN   
-					    
 						--------------------------------------------------- ELIMINAR CUENTAS INTERNAS  ----------------------------------------------------------------
 						DECLARE @iteradorEliminar INT = 1
 						DECLARE @ContadorEliminar INT = (SELECT COUNT(1) FROM  @p_Tbl_Temp_Cuentas_Internas_Eliminar_Insert)
@@ -277,7 +274,7 @@ BEGIN
 							--VALIDACION 2(SI LA CUENTA EXISTE Y SI EXISTE RELACION CON LAS CUENTAS DE LA AGENCIA BANCARIA)
 							--VALIDACION 3(SI LA CUENTA EXISTE)
 							--VALIDACION 4(SI LA CUENTA NO EXISTE)
-							IF(@p_Id_Insert_Cuenta IS NOT NULL AND @p_Iterador_Insert_Grupo_Agencia IS NOT NULL)
+							IF((@p_Id_Insert_Cuenta IS NOT NULL AND @p_Iterador_Insert_Grupo_Agencia IS NOT NULL) OR (@p_Id_Insert_Cuenta IS NOT NULL))
 							BEGIN
 
 							    --INSERTA EN LA TABLA tblCuentaInterna_x_Agencia
@@ -290,14 +287,6 @@ BEGIN
 
 							    ----UPDATE EN LA TABLA tblCuentaInterna_x_Agencia
 								UPDATE [tblCuentaInterna_x_Agencia] SET Activo =  1 WHERE FkIdCuentaInterna = @p_Id_Insert_Cuenta AND FkIdAgencia = @p_Id_Insert_Agencia_Bancaria;
-
-							END
-							ELSE IF(@p_Id_Insert_Cuenta IS NOT NULL)
-							BEGIN
-
-								   --INSERTA EN LA TABLA tblCuentaInterna_x_Agencia
-							      INSERT INTO dbo.[tblCuentaInterna_x_Agencia] ( FkIdCuentaInterna, FkIdAgencia )
-																        VALUES ( @p_Id_Insert_Cuenta, @p_Id_Insert_Agencia_Bancaria )
 
 							END
 							ELSE
@@ -316,8 +305,7 @@ BEGIN
 							END
 
 							SET @i = @i + 1
-						END --FIN DEL CICLO
-						END								
+						END --FIN DEL CICLO						
 					END
 					
 					SELECT @ROW = (SELECT * FROM tblAgenciaBancaria WHERE Id = @p_Id_Insert_Agencia_Bancaria FOR JSON PATH, INCLUDE_NULL_VALUES)

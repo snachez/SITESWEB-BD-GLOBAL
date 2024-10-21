@@ -25,7 +25,7 @@ CREATE TABLE [dbo].[tblTransportadoras_x_Pais] (
     [Id]                   INT           IDENTITY (1, 1) NOT NULL,
     [Fk_Id_Transportadora] INT           NOT NULL,
     [Fk_Id_Pais]           INT           NOT NULL,
-    [Activo]               BIT           CONSTRAINT [CT_tblTransportadoras_x_Pais_Activo] DEFAULT ((1)) NOT NULL,
+    [Activo]               BIT           CONSTRAINT [CT_tblTransportadoras_x_Pais_Activo] DEFAULT (1) NOT NULL,
     [Fecha_Creacion]       SMALLDATETIME CONSTRAINT [CT_tblTransportadoras_x_Pais_FechaCreacion] DEFAULT (CONVERT([smalldatetime],getdate())) NULL,
     [Fecha_Modificacion]   SMALLDATETIME NULL,
     CONSTRAINT [PK_tblTransportadoras_x_Pais] PRIMARY KEY CLUSTERED ([Id] ASC),

@@ -28,7 +28,7 @@ CREATE TABLE [dbo].[tblColaborador] (
     [Apellido2]           VARCHAR (50)  NULL,
     [Cedula]              VARCHAR (50)  NULL,
     [UserActiveDirectory] VARCHAR (100) NOT NULL,
-    [Activo]              BIT           CONSTRAINT [CT_tblColaborador_Activo] DEFAULT ((1)) NOT NULL,
+    [Activo]              BIT           CONSTRAINT [CT_tblColaborador_Activo] DEFAULT (1) NOT NULL,
     [Correo]              VARCHAR (50)  NULL,
     [FechaCreacion]       DATETIME      CONSTRAINT [CT_tblColaborador_FechaCreacion] DEFAULT (getdate()) NOT NULL,
     [FechaModificacion]   DATETIME      NULL,

@@ -26,7 +26,7 @@ CREATE TABLE [dbo].[tblTransportadoras] (
     [Id]                 INT           IDENTITY (1, 1) NOT NULL,
     [Nombre]             VARCHAR (50)  NOT NULL,
     [Codigo]             VARCHAR (100) NOT NULL,
-    [Activo]             BIT           CONSTRAINT [CT_tblTransportadoras_Activo] DEFAULT ((1)) NOT NULL,
+    [Activo]             BIT           CONSTRAINT [CT_tblTransportadoras_Activo] DEFAULT (1) NOT NULL,
     [Fecha_Creacion]     SMALLDATETIME CONSTRAINT [CT_tblTransportadoras_FechaCreacion] DEFAULT (CONVERT([smalldatetime],getdate())) NULL,
     [Fecha_Modificacion] SMALLDATETIME NULL,
     CONSTRAINT [PK_tblTransportadoras] PRIMARY KEY CLUSTERED ([Id] ASC),

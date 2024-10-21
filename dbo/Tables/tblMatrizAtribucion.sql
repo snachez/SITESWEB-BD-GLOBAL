@@ -27,7 +27,7 @@ CREATE TABLE [dbo].[tblMatrizAtribucion] (
     [Id]                INT           IDENTITY (1, 1) NOT NULL,
     [Nombre]            VARCHAR (50)  NULL,
     [Fk_Id_Divisa]      INT           NULL,
-    [Activo]            BIT           CONSTRAINT [DF_tblMatrizAtribucion_Activo] DEFAULT ((1)) NULL,
+    [Activo]            BIT           CONSTRAINT [DF_tblMatrizAtribucion_Activo] DEFAULT (1) NULL,
     [FechaCreacion]     SMALLDATETIME CONSTRAINT [DF_tblMatrizAtribucion_FechaCreacion] DEFAULT (CONVERT([smalldatetime],getdate())) NULL,
     [FechaModificacion] SMALLDATETIME NULL,
     CONSTRAINT [PK_tblMatrizAtribucion] PRIMARY KEY CLUSTERED ([Id] ASC),

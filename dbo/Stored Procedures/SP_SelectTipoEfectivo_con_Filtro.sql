@@ -12,11 +12,11 @@ BEGIN
    ------ VALIDACION DE DATA
 	SET @PAGE = ISNULL(@PAGE, 1)
 	SET @SIZE = ISNULL(@SIZE, 10)
+	SET @ID = ISNULL(@ID, '')
+	SET @ACTIVO = ISNULL(@ACTIVO, 'Activo')
+	DECLARE @INACTIVO NVARCHAR(MAX)  = 'Inactivo';
 
 	DECLARE @TOTAL_RECORDS INT = 0;
-
-	DECLARE @JSON_RESULT_2 NVARCHAR(MAX)
-	DECLARE @resp_JSON_Consolidada NVARCHAR(MAX)
 
 	------------------------------------------
 				--FULL DATA--
@@ -82,7 +82,7 @@ BEGIN
 
 		OR (	(@NOMBRE IS NOT NULL AND @NOMBRE <> '') -- Verifica si @SEARCHING no está vacía
 				AND (
-						   D.Activo = (CASE WHEN @NOMBRE = 'Activo' THEN 1 WHEN @NOMBRE = 'Inactivo' THEN 0 END)
+						   D.Activo = (CASE WHEN @NOMBRE = @ACTIVO THEN 1 WHEN @NOMBRE = @INACTIVO THEN 0 END)
 						OR D.Id LIKE CONCAT('%', ISNULL(@NOMBRE, D.Id), '%')
 						OR D.Nombre LIKE CONCAT('%', ISNULL(@NOMBRE, D.Nombre), '%')
 					)
@@ -99,7 +99,7 @@ BEGIN
 		SELECT D.Id, D.Nombre, D.Activo
 		FROM #tblFullData D
 		WHERE
-		D.Activo = (CASE WHEN @NOMBRE = 'Activo' THEN 1 WHEN @NOMBRE = 'Inactivo' THEN 0 END)
+		D.Activo = (CASE WHEN @NOMBRE = @ACTIVO THEN 1 WHEN @NOMBRE = @INACTIVO THEN 0 END)
 		OR D.Id LIKE CONCAT('%', ISNULL(@NOMBRE, D.Id), '%')
 		OR D.Nombre LIKE CONCAT('%', ISNULL(@NOMBRE, D.Nombre), '%');
 	END
@@ -128,16 +128,14 @@ BEGIN
 										WHERE 	
 										    D.Activo = (
 											  CASE 
-											  WHEN @NOMBRE  = 'Activo' THEN 1
-											  WHEN @NOMBRE = 'Inactivo' THEN 0 END
+											  WHEN @NOMBRE  = @ACTIVO THEN 1
+											  WHEN @NOMBRE = @INACTIVO THEN 0 END
 											  )
 										  OR D.Id LIKE CONCAT('%', ISNULL(@NOMBRE, Id), '%') 
 										  OR D.Nombre LIKE CONCAT('%', ISNULL(@NOMBRE, Nombre), '%') 
 						)
 
 	SELECT * INTO #tmpTblDataIndexed FROM DATA_INDEXED ORDER BY [INDEX]
-	--
-	--SELECT * FROM #tmpTblDataIndexed ORDER BY [INDEX]
 	--
 
 	--- TOTAL DE FILAS SIN PAGINAR
@@ -158,8 +156,6 @@ BEGIN
 	SELECT @JSON_RESULT AS JSON_RESULT_SELECT
 	--
 
-
-	--SELECT * FROM #tmpTblDataIndexed WHERE [INDEX] BETWEEN ((@PAGE * @SIZE)-(@SIZE-1)) AND (@PAGE * @SIZE)
 	DROP TABLE #tmpTblDataIndexed
 	
 
@@ -181,8 +177,8 @@ BEGIN
 					FROM #tblFullData
 					WHERE Activo  = (
 											  CASE 
-											  WHEN @NOMBRE  = 'Activo' THEN 1
-											  WHEN @NOMBRE = 'Inactivo' THEN 0 END
+											  WHEN @NOMBRE  = @ACTIVO THEN 1
+											  WHEN @NOMBRE = @INACTIVO THEN 0 END
 											  )
 					OR [Id] LIKE @NOMBRE
 					OR Nombre LIKE @NOMBRE
@@ -205,8 +201,8 @@ BEGIN
 					SELECT DISTINCT Id FROM #tblFullData 
 					WHERE Activo  = (
 											  CASE 
-											  WHEN @NOMBRE  = 'Activo' THEN 1
-											  WHEN @NOMBRE = 'Inactivo' THEN 0 END
+											  WHEN @NOMBRE  = @ACTIVO THEN 1
+											  WHEN @NOMBRE = @INACTIVO THEN 0 END
 											  )
 					OR [Id] LIKE @NOMBRE
 					OR Nombre LIKE @NOMBRE
@@ -228,8 +224,8 @@ BEGIN
 					SELECT DISTINCT [Nombre] AS Nombre FROM #tblFullData 
 					WHERE Activo  = (
 											  CASE 
-											  WHEN @NOMBRE  = 'Activo' THEN 1
-											  WHEN @NOMBRE = 'Inactivo' THEN 0 END
+											  WHEN @NOMBRE  = @ACTIVO THEN 1
+											  WHEN @NOMBRE = @INACTIVO THEN 0 END
 											  )
 					OR [Id] LIKE @NOMBRE
 					OR Nombre LIKE @NOMBRE

@@ -29,7 +29,7 @@ CREATE TABLE [dbo].[tblCedis] (
     [Nombre]            VARCHAR (50)  NOT NULL,
     [Codigo_Cedis]      VARCHAR (100) NOT NULL,
     [Fk_Id_Pais]        INT            NOT NULL,
-    [Activo]            BIT            CONSTRAINT [DF_tblCedis_Activo] DEFAULT ((1)) NOT NULL,
+    [Activo]            BIT            CONSTRAINT [DF_tblCedis_Activo] DEFAULT (1) NOT NULL,
     [FechaCreacion]     SMALLDATETIME  CONSTRAINT [DF_tblCedis_FechaCreacion] DEFAULT (CONVERT([smalldatetime],getdate())) NOT NULL,
     [FechaModificacion] SMALLDATETIME  NULL,
     CONSTRAINT [PK_tblCedis] PRIMARY KEY CLUSTERED ([Id_Cedis] ASC),

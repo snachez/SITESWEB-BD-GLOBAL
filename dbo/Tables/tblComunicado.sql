@@ -27,7 +27,7 @@ CREATE TABLE [dbo].[tblComunicado] (
     [FKColaborador]     INT           NOT NULL,
     [Mensaje]           VARCHAR (500) NOT NULL,
     [FkHabilitarBanner] INT           NOT NULL,
-    [Activo]            BIT           CONSTRAINT [CT_tblComunicado_Activo] DEFAULT ((1)) NOT NULL,
+    [Activo]            BIT           CONSTRAINT [CT_tblComunicado_Activo] DEFAULT (1) NOT NULL,
     [FechaCreacion]     SMALLDATETIME CONSTRAINT [CT_tblComunicado_FechaCreacion] DEFAULT (CONVERT([smalldatetime],getdate())) NOT NULL,
     [FechaModificacion] SMALLDATETIME NULL,
     CONSTRAINT [PK_tblComunicado] PRIMARY KEY CLUSTERED ([Id] ASC),

@@ -108,9 +108,6 @@ BEGIN
 					FechaModificacion = (CONVERT([smalldatetime],getdate())) 
 					WHERE Id = @p_Id_Denominaciones;
 
-					IF(@p_Id_Denominaciones IS NOT NULL)
-					BEGIN   
-				   		
 						------------------------------ INICIO DEL RECORRIDO Y SETEO DE DATA DE LA TABLA TEMPORAL MODULO  ------------------------------------
 						UPDATE dbo.[tblDenominaciones_x_Modulo] SET Activo = 0 WHERE FkIdDenominaciones = @p_Id_Denominaciones;
 
@@ -141,8 +138,7 @@ BEGIN
 
 								SET @i = @i + 1
 							END --FIN DEL CICLO
-						END								
-					END
+						END		
 
 					SELECT @ROW = (SELECT * FROM tblDenominaciones WHERE Id = @p_Id_Denominaciones FOR JSON PATH, INCLUDE_NULL_VALUES)
 					------------------------------ FIN DEL RECORRIDO Y SETEO DE DATA DE LA TABLA TEMPORAL MODULO  ------------------------------------

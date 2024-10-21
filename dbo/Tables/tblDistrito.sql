@@ -25,7 +25,7 @@ CREATE TABLE [dbo].[tblDistrito] (
     [Id]                INT           NOT NULL,
     [Nombre]            VARCHAR (50)  NOT NULL,
     [fk_Id_Canton]      INT           NOT NULL,
-    [Activo]            BIT           CONSTRAINT [CT_tblDistrito_Activo] DEFAULT ((1)) NOT NULL,
+    [Activo]            BIT           CONSTRAINT [CT_tblDistrito_Activo] DEFAULT (1) NOT NULL,
     [FechaCreacion]     SMALLDATETIME CONSTRAINT [CT_tblDistrito_FechaCreacion] DEFAULT (CONVERT([smalldatetime],getdate())) NOT NULL,
     [FechaModificacion] SMALLDATETIME NULL,
     CONSTRAINT [PK_tblDistrito] PRIMARY KEY CLUSTERED ([Id] ASC),

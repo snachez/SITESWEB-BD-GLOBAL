@@ -167,9 +167,7 @@ BEGIN
 
 
 					SELECT @p_Id_Update_Matriz_Atribucion = IdMatriz from @p_Tbl_Temp_Matriz_Atribucion_Update
-
-					IF(@p_Id_Update_Matriz_Atribucion IS NOT NULL)
-					BEGIN   
+ 
 				   		
 						------------------------------ INICIO DEL RECORRIDO Y SETEO DE DATA DE LA TABLA TEMPORAL TRANSACCIONES  ------------------------------------
 						--DESACTIVA LOS QUE YA ESTABAN 
@@ -213,11 +211,7 @@ BEGIN
 
 						END --FIN DEL CICLO		
 						END
-					END
 					------------------------------ FIN DEL RECORRIDO Y SETEO DE DATA DE LA TABLA TEMPORAL TRANSACCIONES  ------------------------------------
-
-					IF(@Id_Matriz_Por_Transaccion_Actualizada IS NOT NULL)
-					BEGIN   
 
 						------------------------------ INICIO DEL RECORRIDO Y SETEO DE DATA DE LA TABLA TEMPORAL FIRMAS  ------------------------------------
 						--DESACTIVA LOS QUE YA ESTABAN 
@@ -229,60 +223,59 @@ BEGIN
 						DECLARE @Conta INT = (SELECT COUNT(1) FROM  @p_Tbl_Temp_Firmas_Update	 )
 
 						IF @Conta > 0 BEGIN WHILE (@iter <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Firmas_Update	 ))
-						BEGIN
+							BEGIN
 
-							--OBTIENE UN ITEM
-							SELECT 		
-							 @p_Id_Firma_Iterador    = IdFirma
-							,@p_Firma_Firma_Iterador = Firma
-							,@p_MontoDesde_Firma_Iterador = MontoDesde
-							,@p_MontoHasta_Firma_Iterador = MontoHasta
-							FROM @p_Tbl_Temp_Firmas_Update 
-							WHERE ID = @iter
+								--OBTIENE UN ITEM
+								SELECT 		
+								 @p_Id_Firma_Iterador    = IdFirma
+								,@p_Firma_Firma_Iterador = Firma
+								,@p_MontoDesde_Firma_Iterador = MontoDesde
+								,@p_MontoHasta_Firma_Iterador = MontoHasta
+								FROM @p_Tbl_Temp_Firmas_Update 
+								WHERE ID = @iter
 
-							--VALIDA SI EXISTE LA DATA EN tblMatrizAtribucion_Firmas
-							SELECT @ExisteUnion = COUNT(*) FROM tblMatrizAtribucion_Firmas MF
-							WHERE MF.Fk_Id_Firmas = @p_Id_Firma_Iterador ;
+								--VALIDA SI EXISTE LA DATA EN tblMatrizAtribucion_Firmas
+								SELECT @ExisteUnion = COUNT(*) FROM tblMatrizAtribucion_Firmas MF
+								WHERE MF.Fk_Id_Firmas = @p_Id_Firma_Iterador ;
 
-							--VALIDA SI EXISTE LA DATA EN tblFirmas
-							SELECT @ExisteFirma = COUNT(*) FROM tblFirmas F
-							WHERE F.Id = @p_Id_Firma_Iterador;
+								--VALIDA SI EXISTE LA DATA EN tblFirmas
+								SELECT @ExisteFirma = COUNT(*) FROM tblFirmas F
+								WHERE F.Id = @p_Id_Firma_Iterador;
 
-							   IF @ExisteUnion > 0 AND @ExisteFirma > 0
-							   BEGIN
+								   IF @ExisteUnion > 0 AND @ExisteFirma > 0
+								   BEGIN
 
-								 --ACTUALIZA EN LA TABLA tblMatrizAtribucion_Transaccion
-								 UPDATE tblMatrizAtribucion_Firmas SET Fk_Id_MatrizAtribucion = @p_Id_Update_Matriz_Atribucion, Fk_Id_Firmas = @p_Id_Firma_Iterador,
-								 Activo = 1, FechaModificacion = CURRENT_TIMESTAMP WHERE Fk_Id_Firmas = @p_Id_Firma_Iterador AND Fk_Id_MatrizAtribucion = @p_Id_Update_Matriz_Atribucion;
+									 --ACTUALIZA EN LA TABLA tblMatrizAtribucion_Transaccion
+									 UPDATE tblMatrizAtribucion_Firmas SET Fk_Id_MatrizAtribucion = @p_Id_Update_Matriz_Atribucion, Fk_Id_Firmas = @p_Id_Firma_Iterador,
+									 Activo = 1, FechaModificacion = CURRENT_TIMESTAMP WHERE Fk_Id_Firmas = @p_Id_Firma_Iterador AND Fk_Id_MatrizAtribucion = @p_Id_Update_Matriz_Atribucion;
 
-							   END
-							   ELSE IF @ExisteUnion < 0 AND @ExisteFirma > 0
-							   BEGIN
+								   END
+								   ELSE IF @ExisteUnion < 0 AND @ExisteFirma > 0
+								   BEGIN
 
-								 --INSERTA EN LA TABLA tblMatrizAtribucion_Firmas
-								 INSERT INTO tblMatrizAtribucion_Firmas ( [Fk_Id_MatrizAtribucion], [Fk_Id_Firmas], [Activo], [FechaCreacion] )
-												VALUES ( @p_Id_Update_Matriz_Atribucion, @p_Id_Firma_Iterador, 1, CURRENT_TIMESTAMP );
+									 --INSERTA EN LA TABLA tblMatrizAtribucion_Firmas
+									 INSERT INTO tblMatrizAtribucion_Firmas ( [Fk_Id_MatrizAtribucion], [Fk_Id_Firmas], [Activo], [FechaCreacion] )
+													VALUES ( @p_Id_Update_Matriz_Atribucion, @p_Id_Firma_Iterador, 1, CURRENT_TIMESTAMP );
 
-							   END
-							  ELSE
-							  BEGIN
+								   END
+								  ELSE
+								  BEGIN
 
-								 --INSERTA EN LA TABLA tblFirmas
-								 INSERT INTO tblFirmas ( [Firma], [MontoDesde], [MontoHasta], [Activo], [FechaCreacion] )
-												VALUES ( @p_Firma_Firma_Iterador, @p_MontoDesde_Firma_Iterador, @p_MontoHasta_Firma_Iterador, 1, CURRENT_TIMESTAMP );
+									 --INSERTA EN LA TABLA tblFirmas
+									 INSERT INTO tblFirmas ( [Firma], [MontoDesde], [MontoHasta], [Activo], [FechaCreacion] )
+													VALUES ( @p_Firma_Firma_Iterador, @p_MontoDesde_Firma_Iterador, @p_MontoHasta_Firma_Iterador, 1, CURRENT_TIMESTAMP );
 
-                                 SELECT @Id_Matriz_Por_Firma_Actualizada = CONVERT(INT, ISNULL(SCOPE_IDENTITY(), -1));
+									 SELECT @Id_Matriz_Por_Firma_Actualizada = CONVERT(INT, ISNULL(SCOPE_IDENTITY(), -1));
 
-                                 --INSERTA EN LA TABLA tblMatrizAtribucion_Firmas
-							     INSERT INTO tblMatrizAtribucion_Firmas ( [Fk_Id_MatrizAtribucion], [Fk_Id_Firmas], [Activo], [FechaCreacion] )
-																  VALUES ( @p_Id_Update_Matriz_Atribucion, @Id_Matriz_Por_Firma_Actualizada, 1, CURRENT_TIMESTAMP );
+									 --INSERTA EN LA TABLA tblMatrizAtribucion_Firmas
+									 INSERT INTO tblMatrizAtribucion_Firmas ( [Fk_Id_MatrizAtribucion], [Fk_Id_Firmas], [Activo], [FechaCreacion] )
+																	  VALUES ( @p_Id_Update_Matriz_Atribucion, @Id_Matriz_Por_Firma_Actualizada, 1, CURRENT_TIMESTAMP );
 												
-			    			  END	
+			    				  END	
 							  
-							SET @iter = @iter + 1
-						END --FIN DEL CICLO
+								SET @iter = @iter + 1
+							END --FIN DEL CICLO
 						END
-					END
 
 											
 					SELECT @ROW = (SELECT * FROM tblMatrizAtribucion WHERE Id = @p_Id_Update_Matriz_Atribucion FOR JSON PATH, INCLUDE_NULL_VALUES)

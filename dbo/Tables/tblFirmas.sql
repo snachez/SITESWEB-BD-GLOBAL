@@ -26,7 +26,7 @@ CREATE TABLE [dbo].[tblFirmas] (
     [Firma]             VARCHAR (50)    NOT NULL,
     [MontoDesde]        DECIMAL (38, 2) NOT NULL,
     [MontoHasta]        DECIMAL (38, 2) NOT NULL,
-    [Activo]            BIT             CONSTRAINT [DF_tblFirmas_Activo] DEFAULT ((1)) NULL,
+    [Activo]            BIT             CONSTRAINT [DF_tblFirmas_Activo] DEFAULT (1) NULL,
     [FechaCreacion]     SMALLDATETIME   CONSTRAINT [DF_tblFirmas_FechaCreacion] DEFAULT (CONVERT([smalldatetime],getdate())) NULL,
     [FechaModificacion] SMALLDATETIME   NULL,
     CONSTRAINT [PK_tblFirmas] PRIMARY KEY CLUSTERED ([Id] ASC)
