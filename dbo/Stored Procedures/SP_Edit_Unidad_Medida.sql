@@ -1,11 +1,11 @@
-﻿CREATE PROCEDURE [dbo].[usp_Edit_Unidad_Medida] (
+﻿CREATE PROCEDURE [dbo].[SP_Edit_Unidad_Medida] (
     @JSON_IN VARCHAR(MAX) = NULL,
     @JSON_OUT VARCHAR(MAX) OUTPUT
 )
 AS
 BEGIN
     -- Declaración de Variables de Mensajes
-    DECLARE @MetodoTemporal VARCHAR(MAX) = 'usp_Edit_Unidad_Medida';
+    DECLARE @MetodoTemporal VARCHAR(MAX) = 'SP_Edit_Unidad_Medida';
     DECLARE @ErrorMensaje VARCHAR(MAX);
     DECLARE @ERROR_NUMBER VARCHAR(MAX);
 
@@ -48,7 +48,7 @@ BEGIN
 		SET @ERROR_NUMBER = ERROR_NUMBER();
 
 		INSERT INTO #Mensajes
-		EXEC usp_Select_Mensajes_Emergentes_Para_SP
+		EXEC SP_Select_Mensajes_Emergentes_Para_SP
 			@ROWS_AFFECTED = 0,
 			@SUCCESS = 0,
 			@ERROR_NUMBER_SP = @ERROR_NUMBER,
@@ -147,7 +147,7 @@ BEGIN
 
             -- Generar respuesta exitosa
 						INSERT INTO #Mensajes 
-						EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+						EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 						@ROWS_AFFECTED = @@ROWCOUNT,
 						@SUCCESS = 1,
 						@ERROR_NUMBER_SP = NULL,
@@ -171,7 +171,7 @@ BEGIN
             SET @ERROR_NUMBER = ERROR_NUMBER();
 
 						INSERT INTO #Mensajes 
-						EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+						EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 						@ROWS_AFFECTED = 0,
 						@SUCCESS = 0,
 						@ERROR_NUMBER_SP = @ERROR_NUMBER,

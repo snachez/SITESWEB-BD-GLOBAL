@@ -3343,7 +3343,7 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 1)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (1, N'usp_DeleteComunicado', CURRENT_TIMESTAMP, NULL)
+        VALUES (1, N'SP_DeleteComunicado', CURRENT_TIMESTAMP, NULL)
     END
 
     -- Registro 2
@@ -3357,14 +3357,14 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 3)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (3, N'usp_UpdateHabilitarBanner', CURRENT_TIMESTAMP, NULL)
+        VALUES (3, N'SP_UpdateHabilitarBanner', CURRENT_TIMESTAMP, NULL)
     END
 
     -- Registro 4
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 4)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (4, N'usp_InsertComunicado', CURRENT_TIMESTAMP, NULL)
+        VALUES (4, N'SP_InsertComunicado', CURRENT_TIMESTAMP, NULL)
     END
 
     -- Registro 5
@@ -3378,7 +3378,7 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 6)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (6, N'usp_InsertDenominaciones', CURRENT_TIMESTAMP, NULL)
+        VALUES (6, N'SP_InsertDenominaciones', CURRENT_TIMESTAMP, NULL)
     END
 
     -- Registro 7
@@ -3399,7 +3399,7 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 9)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (9, N'usp_UpdateDenominaciones', CURRENT_TIMESTAMP, NULL)
+        VALUES (9, N'SP_UpdateDenominaciones', CURRENT_TIMESTAMP, NULL)
     END
 
     -- Registro 10
@@ -3420,7 +3420,7 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 12)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (12, N'usp_HabilitarDenominaciones', CURRENT_TIMESTAMP, NULL)
+        VALUES (12, N'SP_HabilitarDenominaciones', CURRENT_TIMESTAMP, NULL)
     END
 
     -- Registro 13
@@ -3434,7 +3434,7 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 14)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (14, N'usp_InsertDivisa', CURRENT_TIMESTAMP, NULL)
+        VALUES (14, N'SP_InsertDivisa', CURRENT_TIMESTAMP, NULL)
     END
 
     -- Registro 15
@@ -3448,14 +3448,14 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 16)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (16, N'usp_UpdateDivisa', CURRENT_TIMESTAMP, NULL)
+        VALUES (16, N'SP_UpdateDivisa', CURRENT_TIMESTAMP, NULL)
     END
 
     -- Registro 17
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 17)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (17, N'usp_HabilitarDivisa', CURRENT_TIMESTAMP, NULL)
+        VALUES (17, N'SP_HabilitarDivisa', CURRENT_TIMESTAMP, NULL)
     END
 
     -- Registro 18
@@ -3476,7 +3476,7 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 20)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (20, N'usp_UpdateTipoEfectivo', CURRENT_TIMESTAMP, NULL)
+        VALUES (20, N'SP_UpdateTipoEfectivo', CURRENT_TIMESTAMP, NULL)
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 21)
@@ -3494,7 +3494,7 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 23)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (23, N'usp_HabilitarTipoEfectivo', CURRENT_TIMESTAMP, NULL)
+        VALUES (23, N'SP_HabilitarTipoEfectivo', CURRENT_TIMESTAMP, NULL)
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 24)
@@ -3506,25 +3506,25 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 25)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (25, N'usp_InsertTipoEfectivo', CURRENT_TIMESTAMP, NULL)
+        VALUES (25, N'SP_InsertTipoEfectivo', CURRENT_TIMESTAMP, NULL)
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 26)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (26, N'usp_Insert_Unidad_Medida', CURRENT_TIMESTAMP, NULL)
+        VALUES (26, N'SP_Insert_Unidad_Medida', CURRENT_TIMESTAMP, NULL)
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 27)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (27, N'usp_Edit_Unidad_Medida', CURRENT_TIMESTAMP, NULL)
+        VALUES (27, N'SP_Edit_Unidad_Medida', CURRENT_TIMESTAMP, NULL)
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 28)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (28, N'usp_Habilitar_Unidades_Medidas', CURRENT_TIMESTAMP, NULL)
+        VALUES (28, N'SP_Habilitar_Unidades_Medidas', CURRENT_TIMESTAMP, NULL)
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 29)
@@ -3560,19 +3560,19 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 34)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (34, N'usp_InsertAgenciaBancaria', CURRENT_TIMESTAMP, NULL)
+        VALUES (34, N'SP_InsertAgenciaBancaria', CURRENT_TIMESTAMP, NULL)
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 35)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (35, N'usp_UpdateAgenciaBancaria', CURRENT_TIMESTAMP, NULL)
+        VALUES (35, N'SP_UpdateAgenciaBancaria', CURRENT_TIMESTAMP, NULL)
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 36)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (36, N'usp_HabilitarAgenciaBancaria', CURRENT_TIMESTAMP, NULL)
+        VALUES (36, N'SP_HabilitarAgenciaBancaria', CURRENT_TIMESTAMP, NULL)
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 37)
@@ -3609,35 +3609,35 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 42)
     BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (42, N'usp_SelectCuentaInterna', CURRENT_TIMESTAMP, NULL);
+        VALUES (42, N'SP_SelectCuentaInterna', CURRENT_TIMESTAMP, NULL);
     END;
 
     -- Insert 2
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 43)
     BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (43, N'usp_ValidateCuentasInternas_x_GrupoAgencias', CURRENT_TIMESTAMP, NULL);
+        VALUES (43, N'SP_ValidateCuentasInternas_x_GrupoAgencias', CURRENT_TIMESTAMP, NULL);
     END;
 
     -- Insert 3
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 44)
     BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (44, N'usp_InsertGrupoAgencia', CURRENT_TIMESTAMP, NULL);
+        VALUES (44, N'SP_InsertGrupoAgencia', CURRENT_TIMESTAMP, NULL);
     END;
 
     -- Insert 4
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 45)
     BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (45, N'usp_UpdateGrupoAgencia', CURRENT_TIMESTAMP, NULL);
+        VALUES (45, N'SP_UpdateGrupoAgencia', CURRENT_TIMESTAMP, NULL);
     END;
 
     -- Insert 5
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 46)
     BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (46, N'usp_HabilitarGrupoAgencia', CURRENT_TIMESTAMP, NULL);
+        VALUES (46, N'SP_HabilitarGrupoAgencia', CURRENT_TIMESTAMP, NULL);
     END;
 
     -- Insert 6
@@ -3651,21 +3651,21 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 48)
     BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (48, N'usp_InsertCedis', CURRENT_TIMESTAMP, NULL);
+        VALUES (48, N'SP_InsertCedis', CURRENT_TIMESTAMP, NULL);
     END;
 
     -- Insert 8
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 49)
     BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (49, N'usp_UpdateCedis', CURRENT_TIMESTAMP, NULL);
+        VALUES (49, N'SP_UpdateCedis', CURRENT_TIMESTAMP, NULL);
     END;
 
     -- Insert 9
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 50)
     BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (50, N'usp_HabilitarCedis', CURRENT_TIMESTAMP, NULL);
+        VALUES (50, N'SP_HabilitarCedis', CURRENT_TIMESTAMP, NULL);
     END;
 
     -- Insert 10
@@ -3693,21 +3693,21 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 54)
     BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (54, N'usp_Habilitar_Paises', CURRENT_TIMESTAMP, NULL);
+        VALUES (54, N'SP_Habilitar_Paises', CURRENT_TIMESTAMP, NULL);
     END;
 
     -- Insert 14
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 55)
     BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (55, N'usp_InsertPais', CURRENT_TIMESTAMP, NULL);
+        VALUES (55, N'SP_InsertPais', CURRENT_TIMESTAMP, NULL);
     END;
 
     -- Insert 15
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 56)
     BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (56, N'usp_UpdatePais', CURRENT_TIMESTAMP, NULL);
+        VALUES (56, N'SP_UpdatePais', CURRENT_TIMESTAMP, NULL);
     END;
 
     -- Insert 16
@@ -3735,21 +3735,21 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 60)
     BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (60, N'usp_HabilitarDepartamento', CURRENT_TIMESTAMP, NULL);
+        VALUES (60, N'SP_HabilitarDepartamento', CURRENT_TIMESTAMP, NULL);
     END;
 
     -- Insert 20
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 61)
     BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (61, N'usp_InsertDepartamento', CURRENT_TIMESTAMP, NULL);
+        VALUES (61, N'SP_InsertDepartamento', CURRENT_TIMESTAMP, NULL);
     END;
 
     -- Insert 21
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 62)
     BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (62, N'usp_UpdateDepartamento', CURRENT_TIMESTAMP, NULL);
+        VALUES (62, N'SP_UpdateDepartamento', CURRENT_TIMESTAMP, NULL);
     END;
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 63)
@@ -3773,19 +3773,19 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 66)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (66, N'usp_HabilitarMatrizAtribucion', CURRENT_TIMESTAMP, NULL);
+        VALUES (66, N'SP_HabilitarMatrizAtribucion', CURRENT_TIMESTAMP, NULL);
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 67)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (67, N'usp_InsertMatrizAtribucion', CURRENT_TIMESTAMP, NULL);
+        VALUES (67, N'SP_InsertMatrizAtribucion', CURRENT_TIMESTAMP, NULL);
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 68)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (68, N'usp_UpdateMatrizAtribucion', CURRENT_TIMESTAMP, NULL);
+        VALUES (68, N'SP_UpdateMatrizAtribucion', CURRENT_TIMESTAMP, NULL);
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 69)
@@ -3797,19 +3797,19 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 1036)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (1036, N'usp_UpdateRol', CURRENT_TIMESTAMP, NULL);
+        VALUES (1036, N'SP_UpdateRol', CURRENT_TIMESTAMP, NULL);
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 1037)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (1037, N'usp_InsertRol', CURRENT_TIMESTAMP, NULL);
+        VALUES (1037, N'SP_InsertRol', CURRENT_TIMESTAMP, NULL);
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 1038)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (1038, N'usp_Habilitar_Roles', CURRENT_TIMESTAMP, NULL);
+        VALUES (1038, N'SP_Habilitar_Roles', CURRENT_TIMESTAMP, NULL);
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 1039)
@@ -3851,37 +3851,37 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 1045)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (1045, N'usp_InsertArea', CURRENT_TIMESTAMP, NULL);
+        VALUES (1045, N'SP_InsertArea', CURRENT_TIMESTAMP, NULL);
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 1046)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (1046, N'usp_UpdateArea', CURRENT_TIMESTAMP, NULL);
+        VALUES (1046, N'SP_UpdateArea', CURRENT_TIMESTAMP, NULL);
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 1047)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (1047, N'usp_HabilitarArea', CURRENT_TIMESTAMP, NULL);
+        VALUES (1047, N'SP_HabilitarArea', CURRENT_TIMESTAMP, NULL);
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 1048)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (1048, N'usp_InsertUsuario', CURRENT_TIMESTAMP, NULL);
+        VALUES (1048, N'SP_InsertUsuario', CURRENT_TIMESTAMP, NULL);
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 1049)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (1049, N'usp_UpdateUsuario', CURRENT_TIMESTAMP, NULL);
+        VALUES (1049, N'SP_UpdateUsuario', CURRENT_TIMESTAMP, NULL);
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 1050)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (1050, N'usp_HabilitarUsuario', CURRENT_TIMESTAMP, NULL);
+        VALUES (1050, N'SP_HabilitarUsuario', CURRENT_TIMESTAMP, NULL);
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 1051)
@@ -3899,7 +3899,7 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 1053)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (1053, N'usp_Insert_Transportadora', CURRENT_TIMESTAMP, NULL);
+        VALUES (1053, N'SP_Insert_Transportadora', CURRENT_TIMESTAMP, NULL);
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 1054)
@@ -3911,7 +3911,7 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 1055)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (1055, N'usp_UpdateDiasHabilesEntregaPedidosInternos', CURRENT_TIMESTAMP, NULL);
+        VALUES (1055, N'SP_UpdateDiasHabilesEntregaPedidosInternos', CURRENT_TIMESTAMP, NULL);
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 1056)
@@ -3947,25 +3947,25 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 1065)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (1065, N'usp_Insert_Transportadora_VALORES_NULL', CURRENT_TIMESTAMP, NULL);
+        VALUES (1065, N'SP_Insert_Transportadora_VALORES_NULL', CURRENT_TIMESTAMP, NULL);
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 1066)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (1066, N'usp_Insert_Transportadora_CONSTRAINT', CURRENT_TIMESTAMP, NULL);
+        VALUES (1066, N'SP_Insert_Transportadora_CONSTRAINT', CURRENT_TIMESTAMP, NULL);
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 1067)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (1067, N'usp_FinalizarGestionUsuario', CURRENT_TIMESTAMP, NULL);
+        VALUES (1067, N'SP_FinalizarGestionUsuario', CURRENT_TIMESTAMP, NULL);
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 1070)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (1070, N'usp_Insert_Transportadora_CAMPOS_YA_EXISTENTES', CURRENT_TIMESTAMP, NULL);
+        VALUES (1070, N'SP_Insert_Transportadora_CAMPOS_YA_EXISTENTES', CURRENT_TIMESTAMP, NULL);
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 1071)
@@ -3977,7 +3977,7 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 1072)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (1072, N'usp_Update_Transportadora', CURRENT_TIMESTAMP, NULL);
+        VALUES (1072, N'SP_Update_Transportadora', CURRENT_TIMESTAMP, NULL);
     END
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 1073)
@@ -3989,7 +3989,7 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 1074)
     BEGIN
         INSERT [dbo].[tblMensajes_Emergentes_Metodo] ([Id], [Metodo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (1074, N'usp_Habilitar_Transportadoras', CURRENT_TIMESTAMP, NULL);
+        VALUES (1074, N'SP_Habilitar_Transportadoras', CURRENT_TIMESTAMP, NULL);
     END;
 
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes_Metodo] WHERE [Id] = 1075)
@@ -4981,7 +4981,7 @@ IF EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA  = 'dbo' A
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 103) BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes] ([Id], [Fk_Modulo], [Fk_Metodo], [Fk_TipoMensaje], [Fk_Titulo], [Mensaje], [ErrorMensaje], [FechaCreacion], [FechaModificacion]) 
-        VALUES(103, 8, 49, 2, 5, 'se recibió el JSON vacio o un JSON inválido.', @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
+        VALUES(103, 8, 49, 2, 5, @MENSAJE3, @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
     END
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 104) BEGIN
@@ -5011,7 +5011,7 @@ IF EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA  = 'dbo' A
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 109) BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes] ([Id], [Fk_Modulo], [Fk_Metodo], [Fk_TipoMensaje], [Fk_Titulo], [Mensaje], [ErrorMensaje], [FechaCreacion], [FechaModificacion]) 
-        VALUES(109, 8, 48, 2, 7, 'se recibió el JSON vacio o un JSON inválido.', @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
+        VALUES(109, 8, 48, 2, 7, @MENSAJE3, @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
     END
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 110) BEGIN
@@ -5031,7 +5031,7 @@ IF EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA  = 'dbo' A
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 113) BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes] ([Id], [Fk_Modulo], [Fk_Metodo], [Fk_TipoMensaje], [Fk_Titulo], [Mensaje], [ErrorMensaje], [FechaCreacion], [FechaModificacion]) 
-        VALUES(113, 8, 50, 2, 12, 'se recibió el JSON vacio o un JSON inválido.', @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
+        VALUES(113, 8, 50, 2, 12, @MENSAJE3, @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
     END
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 114) BEGIN
@@ -5066,7 +5066,7 @@ IF EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA  = 'dbo' A
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 120) BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes] ([Id], [Fk_Modulo], [Fk_Metodo], [Fk_TipoMensaje], [Fk_Titulo], [Mensaje], [ErrorMensaje], [FechaCreacion], [FechaModificacion]) 
-        VALUES(120, 9, 54, 2, 12, 'se recibió el JSON vacio o un JSON inválido.', @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
+        VALUES(120, 9, 54, 2, 12, @MENSAJE3, @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
     END
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 121) BEGIN
@@ -5081,7 +5081,7 @@ IF EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA  = 'dbo' A
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 123) BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes] ([Id], [Fk_Modulo], [Fk_Metodo], [Fk_TipoMensaje], [Fk_Titulo], [Mensaje], [ErrorMensaje], [FechaCreacion], [FechaModificacion]) 
-        VALUES(123, 9, 55, 2, 7, 'se recibió el JSON vacio o un JSON inválido.', @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
+        VALUES(123, 9, 55, 2, 7, @MENSAJE3, @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
     END
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 124) BEGIN
@@ -5101,7 +5101,7 @@ IF EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA  = 'dbo' A
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 127) BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes] ([Id], [Fk_Modulo], [Fk_Metodo], [Fk_TipoMensaje], [Fk_Titulo], [Mensaje], [ErrorMensaje], [FechaCreacion], [FechaModificacion]) 
-        VALUES(127, 9, 56, 2, 5, 'se recibió el JSON vacio o un JSON inválido.', @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
+        VALUES(127, 9, 56, 2, 5, @MENSAJE3, @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
     END
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 128) BEGIN
@@ -5146,7 +5146,7 @@ IF EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA  = 'dbo' A
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 136) BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes] ([Id], [Fk_Modulo], [Fk_Metodo], [Fk_TipoMensaje], [Fk_Titulo], [Mensaje], [ErrorMensaje], [FechaCreacion], [FechaModificacion]) 
-        VALUES(136, 10, 60, 2, 12, 'se recibió el JSON vacio o un JSON inválido.', @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
+        VALUES(136, 10, 60, 2, 12, @MENSAJE3, @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
     END
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 137) BEGIN
@@ -5161,7 +5161,7 @@ IF EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA  = 'dbo' A
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 139) BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes] ([Id], [Fk_Modulo], [Fk_Metodo], [Fk_TipoMensaje], [Fk_Titulo], [Mensaje], [ErrorMensaje], [FechaCreacion], [FechaModificacion]) 
-        VALUES(139, 10, 61, 2, 7, 'se recibió el JSON vacio o un JSON inválido.', @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
+        VALUES(139, 10, 61, 2, 7, @MENSAJE3, @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
     END
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 140) BEGIN
@@ -5181,7 +5181,7 @@ IF EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA  = 'dbo' A
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 143) BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes] ([Id], [Fk_Modulo], [Fk_Metodo], [Fk_TipoMensaje], [Fk_Titulo], [Mensaje], [ErrorMensaje], [FechaCreacion], [FechaModificacion]) 
-        VALUES(143, 10, 62, 2, 5, 'se recibió el JSON vacio o un JSON inválido.', @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
+        VALUES(143, 10, 62, 2, 5, @MENSAJE3, @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
     END
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 144) BEGIN
@@ -5226,7 +5226,7 @@ IF EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA  = 'dbo' A
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 152) BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes] ([Id], [Fk_Modulo], [Fk_Metodo], [Fk_TipoMensaje], [Fk_Titulo], [Mensaje], [ErrorMensaje], [FechaCreacion], [FechaModificacion]) 
-        VALUES(152, 11, 66, 2, 12, 'se recibió el JSON vacio o un JSON inválido.', @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
+        VALUES(152, 11, 66, 2, 12, @MENSAJE3, @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
     END
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 153) BEGIN
@@ -5246,7 +5246,7 @@ IF EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA  = 'dbo' A
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 156) BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes] ([Id], [Fk_Modulo], [Fk_Metodo], [Fk_TipoMensaje], [Fk_Titulo], [Mensaje], [ErrorMensaje], [FechaCreacion], [FechaModificacion]) 
-        VALUES(156, 11, 67, 2, 7, 'se recibió el JSON vacio o un JSON inválido.', @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
+        VALUES(156, 11, 67, 2, 7, @MENSAJE3, @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
     END
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 157) BEGIN
@@ -5276,7 +5276,7 @@ IF EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA  = 'dbo' A
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 162) BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes] ([Id], [Fk_Modulo], [Fk_Metodo], [Fk_TipoMensaje], [Fk_Titulo], [Mensaje], [ErrorMensaje], [FechaCreacion], [FechaModificacion]) 
-        VALUES(162, 11, 68, 2, 5, 'se recibió el JSON vacio o un JSON inválido.', @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
+        VALUES(162, 11, 68, 2, 5, @MENSAJE3, @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
     END
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 163) BEGIN
@@ -5306,7 +5306,7 @@ IF EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA  = 'dbo' A
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 168) BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes] ([Id], [Fk_Modulo], [Fk_Metodo], [Fk_TipoMensaje], [Fk_Titulo], [Mensaje], [ErrorMensaje], [FechaCreacion], [FechaModificacion]) 
-        VALUES(168, 13, 1036, 2, 8, 'se recibió el JSON vacio o un JSON inválido.', @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
+        VALUES(168, 13, 1036, 2, 8, @MENSAJE3, @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
     END
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 169) BEGIN
@@ -5331,7 +5331,7 @@ IF EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA  = 'dbo' A
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 173) BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes] ([Id], [Fk_Modulo], [Fk_Metodo], [Fk_TipoMensaje], [Fk_Titulo], [Mensaje], [ErrorMensaje], [FechaCreacion], [FechaModificacion]) 
-        VALUES(173, 13, 1037, 2, 8, 'se recibió el JSON vacio o un JSON inválido.', @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
+        VALUES(173, 13, 1037, 2, 8, @MENSAJE3, @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
     END
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 174) BEGIN
@@ -5351,7 +5351,7 @@ IF EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA  = 'dbo' A
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 177) BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes] ([Id], [Fk_Modulo], [Fk_Metodo], [Fk_TipoMensaje], [Fk_Titulo], [Mensaje], [ErrorMensaje], [FechaCreacion], [FechaModificacion]) 
-        VALUES(177, 13, 1038, 2, 8, 'se recibió el JSON vacio o un JSON inválido.', @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
+        VALUES(177, 13, 1038, 2, 8, @MENSAJE3, @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
     END
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 178) BEGIN
@@ -6126,7 +6126,7 @@ IF EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA  = 'dbo' A
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 332) BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes] ([Id], [Fk_Modulo], [Fk_Metodo], [Fk_TipoMensaje], [Fk_Titulo], [Mensaje], [ErrorMensaje], [FechaCreacion], [FechaModificacion]) 
-        VALUES(332, 2, 6, 2, 8, 'se recibió el JSON vacio o un JSON inválido.', @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
+        VALUES(332, 2, 6, 2, 8, @MENSAJE3, @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
     END
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 333) BEGIN
@@ -6136,17 +6136,17 @@ IF EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA  = 'dbo' A
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 334) BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes] ([Id], [Fk_Modulo], [Fk_Metodo], [Fk_TipoMensaje], [Fk_Titulo], [Mensaje], [ErrorMensaje], [FechaCreacion], [FechaModificacion]) 
-        VALUES(334, 2, 9, 2, 8, 'se recibió el JSON vacio o un JSON inválido.', @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
+        VALUES(334, 2, 9, 2, 8, @MENSAJE3, @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
     END
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 335) BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes] ([Id], [Fk_Modulo], [Fk_Metodo], [Fk_TipoMensaje], [Fk_Titulo], [Mensaje], [ErrorMensaje], [FechaCreacion], [FechaModificacion]) 
-        VALUES(335, 2, 12, 2, 8, 'se recibió el JSON vacio o un JSON inválido.', @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
+        VALUES(335, 2, 12, 2, 8, @MENSAJE3, @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
     END
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 336) BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes] ([Id], [Fk_Modulo], [Fk_Metodo], [Fk_TipoMensaje], [Fk_Titulo], [Mensaje], [ErrorMensaje], [FechaCreacion], [FechaModificacion]) 
-        VALUES(336, 7, 46, 2, 8, 'se recibió el JSON vacio o un JSON inválido.', @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
+        VALUES(336, 7, 46, 2, 8, @MENSAJE3, @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
     END
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 337) BEGIN
@@ -6156,7 +6156,7 @@ IF EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA  = 'dbo' A
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 338) BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes] ([Id], [Fk_Modulo], [Fk_Metodo], [Fk_TipoMensaje], [Fk_Titulo], [Mensaje], [ErrorMensaje], [FechaCreacion], [FechaModificacion]) 
-        VALUES(338, 7, 44, 2, 8, 'se recibió el JSON vacio o un JSON inválido.', @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
+        VALUES(338, 7, 44, 2, 8, @MENSAJE3, @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
     END
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 339) BEGIN
@@ -6166,7 +6166,7 @@ IF EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA  = 'dbo' A
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 340) BEGIN
         INSERT INTO [dbo].[tblMensajes_Emergentes] ([Id], [Fk_Modulo], [Fk_Metodo], [Fk_TipoMensaje], [Fk_Titulo], [Mensaje], [ErrorMensaje], [FechaCreacion], [FechaModificacion]) 
-        VALUES(340, 7, 45, 2, 8, 'se recibió el JSON vacio o un JSON inválido.', @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
+        VALUES(340, 7, 45, 2, 8, @MENSAJE3, @ERRORMENSAJE, CAST(CURRENT_TIMESTAMP AS SMALLDATETIME), NULL);
     END
     ---
     IF NOT EXISTS (SELECT 1 FROM [dbo].[tblMensajes_Emergentes] WHERE Id = 341) BEGIN
@@ -6828,7 +6828,7 @@ BEGIN
     BEGIN
 
         INSERT [dbo].[tblParametros] ([Id], [Codigo], [Nombre], [Descripcion], [Valor], [Activo], [FechaCreacion], [FechaModificacion]) 
-        VALUES (1, 1, N'tblDiasHabilesEntregaPedidosInternos_Modificacion_Dia_Actual_Diferente_Dia_Desde_Corte', N'Activa o Desactiva el sp usp_VALIDACION_CONTRAINT_MODIFICACION_MISMO_DIA_VALIDACIONES_tblDiasHabilesEntregaPedidosInternos', N'1', 0, CURRENT_TIMESTAMP, NULL);
+        VALUES (1, 1, N'tblDiasHabilesEntregaPedidosInternos_Modificacion_Dia_Actual_Diferente_Dia_Desde_Corte', N'Activa o Desactiva el sp SP_VALIDACION_CONTRAINT_MODIFICACION_MISMO_DIA_VALIDACIONES_tblDiasHabilesEntregaPedidosInternos', N'1', 0, CURRENT_TIMESTAMP, NULL);
 
     END
 
@@ -6846,14 +6846,14 @@ BEGIN
         IF NOT EXISTS (SELECT * FROM [dbo].[tblReportes] WHERE [Id] = 1)
         BEGIN
             INSERT [dbo].[tblReportes] ([Id], [Nombre], [Procedimiento], [Descripcion], [Tiene_Filtro_Fechas], [Es_Reporte_VD], [Fecha_Creacion], [Fecha_Modificacion], [Estado]) 
-            VALUES (1, N'Tipo_Efectivo.pdf', N'usp_Select_Data_By_Pdf_Tipo_Efectivo', N'prueba masiva', 0, 0, CURRENT_TIMESTAMP, NULL, 1);
+            VALUES (1, N'Tipo_Efectivo.pdf', N'SP_Select_Data_By_Pdf_Tipo_Efectivo', N'prueba masiva', 0, 0, CURRENT_TIMESTAMP, NULL, 1);
         END
         
         -- Validación e inserción del registro 2
         IF NOT EXISTS (SELECT * FROM [dbo].[tblReportes] WHERE [Id] = 2)
         BEGIN
             INSERT [dbo].[tblReportes] ([Id], [Nombre], [Procedimiento], [Descripcion], [Tiene_Filtro_Fechas], [Es_Reporte_VD], [Fecha_Creacion], [Fecha_Modificacion], [Estado]) 
-            VALUES (2, N'Tipo_Efectivo.xlsx', N'usp_Select_Data_By_Excel_Tipo_Efectivo', N'prueba masiva', 0, 0, CURRENT_TIMESTAMP, NULL, 1);
+            VALUES (2, N'Tipo_Efectivo.xlsx', N'SP_Select_Data_By_Excel_Tipo_Efectivo', N'prueba masiva', 0, 0, CURRENT_TIMESTAMP, NULL, 1);
         END
         
         -- Validación e inserción del registro 3
@@ -6902,13 +6902,15 @@ BEGIN
 	DECLARE @_Id VARCHAR(30) = 'Id';
 	DECLARE @_FechaCreacion VARCHAR(30) = 'FechaCreacion';
 	DECLARE @_FechaModificacion VARCHAR(30) = 'FechaModificacion';
+    DECLARE @_Activo VARCHAR(30) = 'Activo';
+    DECLARE @_Nombre VARCHAR(30) = 'Nombre';
 
 
 -------------------------------------- Descripciones para las columnas de tblAgenciaBancaria
     SET @_LELEL0NAME = 'dbo'
 	SET @_LELEL1NAME = 'tblAgenciaBancaria'
 
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblAgenciaBancaria) - Indica si la agencia bancaria está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Activo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblAgenciaBancaria) - Indica si la agencia bancaria está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
 EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblAgenciaBancaria) - Código de la sucursal de la agencia bancaria.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'CodigoBranch';
 EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblAgenciaBancaria) - Código del cantón de la agencia bancaria.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'CodigoCanton';
 EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblAgenciaBancaria) - Código del distrito de la agencia bancaria.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'CodigoDistrito';
@@ -6919,491 +6921,507 @@ EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblAgenciaBancari
 EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblAgenciaBancaria) - Fecha en que se modificó por última vez el registro de la agencia bancaria.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblAgenciaBancaria) - Identificador del grupo de agencia al que pertenece la agencia bancaria.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'FkIdGrupoAgencia';
 EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblAgenciaBancaria) - Identificador único de tipo entero para la agencia bancaria.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblAgenciaBancaria) - Nombre de la agencia bancaria.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Nombre';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblAgenciaBancaria) - Nombre de la agencia bancaria.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Nombre;
 EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblAgenciaBancaria) - Indica si la agencia bancaria solicita remesas.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'SolicitaRemesas';
 EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblAgenciaBancaria) - Indica si la agencia bancaria utiliza cuentas del grupo de agencia.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'UsaCuentasGrupo';
 
 -------------------------------------- Descripciones para las columnas de tblArea
 	SET @_LELEL1NAME = 'tblArea'
 
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblArea) - Indica si el area está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Activo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblArea) - Indica si el area está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
 EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblArea) - Identificador del Departamento al que pertenece el area.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Departamento';
 EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblArea) - Fecha en que se creó el registro del area.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
 EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblArea) - Fecha en que se modificó por última vez el registro del area.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblArea) - Nombre del area.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Nombre';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblArea) - Nombre del area.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Nombre;
 EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblArea) - Identificador único de tipo entero para el area.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
 
 -------------------------------------- Descripciones para las columnas de tblCanton
 	SET @_LELEL1NAME = 'tblCanton'
 
 EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblCanton) - Identificador único de tipo entero para el canton.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblCanton) - Nombre del canton.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Nombre';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblCanton) - Nombre del canton.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Nombre;
 EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblCanton) - Identificador de la provincia a la que pertenece el cantón.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'fk_Id_Provincia';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblCanton) - Indica si el canton está activo o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Activo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblCanton) - Indica si el canton está activo o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
 EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblCanton) - Fecha en que se creó el registro del canton.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
 EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'(dbo.tblCanton) - Fecha en que se modificó por última vez el registro del canton.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 -------------------------------------- Descripciones para las columnas de tblCedis
+	SET @_LELEL1NAME = 'tblCedis'
 
-
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el cedis.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCedis', @level2type = @_LELEL2TYPE, @level2name = N'Id_Cedis';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre del cedis.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCedis', @level2type = @_LELEL2TYPE, @level2name = N'Nombre';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Codigo del cedis.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCedis', @level2type = @_LELEL2TYPE, @level2name = N'Codigo_Cedis';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador del Pais al que pertenece el Cedis.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCedis', @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Pais';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el cedis está activo o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCedis', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del cedis.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCedis', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del cedis.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCedis', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el cedis.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Id_Cedis';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre del cedis.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Nombre;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Codigo del cedis.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Codigo_Cedis';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador del Pais al que pertenece el Cedis.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Pais';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el cedis está activo o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del cedis.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del cedis.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 -------------------------------------- Descripciones para las columnas de tblColaborador
+	SET @_LELEL1NAME = 'tblColaborador'
 
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el cedis.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblColaborador', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre del colaborador.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblColaborador', @level2type = @_LELEL2TYPE, @level2name = N'Nombre';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Primer Apellido del colaborador.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblColaborador', @level2type = @_LELEL2TYPE, @level2name = N'Apellido1';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Segundo Apellido del colaborador.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblColaborador', @level2type = @_LELEL2TYPE, @level2name = N'Apellido2';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Usuario del Directorio Activo del colaborador.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblColaborador', @level2type = @_LELEL2TYPE, @level2name = N'UserActiveDirectory';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el colaborador está activo o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblColaborador', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Correo electronico del colaborador', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblColaborador', @level2type = @_LELEL2TYPE, @level2name = N'Correo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del colaborador.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblColaborador', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del colaborador.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblColaborador', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el colaborador.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre del colaborador.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Nombre;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Primer Apellido del colaborador.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Apellido1';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Segundo Apellido del colaborador.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Apellido2';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Usuario del Directorio Activo del colaborador.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'UserActiveDirectory';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el colaborador está activo o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Correo electronico del colaborador', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Correo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del colaborador.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del colaborador.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 -------------------------------------- Descripciones para las columnas de tblComunicado
+	SET @_LELEL1NAME = 'tblComunicado'
 
-
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el comunicado.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblComunicado', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador del tipo de comunicado que se esta registrando.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblComunicado', @level2type = @_LELEL2TYPE, @level2name = N'FkTipoComunicado';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador del colaborador que esta haciendo el registro del comunicado', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblComunicado', @level2type = @_LELEL2TYPE, @level2name = N'FKColaborador';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'El mensaje que va a brindar el comunicado.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblComunicado', @level2type = @_LELEL2TYPE, @level2name = N'Mensaje';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador para saber si se debe visualizar el comunicado en el banner.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblComunicado', @level2type = @_LELEL2TYPE, @level2name = N'FkHabilitarBanner';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el comunicado está activo o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblComunicado', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del comunicado.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblComunicado', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del comunicado.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblComunicado', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el comunicado.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador del tipo de comunicado que se esta registrando.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'FkTipoComunicado';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador del colaborador que esta haciendo el registro del comunicado', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'FKColaborador';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'El mensaje que va a brindar el comunicado.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Mensaje';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador para saber si se debe visualizar el comunicado en el banner.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'FkHabilitarBanner';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el comunicado está activo o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del comunicado.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del comunicado.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 -------------------------------------- Descripciones para las columnas de tblCuentaInterna
+	SET @_LELEL1NAME = 'tblCuentaInterna'
 
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la cuenta bancaria interna.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCuentaInterna', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Numero de cuenta bancaria interna.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCuentaInterna', @level2type = @_LELEL2TYPE, @level2name = N'NumeroCuenta';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la divisa asociada a la cuenta banacaria interna que se esta haciendo el registro', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCuentaInterna', @level2type = @_LELEL2TYPE, @level2name = N'Codigo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la divisa asociada a la cuenta interna.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCuentaInterna', @level2type = @_LELEL2TYPE, @level2name = N'FkIdDivisa';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la cuenta bancaria interna está activo o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCuentaInterna', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la cuenta bancaria interna.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCuentaInterna', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la cuenta bancaria interna.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCuentaInterna', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la cuenta bancaria interna.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Numero de cuenta bancaria interna.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'NumeroCuenta';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la divisa asociada a la cuenta banacaria interna que se esta haciendo el registro', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Codigo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la divisa asociada a la cuenta interna.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'FkIdDivisa';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la cuenta bancaria interna está activo o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la cuenta bancaria interna.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la cuenta bancaria interna.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 -------------------------------------- Descripciones para las columnas de tblCuentaInterna_x_Agencia
+	SET @_LELEL1NAME = 'tblCuentaInterna_x_Agencia'
 
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la cuenta bancaria interna asociada a la agencia.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCuentaInterna_x_Agencia', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la cuenta bancaria interna asociada a la agencia.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCuentaInterna_x_Agencia', @level2type = @_LELEL2TYPE, @level2name = N'FkIdCuentaInterna';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la agencia bancaria asociada a la cuenta bancaria interna.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCuentaInterna_x_Agencia', @level2type = @_LELEL2TYPE, @level2name = N'FkIdAgencia';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Codigo que asocia la relacion de cuanta bancaria interna con la agencia bancaria', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCuentaInterna_x_Agencia', @level2type = @_LELEL2TYPE, @level2name = N'Codigo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la relacion cuenta bancaria interna con la agencia está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCuentaInterna_x_Agencia', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la relacion cuenta bancaria interna con agencia bancaria.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCuentaInterna_x_Agencia', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la relacion cuenta bancaria interna con agencia bancaria.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCuentaInterna_x_Agencia', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la cuenta bancaria interna asociada a la agencia.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la cuenta bancaria interna asociada a la agencia.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'FkIdCuentaInterna';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la agencia bancaria asociada a la cuenta bancaria interna.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'FkIdAgencia';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Codigo que asocia la relacion de cuanta bancaria interna con la agencia bancaria', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Codigo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la relacion cuenta bancaria interna con la agencia está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la relacion cuenta bancaria interna con agencia bancaria.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la relacion cuenta bancaria interna con agencia bancaria.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 
 -------------------------------------- Descripciones para las columnas de tblCuentaInterna_x_GrupoAgencias
+	SET @_LELEL1NAME = 'tblCuentaInterna_x_GrupoAgencias'
 
-
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la cuenta bancaria interna asociada al grupo de agencias.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCuentaInterna_x_GrupoAgencias', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la cuenta interna asociada a la relación.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCuentaInterna_x_GrupoAgencias', @level2type = @_LELEL2TYPE, @level2name = N'FkIdCuentaInterna';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la cuenta bancaria interna asociada al grupo de agencias.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCuentaInterna_x_GrupoAgencias', @level2type = @_LELEL2TYPE, @level2name = N'FkIdGrupoAgencias';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Codigo que asocia la relacion de cuanta bancaria interna con la agencia bancaria', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCuentaInterna_x_GrupoAgencias', @level2type = @_LELEL2TYPE, @level2name = N'Codigo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la relacion cuenta bancaria interna con el grupo de agencia está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCuentaInterna_x_GrupoAgencias', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la relacion cuenta bancaria interna con agencia bancaria.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCuentaInterna_x_GrupoAgencias', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la relacion cuenta bancaria interna con agencia bancaria.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblCuentaInterna_x_GrupoAgencias', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la cuenta bancaria interna asociada al grupo de agencias.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la cuenta interna asociada a la relación.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'FkIdCuentaInterna';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la cuenta bancaria interna asociada al grupo de agencias.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'FkIdGrupoAgencias';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Codigo que asocia la relacion de cuanta bancaria interna con la agencia bancaria', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Codigo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la relacion cuenta bancaria interna con el grupo de agencia está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la relacion cuenta bancaria interna con agencia bancaria.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la relacion cuenta bancaria interna con agencia bancaria.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 
 -------------------------------------- Descripciones para las columnas de tblDenominaciones
+	SET @_LELEL1NAME = 'tblDenominaciones'
 
-
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la denominacion', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDenominaciones', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la divisa a la que esta asociada la denominacion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDenominaciones', @level2type = @_LELEL2TYPE, @level2name = N'IdDivisa';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Valor nominal en expresion numerica de la denominacion que se esta creando', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDenominaciones', @level2type = @_LELEL2TYPE, @level2name = N'ValorNominal';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre de la denominacion, escrita en forma de texto', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDenominaciones', @level2type = @_LELEL2TYPE, @level2name = N'Nombre';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la denominacion está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDenominaciones', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador del tipo de esta denominacion (Billete, Moneda o Otro).', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDenominaciones', @level2type = @_LELEL2TYPE, @level2name = N'BMO';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Archivo guardado en bit que representa la imagen de la denominacion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDenominaciones', @level2type = @_LELEL2TYPE, @level2name = N'Imagen';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la denominacion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDenominaciones', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la denominacion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDenominaciones', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la denominacion', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la divisa a la que esta asociada la denominacion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'IdDivisa';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Valor nominal en expresion numerica de la denominacion que se esta creando', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'ValorNominal';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre de la denominacion, escrita en forma de texto', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Nombre;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la denominacion está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador del tipo de esta denominacion (Billete, Moneda o Otro).', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'BMO';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Archivo guardado en bit que representa la imagen de la denominacion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Imagen';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la denominacion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la denominacion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 
 
 -------------------------------------- Descripciones para las columnas de tblDenominaciones_x_Modulo
+	SET @_LELEL1NAME = 'tblDenominaciones_x_Modulo'
 
-
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la relacion entre denominacion y modulo', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDenominaciones_x_Modulo', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador del modulo al que esta relacionada la denominacion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDenominaciones_x_Modulo', @level2type = @_LELEL2TYPE, @level2name = N'FkIdModulo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la denominacion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDenominaciones_x_Modulo', @level2type = @_LELEL2TYPE, @level2name = N'FkIdDenominaciones';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la relacion entre denominacion y modulo está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDenominaciones_x_Modulo', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la relacion entre denominacion y modul.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDenominaciones_x_Modulo', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la relacion entre denominacion y modul.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDenominaciones_x_Modulo', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la relacion entre denominacion y modulo', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador del modulo al que esta relacionada la denominacion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'FkIdModulo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la denominacion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'FkIdDenominaciones';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la relacion entre denominacion y modulo está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la relacion entre denominacion y modul.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la relacion entre denominacion y modul.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 
 -------------------------------------- Descripciones para las columnas de tblDepartamento
+	SET @_LELEL1NAME = 'tblDepartamento'
 
-
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el departamento', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDepartamento', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe la funcion del departamento.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDepartamento', @level2type = @_LELEL2TYPE, @level2name = N'Nombre';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el departamento está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDepartamento', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del departamento.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDepartamento', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del departamento.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDepartamento', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el departamento', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe la funcion del departamento.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Nombre;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el departamento está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del departamento.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del departamento.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 
 -------------------------------------- Descripciones para las columnas de tblDiasHabilesEntregaPedidosInternos
+	SET @_LELEL1NAME = 'tblDiasHabilesEntregaPedidosInternos'
 
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el horario', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDiasHabilesEntregaPedidosInternos', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Numero que indica el dia de la semana para el cual se esta configuranfo el horario de entrega.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDiasHabilesEntregaPedidosInternos', @level2type = @_LELEL2TYPE, @level2name = N'Dia';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador del cedis para el cual se etsa configurando el horario disponible de entrega de pedidos.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDiasHabilesEntregaPedidosInternos', @level2type = @_LELEL2TYPE, @level2name = N'FkIdCedis';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre del dia para el cual se esta configurando el horario', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDiasHabilesEntregaPedidosInternos', @level2type = @_LELEL2TYPE, @level2name = N'NombreDia';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si para este dia esta permitido la entrega de remesas', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDiasHabilesEntregaPedidosInternos', @level2type = @_LELEL2TYPE, @level2name = N'PermiteRemesas';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si para este dia esta permitido la entrega de remesas par el mismo dia', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDiasHabilesEntregaPedidosInternos', @level2type = @_LELEL2TYPE, @level2name = N'PermiteEntregasMismoDia';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si para este cedis las entregas estan permitida para el dia Lunes', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDiasHabilesEntregaPedidosInternos', @level2type = @_LELEL2TYPE, @level2name = N'EntregarLunes';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si para este cedis las entregas estan permitida para el dia Martes', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDiasHabilesEntregaPedidosInternos', @level2type = @_LELEL2TYPE, @level2name = N'EntregarMartes';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si para este cedis las entregas estan permitida para el dia Miercoles', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDiasHabilesEntregaPedidosInternos', @level2type = @_LELEL2TYPE, @level2name = N'EntregarMiercoles';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si para este cedis las entregas estan permitida para el dia Jueves', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDiasHabilesEntregaPedidosInternos', @level2type = @_LELEL2TYPE, @level2name = N'EntregarJueves';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si para este cedis las entregas estan permitida para el dia Viernes', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDiasHabilesEntregaPedidosInternos', @level2type = @_LELEL2TYPE, @level2name = N'EntregarViernes';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si para este cedis las entregas estan permitida para el dia Sabado', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDiasHabilesEntregaPedidosInternos', @level2type = @_LELEL2TYPE, @level2name = N'EntregarSabado';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si para este cedis las entregas estan permitida para el dia Domingo', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDiasHabilesEntregaPedidosInternos', @level2type = @_LELEL2TYPE, @level2name = N'EntregarDomingo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Hora límite para las entregas de pedidos internos el mismo día en los días hábiles de entrega.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDiasHabilesEntregaPedidosInternos', @level2type = @_LELEL2TYPE, @level2name = N'HoraLimiteMismoDia';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Codigo unico para la configuracion del horario para ese dia para el dia especifico', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDiasHabilesEntregaPedidosInternos', @level2type = @_LELEL2TYPE, @level2name = N'Codigo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Se define la hora limite para aprobar la solicitud del pedido', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDiasHabilesEntregaPedidosInternos', @level2type = @_LELEL2TYPE, @level2name = N'HoraLimiteAprobacion';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Se define la hora limite para aprobar la solicitud del pedido para el mismo dia', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDiasHabilesEntregaPedidosInternos', @level2type = @_LELEL2TYPE, @level2name = N'HoraLimiteAprobacionMismoDia';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Hora inicial para la solicitud de remesas', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDiasHabilesEntregaPedidosInternos', @level2type = @_LELEL2TYPE, @level2name = N'HoraDesde';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Hora limite para la solicitud de remesas', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDiasHabilesEntregaPedidosInternos', @level2type = @_LELEL2TYPE, @level2name = N'HoraHasta';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Hora corte del dia para las solicitudes de remesas', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDiasHabilesEntregaPedidosInternos', @level2type = @_LELEL2TYPE, @level2name = N'HoraCorteDia';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del horario para el cedis.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDiasHabilesEntregaPedidosInternos', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del horario para el cedis.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDiasHabilesEntregaPedidosInternos', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el horario', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Numero que indica el dia de la semana para el cual se esta configuranfo el horario de entrega.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Dia';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador del cedis para el cual se etsa configurando el horario disponible de entrega de pedidos.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'FkIdCedis';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre del dia para el cual se esta configurando el horario', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'NombreDia';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si para este dia esta permitido la entrega de remesas', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'PermiteRemesas';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si para este dia esta permitido la entrega de remesas par el mismo dia', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'PermiteEntregasMismoDia';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si para este cedis las entregas estan permitida para el dia Lunes', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'EntregarLunes';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si para este cedis las entregas estan permitida para el dia Martes', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'EntregarMartes';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si para este cedis las entregas estan permitida para el dia Miercoles', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'EntregarMiercoles';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si para este cedis las entregas estan permitida para el dia Jueves', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'EntregarJueves';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si para este cedis las entregas estan permitida para el dia Viernes', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'EntregarViernes';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si para este cedis las entregas estan permitida para el dia Sabado', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'EntregarSabado';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si para este cedis las entregas estan permitida para el dia Domingo', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'EntregarDomingo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Hora límite para las entregas de pedidos internos el mismo día en los días hábiles de entrega.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'HoraLimiteMismoDia';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Codigo unico para la configuracion del horario para ese dia para el dia especifico', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Codigo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Se define la hora limite para aprobar la solicitud del pedido', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'HoraLimiteAprobacion';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Se define la hora limite para aprobar la solicitud del pedido para el mismo dia', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'HoraLimiteAprobacionMismoDia';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Hora inicial para la solicitud de remesas', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'HoraDesde';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Hora limite para la solicitud de remesas', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'HoraHasta';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Hora corte del dia para las solicitudes de remesas', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'HoraCorteDia';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del horario para el cedis.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del horario para el cedis.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 -------------------------------------- Descripciones para las columnas de tblDistrito
+	SET @_LELEL1NAME = 'tblDistrito'
 
-
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el distrito', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDistrito', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe el distrito.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDistrito', @level2type = @_LELEL2TYPE, @level2name = N'Nombre';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único del cantón al que pertenece el distrito.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDistrito', @level2type = @_LELEL2TYPE, @level2name = N'fk_Id_Canton';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el distrito está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDistrito', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del distrito.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDistrito', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del distrito.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDistrito', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el distrito', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe el distrito.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Nombre;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único del cantón al que pertenece el distrito.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'fk_Id_Canton';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el distrito está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del distrito.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del distrito.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 
 -------------------------------------- Descripciones para las columnas de tblDivisa
+	SET @_LELEL1NAME = 'tblDivisa'
 
-
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la divisa', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDivisa', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe la divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDivisa', @level2type = @_LELEL2TYPE, @level2name = N'Nombre';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nomenclatura que describe la divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDivisa', @level2type = @_LELEL2TYPE, @level2name = N'Nomenclatura';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Simbolo que describe la divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDivisa', @level2type = @_LELEL2TYPE, @level2name = N'Simbolo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Descripcion literal sobre la divisa la divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDivisa', @level2type = @_LELEL2TYPE, @level2name = N'Descripcion';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la divisa está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDivisa', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDivisa', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDivisa', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la divisa', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe la divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Nombre;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nomenclatura que describe la divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Nomenclatura';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Simbolo que describe la divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Simbolo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Descripcion literal sobre la divisa la divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Descripcion';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la divisa está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 
 -------------------------------------- Descripciones para las columnas de tblDivisa_x_TipoEfectivo
+	SET @_LELEL1NAME = 'tblDivisa_x_TipoEfectivo'
 
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la divisa', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDivisa_x_TipoEfectivo', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador del tipo de efectivo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDivisa_x_TipoEfectivo', @level2type = @_LELEL2TYPE, @level2name = N'FkIdTipoEfectivo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador del tipo de divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDivisa_x_TipoEfectivo', @level2type = @_LELEL2TYPE, @level2name = N'FkIdDivisa';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre del tipo de efectivo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDivisa_x_TipoEfectivo', @level2type = @_LELEL2TYPE, @level2name = N'NombreTipoEfectivo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre de la divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDivisa_x_TipoEfectivo', @level2type = @_LELEL2TYPE, @level2name = N'NombreDivisa';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la relacion divisa con tipo de efectivo está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDivisa_x_TipoEfectivo', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la relacion divisa con tipo de efectivo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDivisa_x_TipoEfectivo', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la relacion divisa con tipo de efectivo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblDivisa_x_TipoEfectivo', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la divisa', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador del tipo de efectivo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'FkIdTipoEfectivo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador del tipo de divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'FkIdDivisa';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre del tipo de efectivo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'NombreTipoEfectivo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre de la divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'NombreDivisa';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la relacion divisa con tipo de efectivo está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la relacion divisa con tipo de efectivo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la relacion divisa con tipo de efectivo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 
 -------------------------------------- Descripciones para las columnas de tblFirmas
+	SET @_LELEL1NAME = 'tblFirmas'
 
-
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la firma', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblFirmas', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre de la firma.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblFirmas', @level2type = @_LELEL2TYPE, @level2name = N'Firma';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Monto Inicial para el cual la firma aprueba .', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblFirmas', @level2type = @_LELEL2TYPE, @level2name = N'MontoDesde';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Monto limite para el cual la firma aprueba .', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblFirmas', @level2type = @_LELEL2TYPE, @level2name = N'MontoHasta';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la firma está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblFirmas', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la firma.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblFirmas', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la firma.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblFirmas', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la firma', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre de la firma.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Firma';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Monto Inicial para el cual la firma aprueba .', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'MontoDesde';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Monto limite para el cual la firma aprueba .', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'MontoHasta';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la firma está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la firma.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la firma.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 -------------------------------------- Descripciones para las columnas de tblGrupoAgencia
+	SET @_LELEL1NAME = 'tblGrupoAgencia'
 
-
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el grupo de agencias', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblGrupoAgencia', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe el grupo de agencias.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblGrupoAgencia', @level2type = @_LELEL2TYPE, @level2name = N'Nombre';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Codigo que identifica el grupo de agencias.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblGrupoAgencia', @level2type = @_LELEL2TYPE, @level2name = N'Codigo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el grupo de agencias esta autorizado a enviar remesas.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblGrupoAgencia', @level2type = @_LELEL2TYPE, @level2name = N'EnviaRemesas';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el grupo de agencias est autorizado a solicitar remesas.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblGrupoAgencia', @level2type = @_LELEL2TYPE, @level2name = N'SolicitaRemesas';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el gripo de agencias está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblGrupoAgencia', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del grupo de agencia.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblGrupoAgencia', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del grupo de agencia.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblGrupoAgencia', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el grupo de agencias', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe el grupo de agencias.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Nombre;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Codigo que identifica el grupo de agencias.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Codigo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el grupo de agencias esta autorizado a enviar remesas.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'EnviaRemesas';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el grupo de agencias est autorizado a solicitar remesas.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'SolicitaRemesas';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el gripo de agencias está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del grupo de agencia.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del grupo de agencia.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 -------------------------------------- Descripciones para las columnas de tblHabilitarBanner
+	SET @_LELEL1NAME = 'tblHabilitarBanner'
 
-
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para habilitar el banner', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblHabilitarBanner', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el baner está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblHabilitarBanner', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro para habilitar banner.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblHabilitarBanner', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro para habilitar banner.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblHabilitarBanner', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para habilitar el banner', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el baner está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro para habilitar banner.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro para habilitar banner.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 -------------------------------------- Descripciones para las columnas de tblMatrizAtribucion
+	SET @_LELEL1NAME = 'tblMatrizAtribucion'
 
-
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la matriz de atribucion', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMatrizAtribucion', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe la matriz de atribucion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMatrizAtribucion', @level2type = @_LELEL2TYPE, @level2name = N'Nombre';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la divisa con la que esta asociada la matriz.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMatrizAtribucion', @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Divisa';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la matriz de atribucion está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMatrizAtribucion', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la matriz de atribucion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMatrizAtribucion', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la matriz de atribucion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMatrizAtribucion', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la matriz de atribucion', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe la matriz de atribucion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Nombre;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la divisa con la que esta asociada la matriz.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Divisa';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la matriz de atribucion está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la matriz de atribucion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la matriz de atribucion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 -------------------------------------- Descripciones para las columnas de tblMatrizAtribucion_Firmas
+	SET @_LELEL1NAME = 'tblMatrizAtribucion_Firmas'
 
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la relacion matriz atribucion y firmas', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMatrizAtribucion_Firmas', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de matriz de atribucion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMatrizAtribucion_Firmas', @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_MatrizAtribucion';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de firma.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMatrizAtribucion_Firmas', @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Firmas';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la relacion matriz de atriucion y firma está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMatrizAtribucion_Firmas', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la relacion matriz de atribucion y firmas.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMatrizAtribucion_Firmas', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la relacion matriz de atribucion y firmas.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMatrizAtribucion_Firmas', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la relacion matriz atribucion y firmas', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de matriz de atribucion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_MatrizAtribucion';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de firma.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Firmas';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la relacion matriz de atriucion y firma está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la relacion matriz de atribucion y firmas.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la relacion matriz de atribucion y firmas.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 
 -------------------------------------- Descripciones para las columnas de tblMatrizAtribucion_Transaccion
+	SET @_LELEL1NAME = 'tblMatrizAtribucion_Transaccion'
 
-
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la relacion matriz de atribucion con transacciones', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMatrizAtribucion_Transaccion', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la matriz de atribucion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMatrizAtribucion_Transaccion', @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_MatrizAtribucion';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la transaccion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMatrizAtribucion_Transaccion', @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Transaccion';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la relacion de la transaccion con la matriz de atribucion está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMatrizAtribucion_Transaccion', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de las transacciones asociadas a la matriz de atribucion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMatrizAtribucion_Transaccion', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de las transacciones asociadas a la matriz de atribucion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMatrizAtribucion_Transaccion', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la relacion matriz de atribucion con transacciones', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la matriz de atribucion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_MatrizAtribucion';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la transaccion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Transaccion';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la relacion de la transaccion con la matriz de atribucion está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de las transacciones asociadas a la matriz de atribucion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de las transacciones asociadas a la matriz de atribucion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 -------------------------------------- Descripciones para las columnas de tblMensajes_Emergentes
+	SET @_LELEL1NAME = 'tblMensajes_Emergentes'
 
-
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el departamento', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMensajes_Emergentes', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indicador del modulo con el que esta relacionado el mensaje emergente.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMensajes_Emergentes', @level2type = @_LELEL2TYPE, @level2name = N'Fk_Modulo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indicador del modulo con el que esta relacionado el mensaje emergente.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMensajes_Emergentes', @level2type = @_LELEL2TYPE, @level2name = N'Fk_Metodo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indicador del tipo de mensaje.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMensajes_Emergentes', @level2type = @_LELEL2TYPE, @level2name = N'Fk_TipoMensaje';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indicador del titulo con el que se relacione el mensaje emergente.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMensajes_Emergentes', @level2type = @_LELEL2TYPE, @level2name = N'Fk_Titulo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Mensaje que se muestra en las mensaje emergentes.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMensajes_Emergentes', @level2type = @_LELEL2TYPE, @level2name = N'Mensaje';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Error que proporciona en la ventana emergente cado este mensaje no se puede mostrar.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMensajes_Emergentes', @level2type = @_LELEL2TYPE, @level2name = N'ErrorMensaje';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del mensaje emergente.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMensajes_Emergentes', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del mensaje emergente.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMensajes_Emergentes', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el departamento', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indicador del modulo con el que esta relacionado el mensaje emergente.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fk_Modulo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indicador del modulo con el que esta relacionado el mensaje emergente.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fk_Metodo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indicador del tipo de mensaje.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fk_TipoMensaje';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indicador del titulo con el que se relacione el mensaje emergente.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fk_Titulo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Mensaje que se muestra en las mensaje emergentes.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Mensaje';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Error que proporciona en la ventana emergente cado este mensaje no se puede mostrar.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'ErrorMensaje';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del mensaje emergente.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del mensaje emergente.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 -------------------------------------- Descripciones para las columnas de tblMensajes_Emergentes_Metodo
+	SET @_LELEL1NAME = 'tblMensajes_Emergentes_Metodo'
 
-
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el metodo', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMensajes_Emergentes_Metodo', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe la funcion del metodo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMensajes_Emergentes_Metodo', @level2type = @_LELEL2TYPE, @level2name = N'Metodo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del metodo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMensajes_Emergentes_Metodo', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del metodo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMensajes_Emergentes_Metodo', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el metodo', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe la funcion del metodo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Metodo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del metodo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del metodo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 -------------------------------------- Descripciones para las columnas de tblMensajes_Emergentes_Modulo
+	SET @_LELEL1NAME = 'tblMensajes_Emergentes_Modulo'
 
-
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el modulo', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMensajes_Emergentes_Modulo', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe la funcion del modulo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMensajes_Emergentes_Modulo', @level2type = @_LELEL2TYPE, @level2name = N'Modulo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del modulo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMensajes_Emergentes_Modulo', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del modulo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMensajes_Emergentes_Modulo', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el modulo', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe la funcion del modulo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Modulo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del modulo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del modulo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 -------------------------------------- Descripciones para las columnas de tblMensajes_Emergentes_Tipo_Mensaje
+	SET @_LELEL1NAME = 'tblMensajes_Emergentes_Tipo_Mensaje'
 
-
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el tipo de mensaje', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMensajes_Emergentes_Tipo_Mensaje', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe el tipo de mensaje.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMensajes_Emergentes_Tipo_Mensaje', @level2type = @_LELEL2TYPE, @level2name = N'TipoMensaje';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del tipo de mensaje.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMensajes_Emergentes_Tipo_Mensaje', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del tipo de mensaje.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMensajes_Emergentes_Tipo_Mensaje', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el tipo de mensaje', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe el tipo de mensaje.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'TipoMensaje';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del tipo de mensaje.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del tipo de mensaje.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 
 -------------------------------------- Descripciones para las columnas de tblMensajes_Emergentes_Titulo
+	SET @_LELEL1NAME = 'tblMensajes_Emergentes_Titulo'
 
 
-
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el titulo del mensaje', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMensajes_Emergentes_Titulo', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Titulo del mensaje emergente.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMensajes_Emergentes_Titulo', @level2type = @_LELEL2TYPE, @level2name = N'Titulo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro el titulo del mensaje.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMensajes_Emergentes_Titulo', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del titulo del mensaje.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblMensajes_Emergentes_Titulo', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el titulo del mensaje', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Titulo del mensaje emergente.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Titulo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro el titulo del mensaje.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del titulo del mensaje.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 -------------------------------------- Descripciones para las columnas de tblModulo
+	SET @_LELEL1NAME = 'tblModulo'
 
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el modulo', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblModulo', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe la funcion del modulo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblModulo', @level2type = @_LELEL2TYPE, @level2name = N'Nombre';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el modulo está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblModulo', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del modulo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblModulo', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del modulo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblModulo', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el modulo', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe la funcion del modulo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Nombre;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el modulo está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del modulo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del modulo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 
 -------------------------------------- Descripciones para las columnas de tblPais
+	SET @_LELEL1NAME = 'tblPais'
 
-
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el pais', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblPais', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre del pais.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblPais', @level2type = @_LELEL2TYPE, @level2name = N'Nombre';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Codigo identificativo para el pais.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblPais', @level2type = @_LELEL2TYPE, @level2name = N'Codigo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el pais está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblPais', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del pais.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblPais', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del pais.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblPais', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el pais', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre del pais.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Nombre;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Codigo identificativo para el pais.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Codigo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el pais está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del pais.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del pais.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 
 -------------------------------------- Descripciones para las columnas de tblParametros
+	SET @_LELEL1NAME = 'tblParametros'
 
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el parametro', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblParametros', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Codigo que identifica al parametro.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblParametros', @level2type = @_LELEL2TYPE, @level2name = N'Codigo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe la funcion del parametro.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblParametros', @level2type = @_LELEL2TYPE, @level2name = N'Nombre';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Descripcion literal del parametro.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblParametros', @level2type = @_LELEL2TYPE, @level2name = N'Descripcion';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Valor que se la pasa al parametro.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblParametros', @level2type = @_LELEL2TYPE, @level2name = N'Valor';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el parametro está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblParametros', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del parametro.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblParametros', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del parametro.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblParametros', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el parametro', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Codigo que identifica al parametro.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Codigo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe la funcion del parametro.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Nombre;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Descripcion literal del parametro.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Descripcion';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Valor que se la pasa al parametro.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Valor';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el parametro está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del parametro.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del parametro.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 
 -------------------------------------- Descripciones para las columnas de tblProvincia
+	SET @_LELEL1NAME = 'tblProvincia'
 
-
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la provincia', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblProvincia', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe la funcion de la provincia.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblProvincia', @level2type = @_LELEL2TYPE, @level2name = N'Nombre';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la provincia está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblProvincia', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la provincia.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblProvincia', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la provincia.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblProvincia', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la provincia', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe la funcion de la provincia.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Nombre;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la provincia está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la provincia.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la provincia.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 
 -------------------------------------- Descripciones para las columnas de tblReportes
+	SET @_LELEL1NAME = 'tblReportes'
 
-
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el reporte', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblReportes', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe la funcion del reporte.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblReportes', @level2type = @_LELEL2TYPE, @level2name = N'Nombre';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Procedimiento con el cual se ejecuta el reporte.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblReportes', @level2type = @_LELEL2TYPE, @level2name = N'Procedimiento';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Descripcion para que funciona el reporte.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblReportes', @level2type = @_LELEL2TYPE, @level2name = N'Descripcion';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el reporte tiene filtros.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblReportes', @level2type = @_LELEL2TYPE, @level2name = N'Tiene_Filtro_Fechas';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el reporte es VD.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblReportes', @level2type = @_LELEL2TYPE, @level2name = N'Es_Reporte_VD';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el reporte está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblReportes', @level2type = @_LELEL2TYPE, @level2name = N'Estado';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del reporte.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblReportes', @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Creacion';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del reporte.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblReportes', @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Modificacion';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el reporte', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe la funcion del reporte.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Nombre;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Procedimiento con el cual se ejecuta el reporte.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Procedimiento';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Descripcion para que funciona el reporte.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Descripcion';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el reporte tiene filtros.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Tiene_Filtro_Fechas';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el reporte es VD.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Es_Reporte_VD';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el reporte está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Estado';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del reporte.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Creacion';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del reporte.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Modificacion';
 
 
 
 -------------------------------------- Descripciones para las columnas de tblTipoCambio
+	SET @_LELEL1NAME = 'tblTipoCambio'
 
-
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el departamento', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTipoCambio', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador para la divisa que se cotiza', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTipoCambio', @level2type = @_LELEL2TYPE, @level2name = N'fk_Id_DivisaCotizada';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'El monto en colones de la compra de la divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTipoCambio', @level2type = @_LELEL2TYPE, @level2name = N'CompraColones';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'El monto en colones de la venta de la divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTipoCambio', @level2type = @_LELEL2TYPE, @level2name = N'VentaColones';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el tipo de cambio está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTipoCambio', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del tipo de cambio.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTipoCambio', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del tipo de cambio.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTipoCambio', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el departamento', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador para la divisa que se cotiza', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'fk_Id_DivisaCotizada';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'El monto en colones de la compra de la divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'CompraColones';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'El monto en colones de la venta de la divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'VentaColones';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el tipo de cambio está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del tipo de cambio.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del tipo de cambio.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 -------------------------------------- Descripciones para las columnas de tblTipoComunicado
+	SET @_LELEL1NAME = 'tblTipoComunicado'
 
-
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el tipo de comunicado', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTipoComunicado', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre del tipo de comunicado.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTipoComunicado', @level2type = @_LELEL2TYPE, @level2name = N'Nombre';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fichero en bit para guardar la imagen asociada al comunicado.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTipoComunicado', @level2type = @_LELEL2TYPE, @level2name = N'Imagen';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el tipo de comunicado está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTipoComunicado', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del tipo de comunicado.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTipoComunicado', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del tipo de comunicado.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTipoComunicado', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el tipo de comunicado', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre del tipo de comunicado.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Nombre;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fichero en bit para guardar la imagen asociada al comunicado.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Imagen';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el tipo de comunicado está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del tipo de comunicado.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del tipo de comunicado.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 -------------------------------------- Descripciones para las columnas de tblTipoEfectivo
+	SET @_LELEL1NAME = 'tblTipoEfectivo'
 
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el tipo de efectivo', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTipoEfectivo', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe el tipo de efectivo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTipoEfectivo', @level2type = @_LELEL2TYPE, @level2name = N'Nombre';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el tipo de efectivo está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTipoEfectivo', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del tipo de efectivo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTipoEfectivo', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del tipo de efectivo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTipoEfectivo', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el tipo de efectivo', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe el tipo de efectivo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Nombre;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si el tipo de efectivo está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro del tipo de efectivo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro del tipo de efectivo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 -------------------------------------- Descripciones para las columnas de tblTransacciones
+	SET @_LELEL1NAME = 'tblTransacciones'
 
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el tipo de efectivo', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTransacciones', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe las transacciones.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTransacciones', @level2type = @_LELEL2TYPE, @level2name = N'Nombre';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador del modulo al que esta ligada la transaccion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTransacciones', @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Modulo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Codigo unico de la transaccion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTransacciones', @level2type = @_LELEL2TYPE, @level2name = N'Codigo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la transaccion está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTransacciones', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la transaccion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTransacciones', @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la transaccion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTransacciones', @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para el tipo de efectivo', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe las transacciones.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Nombre;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador del modulo al que esta ligada la transaccion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Modulo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Codigo unico de la transaccion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Codigo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la transaccion está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la transaccion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaCreacion;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la transaccion.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_FechaModificacion;
 
 
 -------------------------------------- Descripciones para las columnas de tblTransportadoras
+	SET @_LELEL1NAME = 'tblTransportadoras'
 
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la transportadora', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTransportadoras', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe la transportadora.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTransportadoras', @level2type = @_LELEL2TYPE, @level2name = N'Nombre';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Codigo unico para la transportadora.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTransportadoras', @level2type = @_LELEL2TYPE, @level2name = N'Codigo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la transportadora está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTransportadoras', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la trasnportadora.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTransportadoras', @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Creacion';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la transportadora.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTransportadoras', @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Modificacion';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la transportadora', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe la transportadora.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Nombre;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Codigo unico para la transportadora.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Codigo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la transportadora está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la trasnportadora.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Creacion';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la transportadora.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Modificacion';
 
 
 -------------------------------------- Descripciones para las columnas de tblTransportadoras_x_Modulo
+	SET @_LELEL1NAME = 'tblTransportadoras_x_Modulo'
 
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la relacion trasnportadora con modulo', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTransportadoras_x_Modulo', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la transportadora', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTransportadoras_x_Modulo', @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Transportadora';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador del modulo', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTransportadoras_x_Modulo', @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Modulo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la relacion transportadora con modulo está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTransportadoras_x_Modulo', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la la relacion transportadora con modulo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTransportadoras_x_Modulo', @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Creacion';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la relacion transportadora con modulo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTransportadoras_x_Modulo', @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Modificacion';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la relacion trasnportadora con modulo', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la transportadora', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Transportadora';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador del modulo', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Modulo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la relacion transportadora con modulo está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la la relacion transportadora con modulo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Creacion';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la relacion transportadora con modulo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Modificacion';
 
 
 -------------------------------------- Descripciones para las columnas de tblTransportadoras_x_Pais
+	SET @_LELEL1NAME = 'tblTransportadoras_x_Pais'
 
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la relacion trasnportadora con modulo', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTransportadoras_x_Pais', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la transportadora', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTransportadoras_x_Pais', @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Transportadora';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador del pais', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTransportadoras_x_Pais', @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Pais';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la relacion transportadora con pais está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTransportadoras_x_Pais', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la relacion transportadora con pais.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTransportadoras_x_Pais', @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Creacion';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la relacion transportadora con pais.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblTransportadoras_x_Pais', @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Modificacion';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la relacion trasnportadora con modulo', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la transportadora', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Transportadora';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador del pais', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Pais';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la relacion transportadora con pais está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la relacion transportadora con pais.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Creacion';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la relacion transportadora con pais.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Modificacion';
 
 
 -------------------------------------- Descripciones para las columnas de tblUnidadMedida
+	SET @_LELEL1NAME = 'tblUnidadMedida'
 
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la unidad de medida', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblUnidadMedida', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe la unidad de medida.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblUnidadMedida', @level2type = @_LELEL2TYPE, @level2name = N'Nombre';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Simbolo que identifica la unidad de medida.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblUnidadMedida', @level2type = @_LELEL2TYPE, @level2name = N'Simbolo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Cantidad que contiene la unidad de medida .', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblUnidadMedida', @level2type = @_LELEL2TYPE, @level2name = N'Cantidad_Unidades';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la unidad de medida está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblUnidadMedida', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la unidad de medida.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblUnidadMedida', @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Creacion';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la unidad de medida.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblUnidadMedida', @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Modificacion';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la unidad de medida', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Nombre que describe la unidad de medida.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Nombre;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Simbolo que identifica la unidad de medida.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Simbolo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Cantidad que contiene la unidad de medida .', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Cantidad_Unidades';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la unidad de medida está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la unidad de medida.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Creacion';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la unidad de medida.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Modificacion';
 
 
 -------------------------------------- Descripciones para las columnas de tblUnidadMedida_x_Divisa
+	SET @_LELEL1NAME = 'tblUnidadMedida_x_Divisa'
 
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la relacion unidad de medida con la divisa', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblUnidadMedida_x_Divisa', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la unidad de medida.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblUnidadMedida_x_Divisa', @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Unidad_Medida';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblUnidadMedida_x_Divisa', @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Divisa';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la relacion entre la unidad de medida y la divisa está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblUnidadMedida_x_Divisa', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la relacion entre la unidad de medida y la divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblUnidadMedida_x_Divisa', @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Creacion';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la relacion entre la unidad de medida y la divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblUnidadMedida_x_Divisa', @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Modificacion';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la relacion unidad de medida con la divisa', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la unidad de medida.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Unidad_Medida';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Divisa';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la relacion entre la unidad de medida y la divisa está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la relacion entre la unidad de medida y la divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Creacion';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la relacion entre la unidad de medida y la divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Modificacion';
 
 
 -------------------------------------- Descripciones para las columnas de tblUnidadMedida_x_TipoEfectivo
+	SET @_LELEL1NAME = 'tblUnidadMedida_x_TipoEfectivo'
 
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la relacion unidad de medida, divisa y tipo de efectivo', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblUnidadMedida_x_TipoEfectivo', @level2type = @_LELEL2TYPE, @level2name = @_Id;
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la unidad de medida.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblUnidadMedida_x_TipoEfectivo', @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Unidad_Medida';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblUnidadMedida_x_TipoEfectivo', @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Divisa';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador del tipo de efectivo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblUnidadMedida_x_TipoEfectivo', @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Tipo_Efectivo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la relacion entre la unidad de medida, divisa y tipo de efectivo está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblUnidadMedida_x_TipoEfectivo', @level2type = @_LELEL2TYPE, @level2name = N'Activo';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la relacion entre la unidad de medida divisa y tipo de efectivo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblUnidadMedida_x_TipoEfectivo', @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Creacion';
-EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la relacion entre la unidad de medida divisa y tipo de efectivo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = N'tblUnidadMedida_x_TipoEfectivo', @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Modificacion';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador único de tipo entero para la relacion unidad de medida, divisa y tipo de efectivo', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Id;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la unidad de medida.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Unidad_Medida';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador de la divisa.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Divisa';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Identificador del tipo de efectivo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fk_Id_Tipo_Efectivo';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Indica si la relacion entre la unidad de medida, divisa y tipo de efectivo está activa o no.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = @_Activo;
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se creó el registro de la relacion entre la unidad de medida divisa y tipo de efectivo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Creacion';
+EXECUTE sp_addextendedproperty @name = @_NAME, @value = N'Fecha en que se modificó por última vez el registro de la relacion entre la unidad de medida divisa y tipo de efectivo.', @level0type = @_LELEL0TYPE, @level0name = @_LELEL0NAME, @level1type = @_LELEL1TYPE, @level1name = @_LELEL1NAME, @level2type = @_LELEL2TYPE, @level2name = N'Fecha_Modificacion';
 
 END
 GO

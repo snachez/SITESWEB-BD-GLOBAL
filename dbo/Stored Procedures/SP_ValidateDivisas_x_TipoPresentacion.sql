@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[usp_ValidateDivisas_x_TipoPresentacion](   
+﻿CREATE PROCEDURE [dbo].[SP_ValidateDivisas_x_TipoPresentacion](   
                                                                           @FK_ID_DIVISA			VARCHAR(MAX)  =	NULL,
 																		  @ACTIVO					VARCHAR(MAX)  =	NULL
 																	)

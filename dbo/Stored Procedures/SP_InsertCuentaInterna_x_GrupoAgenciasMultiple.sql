@@ -1,5 +1,5 @@
 ﻿---
-CREATE   PROCEDURE [dbo].[usp_InsertCuentaInterna_x_GrupoAgenciasMultiple](@CUENTAS_X_GRUPO_JSON NVARCHAR(MAX), @USUARIO_ID INT = NULL)
+CREATE   PROCEDURE [dbo].[SP_InsertCuentaInterna_x_GrupoAgenciasMultiple](@CUENTAS_X_GRUPO_JSON NVARCHAR(MAX), @USUARIO_ID INT = NULL)
 AS
 BEGIN
 	---

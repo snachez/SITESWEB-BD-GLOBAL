@@ -1,4 +1,4 @@
-﻿CREATE   PROCEDURE usp_Select_Data_By_Excel_Tipo_Efectivo(
+﻿CREATE   PROCEDURE SP_Select_Data_By_Excel_Tipo_Efectivo(
 																	  @JSON_IN VARCHAR(MAX),
 																	  @JSON_OUT VARCHAR(MAX) OUTPUT 
 																	, @USUARIO_ID INT = NULL

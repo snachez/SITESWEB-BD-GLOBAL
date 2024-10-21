@@ -2,7 +2,7 @@
 
 
 
-CREATE PROCEDURE [dbo].[usp_SelectTipoEfectivo_x_Divisa](    
+CREATE PROCEDURE [dbo].[SP_SelectTipoEfectivo_x_Divisa](    
 																		  @NOMBRE_TIPOEFECTIVO			VARCHAR(150)  =	NULL
 																		, @FK_ID_DIVISA			        INT  =	NULL
 																		, @ACTIVO						BIT  =	NULL

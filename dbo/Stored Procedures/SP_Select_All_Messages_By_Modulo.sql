@@ -1,4 +1,4 @@
-﻿CREATE   PROCEDURE [dbo].[usp_Select_All_Messages_By_Modulo](
+﻿CREATE   PROCEDURE [dbo].[SP_Select_All_Messages_By_Modulo](
 	@JSON_IN VARCHAR(MAX) = NULL,
 	@JSON_OUT VARCHAR(MAX) OUTPUT 
 )

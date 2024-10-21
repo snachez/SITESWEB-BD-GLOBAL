@@ -1,4 +1,4 @@
-﻿CREATE   PROCEDURE [dbo].[usp_InsertTipoCambio] (		  @NOMENCLATURADIVISA	 VARCHAR(3)
+﻿CREATE   PROCEDURE [dbo].[SP_InsertTipoCambio] (		  @NOMENCLATURADIVISA	 VARCHAR(3)
 													, @COMPRA                DECIMAL
 													, @VENTA                 DECIMAL
 										      )
@@ -39,7 +39,7 @@ BEGIN
 	BEGIN CATCH
 		--
 		SELECT	  CAST(1 AS BIT)											AS SP_Error
-				, 'Error: error en el insert usp_InsertTipoCambio'			AS SP_ERROR_MESSAGE_DB
+				, 'Error: error en el insert SP_InsertTipoCambio'			AS SP_ERROR_MESSAGE_DB
 				, 0															AS ROWS_AFFECTED
 				, -1														AS pk_Id
 

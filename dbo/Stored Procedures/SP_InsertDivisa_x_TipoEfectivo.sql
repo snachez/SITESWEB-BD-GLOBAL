@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[usp_InsertDivisa_x_TipoEfectivo] (@FkIdDivisa INT, @FkIdTipoEfectivo INT)
+﻿CREATE PROCEDURE [dbo].[SP_InsertDivisa_x_TipoEfectivo] (@FkIdDivisa INT, @FkIdTipoEfectivo INT)
 AS
 BEGIN
 	---

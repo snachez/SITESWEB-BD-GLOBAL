@@ -1,4 +1,4 @@
-﻿CREATE   PROCEDURE usp_SelectGrupoAgencia(        @SEARCH					NVARCHAR(MAX)  =	NULL
+﻿CREATE   PROCEDURE SP_SelectGrupoAgencia(        @SEARCH					NVARCHAR(MAX)  =	NULL
 													  , @PAGE					INT			   =	1
 												      , @SIZE					INT			   =	10
 												      , @ORDEN                  INT            =    1

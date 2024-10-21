@@ -1,5 +1,5 @@
 ﻿
-CREATE PROCEDURE [dbo].[usp_SelectCombobox_Cedis_X_Pais](@IdPais INT = NULL, @Nombre varchar(50) = NULL, @Activo BIT = NULL)
+CREATE PROCEDURE [dbo].[SP_SelectCombobox_Cedis_X_Pais](@IdPais INT = NULL, @Nombre varchar(50) = NULL, @Activo BIT = NULL)
 AS
 BEGIN
 	---

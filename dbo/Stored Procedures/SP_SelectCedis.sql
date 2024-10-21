@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[usp_SelectCedis](	@SEARCH		NVARCHAR(MAX)		=		NULL
+﻿CREATE PROCEDURE [dbo].[SP_SelectCedis](	@SEARCH		NVARCHAR(MAX)		=		NULL
                                           , @IdPaises	VARCHAR(MAX)        =	    NULL
 										  , @PAGE		INT					=		1
 										  , @SIZE		INT					=		10

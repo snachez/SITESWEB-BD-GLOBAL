@@ -1,5 +1,5 @@
 ﻿--
-CREATE   PROCEDURE usp_SelectModulo (		  @ID						NVARCHAR(MAX)  =	NULL
+CREATE   PROCEDURE SP_SelectModulo (		  @ID						NVARCHAR(MAX)  =	NULL
 												, @NOMBRE					NVARCHAR(MAX)  =	NULL
 												, @ACTIVO					NVARCHAR(MAX)  =	NULL
 												, @USUARIO_ID INT = NULL

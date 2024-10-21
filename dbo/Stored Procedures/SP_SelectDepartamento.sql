@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[usp_SelectDepartamento](	
+﻿CREATE PROCEDURE [dbo].[SP_SelectDepartamento](	
 												  @SEARCH					VARCHAR(MAX)   =	NULL
 												, @PAGE						INT			   =	NULL
 												, @SIZE						INT			   =	NULL

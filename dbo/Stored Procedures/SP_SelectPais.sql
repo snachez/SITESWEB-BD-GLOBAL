@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[usp_SelectPais](	
+﻿CREATE PROCEDURE [dbo].[SP_SelectPais](	
 												  @SEARCH					VARCHAR(MAX)   =	NULL
 												, @PAGE						INT			   =	NULL
 												, @SIZE						INT			   =	NULL

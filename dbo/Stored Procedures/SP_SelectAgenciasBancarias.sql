@@ -1,5 +1,5 @@
 ﻿---
-CREATE   PROCEDURE usp_SelectAgenciasBancarias(	  @SEARCH		NVARCHAR(MAX)		=		NULL
+CREATE   PROCEDURE SP_SelectAgenciasBancarias(	  @SEARCH		NVARCHAR(MAX)		=		NULL
 														, @PAGE			INT					=		1
 														, @SIZE			INT					=		10
 														, @ORDEN        INT					=		1

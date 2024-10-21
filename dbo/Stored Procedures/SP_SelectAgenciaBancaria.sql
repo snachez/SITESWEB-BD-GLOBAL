@@ -1,4 +1,4 @@
-﻿CREATE   PROCEDURE usp_SelectAgenciaBancaria (	  @ID			INT  =	NULL
+﻿CREATE   PROCEDURE SP_SelectAgenciaBancaria (	  @ID			INT  =	NULL
 														, @ACTIVO       BIT  =    NULL
 														, @USUARIO_ID	INT = NULL
 												   )

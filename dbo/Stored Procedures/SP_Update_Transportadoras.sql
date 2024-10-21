@@ -1,4 +1,4 @@
-﻿CREATE    PROCEDURE [dbo].[usp_Update_Transportadoras](
+﻿CREATE    PROCEDURE [dbo].[SP_Update_Transportadoras](
     @JSON_IN VARCHAR(MAX) = NULL,
 	@JSON_OUT  VARCHAR(MAX) OUTPUT 
 )
@@ -12,7 +12,7 @@ DECLARE @Resp_1 VARCHAR(MAX)
 	  SET @JSON_IN = REPLACE( @JSON_IN,'\','')
 
 	  ---Declaracion Variables Mensajes
-      DECLARE @MetodoTemporal VARCHAR(MAX) = 'usp_Update_Transportadora';
+      DECLARE @MetodoTemporal VARCHAR(MAX) = 'SP_Update_Transportadora';
 	  DECLARE @ERROR_MESSAGE VARCHAR(MAX);
 	  DECLARE @ERROR_NUMBER INT;
 
@@ -118,7 +118,7 @@ DECLARE @Resp_1 VARCHAR(MAX)
 						SET @ERROR_NUMBER = ERROR_NUMBER()
 
 						INSERT INTO #Mensajes 
-						EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+						EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 						@ROWS_AFFECTED = 0,
 						@SUCCESS = 0,
 						@ERROR_NUMBER_SP = @ERROR_NUMBER ,
@@ -159,7 +159,7 @@ DECLARE @Resp_1 VARCHAR(MAX)
 					------------------------------ RESPUESTA A LA APP MSJ: 3226 ------------------------------------
 								
 									INSERT INTO #Mensajes 
-									EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+									EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 									@ROWS_AFFECTED = 0,
 									@SUCCESS = 0,
 									@ERROR_NUMBER_SP = @ERROR_NUMBER,
@@ -199,7 +199,7 @@ DECLARE @Resp_1 VARCHAR(MAX)
 					------------------------------ RESPUESTA A LA APP MSJ: 3226 ------------------------------------
 									
 									INSERT INTO #Mensajes 
-									EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+									EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 									@ROWS_AFFECTED = 0,
 									@SUCCESS = 0,
 									@ERROR_NUMBER_SP = @ERROR_NUMBER,
@@ -306,7 +306,7 @@ DECLARE @Resp_1 VARCHAR(MAX)
 								------------------------------ RESPUESTA A LA APP MSJ: 3205 Transportadora insertada con exito!  ------------------------------------							
 
 								INSERT INTO #Mensajes 
-								EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+								EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 								@ROWS_AFFECTED = @@ROWCOUNT,
 								@SUCCESS = 1,
 								@ERROR_NUMBER_SP = NULL,
@@ -344,7 +344,7 @@ DECLARE @Resp_1 VARCHAR(MAX)
 								SET @ERROR_NUMBER = ERROR_NUMBER()
 
 								INSERT INTO #Mensajes 
-								EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+								EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 								@ROWS_AFFECTED = 0,
 								@SUCCESS = 0,
 								@ERROR_NUMBER_SP = @ERROR_NUMBER ,
@@ -353,7 +353,7 @@ DECLARE @Resp_1 VARCHAR(MAX)
 								@ROW = NULL,
 								@Metodo = @MetodoTemporal, 
 								@TipoMensaje = 'Error', 
-								@ErrorMensaje  = 'usp_Update_Transportadora_VALORES_NULL',
+								@ErrorMensaje  = 'SP_Update_Transportadora_VALORES_NULL',
 								@ModeJson = 0;
 
 								SELECT @Resp_1 = 
@@ -384,7 +384,7 @@ DECLARE @Resp_1 VARCHAR(MAX)
 						IF  @ERROR_NUMBER LIKE '%515%' 
 						BEGIN 
 						
-							SET @ERROR_MESSAGE = 'usp_Update_Transportadora_VALORES_NULL'
+							SET @ERROR_MESSAGE = 'SP_Update_Transportadora_VALORES_NULL'
 						
 						END	
 
@@ -396,7 +396,7 @@ DECLARE @Resp_1 VARCHAR(MAX)
 						END	
 								
 						INSERT INTO #Mensajes 
-						EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+						EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 						@ROWS_AFFECTED = 0,
 						@SUCCESS = 0,
 						@ERROR_NUMBER_SP = @ERROR_NUMBER,

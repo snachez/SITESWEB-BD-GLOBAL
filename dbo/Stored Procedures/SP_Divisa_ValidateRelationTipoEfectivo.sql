@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[usp_Divisa_ValidateRelationTipoEfectivo](    
+﻿CREATE PROCEDURE [dbo].[SP_Divisa_ValidateRelationTipoEfectivo](    
                                                                           @FK_ID_TIPOEFECTIVO			VARCHAR(MAX)  =	NULL
 																		, @FK_ID_DIVISA			VARCHAR(MAX)  =	NULL
 																		, @ACTIVO          VARCHAR(MAX)  =	NULL

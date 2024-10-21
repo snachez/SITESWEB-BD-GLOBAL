@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[usp_ValidateCuentaInterna_x_AgenciaBancaria](    
+﻿CREATE PROCEDURE [dbo].[SP_ValidateCuentaInterna_x_AgenciaBancaria](    
                                                                           @FK_ID_AGENCIA			VARCHAR(MAX)  =	NULL
 																		, @NUMERO_CUENTA            VARCHAR(MAX)  =	NULL
 																	)

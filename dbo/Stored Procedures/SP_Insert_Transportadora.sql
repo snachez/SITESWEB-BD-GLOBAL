@@ -1,6 +1,6 @@
 ﻿
 
-CREATE   PROCEDURE [dbo].[usp_Insert_Transportadora] (
+CREATE   PROCEDURE [dbo].[SP_Insert_Transportadora] (
 
 	@JSON_IN VARCHAR(MAX) = NULL,
 	@JSON_OUT  VARCHAR(MAX) OUTPUT 
@@ -17,7 +17,7 @@ BEGIN
 	  SET @JSON_IN = REPLACE( @JSON_IN,'\','')
 
 	  ---Declaracion Variables Mensajes
-      DECLARE @MetodoTemporal VARCHAR(MAX) = 'usp_Insert_Transportadora';
+      DECLARE @MetodoTemporal VARCHAR(MAX) = 'SP_Insert_Transportadora';
 	  DECLARE @ERROR_MESSAGE VARCHAR(MAX);
 	  DECLARE @ERROR_NUMBER INT;
 
@@ -45,7 +45,7 @@ BEGIN
 	  --SETEANDO LOS VALORES DEL JSON (TABLA PADRE TRANSPORTADORA)
 	  SELECT @p_Nombre_Transportadora = Nombre FROM OPENJSON( @JSON_IN) WITH ( Nombre VARCHAR(MAX) )
 	  --apesar de que viene el codigo de transportadora en la variable @JSON_IN se setea nuevamente dicho codigo aqui, por que puede darse el caso que desde en el front end lo cambien
-	  EXECUTE usp_Select_Codigo_Consecutivo_Transportadora @p_Codigo_Transportadora OUTPUT 	 
+	  EXECUTE SP_Select_Codigo_Consecutivo_Transportadora @p_Codigo_Transportadora OUTPUT 	 
 	  SELECT @p_Activo_Transportadora = Activo FROM OPENJSON( @JSON_IN) WITH ( Activo BIT )
 
 	  --------------------------- DECLARACION DE TABLA PARA INSERTAR LOS REGISTROS DE PAISES (TABLA HIJO) ----------------------------------------
@@ -126,7 +126,7 @@ BEGIN
 						SET @ERROR_NUMBER = ERROR_NUMBER()
 
 						INSERT INTO #Mensajes 
-						EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+						EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 						@ROWS_AFFECTED = 0,
 						@SUCCESS = 0,
 						@ERROR_NUMBER_SP = @ERROR_NUMBER ,
@@ -231,7 +231,7 @@ BEGIN
 								------------------------------ RESPUESTA A LA APP MSJ: 3198 Transportadora insertada con exito!  ------------------------------------							
 
 								INSERT INTO #Mensajes 
-								EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+								EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 								@ROWS_AFFECTED = @@ROWCOUNT,
 								@SUCCESS = 1,
 								@ERROR_NUMBER_SP = NULL,
@@ -269,7 +269,7 @@ BEGIN
 								SET @ERROR_NUMBER = ERROR_NUMBER()
 
 								INSERT INTO #Mensajes 
-								EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+								EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 								@ROWS_AFFECTED = 0,
 								@SUCCESS = 0,
 								@ERROR_NUMBER_SP = @ERROR_NUMBER ,
@@ -278,7 +278,7 @@ BEGIN
 								@ROW = NULL,
 								@Metodo = @MetodoTemporal, 
 								@TipoMensaje = 'Error', 
-								@ErrorMensaje  = 'usp_Insert_Transportadora_VALORES_NULL',
+								@ErrorMensaje  = 'SP_Insert_Transportadora_VALORES_NULL',
 								@ModeJson = 0;
 
 								SELECT @Resp_1 = 
@@ -306,10 +306,10 @@ BEGIN
 					
 						SET @ERROR_NUMBER = ERROR_NUMBER()				
 
-						IF  @ERROR_NUMBER LIKE '%515%' -- usp_Insert_Transportadora_VALORES_NULL
+						IF  @ERROR_NUMBER LIKE '%515%' -- SP_Insert_Transportadora_VALORES_NULL
 						BEGIN 
 						
-							SET @ERROR_MESSAGE = 'usp_Insert_Transportadora_VALORES_NULL' 
+							SET @ERROR_MESSAGE = 'SP_Insert_Transportadora_VALORES_NULL' 
 						
 						END	
 
@@ -328,7 +328,7 @@ BEGIN
 						END	
 								
 						INSERT INTO #Mensajes 
-						EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+						EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 						@ROWS_AFFECTED = 0,
 						@SUCCESS = 0,
 						@ERROR_NUMBER_SP = @ERROR_NUMBER,

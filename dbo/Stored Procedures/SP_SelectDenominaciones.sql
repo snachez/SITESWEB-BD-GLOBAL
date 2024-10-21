@@ -1,5 +1,5 @@
 ﻿
-CREATE   PROCEDURE [dbo].[usp_SelectDenominaciones] (               @SEARCH					VARCHAR(MAX)  =	NULL
+CREATE   PROCEDURE [dbo].[SP_SelectDenominaciones] (               @SEARCH					VARCHAR(MAX)  =	NULL
 																		  , @PAGE					INT			   =	1
 																		  , @SIZE					INT			   =	10
 																		  , @ORDEN                  INT			   =    1

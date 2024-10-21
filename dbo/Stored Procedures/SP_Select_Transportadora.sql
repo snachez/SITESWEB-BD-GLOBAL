@@ -1,5 +1,5 @@
 ﻿---
-CREATE   PROCEDURE usp_Select_Transportadora(
+CREATE   PROCEDURE SP_Select_Transportadora(
 														  @JSON_IN VARCHAR(MAX),
 														  @JSON_OUT  VARCHAR(MAX) OUTPUT
 														, @USUARIO_ID INT = NULL

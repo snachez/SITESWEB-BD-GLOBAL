@@ -1,5 +1,5 @@
 ﻿---
-CREATE   PROCEDURE usp_SelectTransacciones (			 
+CREATE   PROCEDURE SP_SelectTransacciones (			 
                                                       @SEARCH					NVARCHAR(MAX)	=	NULL
 													, @USUARIO_ID				INT				=	NULL
 										         )

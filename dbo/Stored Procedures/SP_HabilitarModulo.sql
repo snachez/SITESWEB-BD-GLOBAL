@@ -1,4 +1,4 @@
-﻿CREATE   PROCEDURE [dbo].[usp_HabilitarModulo](@ID INT, @ACTIVO BIT)
+﻿CREATE   PROCEDURE [dbo].[SP_HabilitarModulo](@ID INT, @ACTIVO BIT)
 AS
 BEGIN
 	---

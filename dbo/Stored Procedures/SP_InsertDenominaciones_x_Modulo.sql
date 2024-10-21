@@ -1,5 +1,5 @@
 ﻿---
-CREATE   PROCEDURE [dbo].[usp_InsertDenominaciones_x_Modulo] (	  
+CREATE   PROCEDURE [dbo].[SP_InsertDenominaciones_x_Modulo] (	  
 																  @FK_ID_DENOMINACIONES	INT,
 																  @FK_ID_Modulo			INT,
 																  @ACTIVO BIT

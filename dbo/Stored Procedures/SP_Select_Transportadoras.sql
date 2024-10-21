@@ -1,4 +1,4 @@
-﻿CREATE   PROCEDURE usp_Select_Transportadoras (	 																
+﻿CREATE   PROCEDURE SP_Select_Transportadoras (	 																
 														  @SEARCH			NVARCHAR(MAX)  =	NULL
 														, @PAGE				INT			   =	1
 														, @SIZE				INT			   =	10

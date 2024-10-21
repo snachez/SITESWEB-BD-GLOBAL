@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[usp_HabilitarCuentaInterna_x_GrupoAgencias](@FkIdCuentaInterna INT, @FkIdGrupoAgencias INT, @ACTIVO BIT, @USUARIO_ID INT = NULL)
+﻿CREATE PROCEDURE [dbo].[SP_HabilitarCuentaInterna_x_GrupoAgencias](@FkIdCuentaInterna INT, @FkIdGrupoAgencias INT, @ACTIVO BIT, @USUARIO_ID INT = NULL)
 AS
 BEGIN
 	---

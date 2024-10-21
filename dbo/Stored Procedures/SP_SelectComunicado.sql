@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[usp_SelectComunicado] 
+﻿CREATE PROCEDURE [dbo].[SP_SelectComunicado] 
 AS
 BEGIN
 	---

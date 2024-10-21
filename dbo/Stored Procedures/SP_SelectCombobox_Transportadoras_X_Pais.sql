@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[usp_SelectCombobox_Transportadoras_X_Pais](@IdPais INT = NULL, @Activo bit = NULL, @IdTransportadora INT = NULL)
+﻿CREATE PROCEDURE [dbo].[SP_SelectCombobox_Transportadoras_X_Pais](@IdPais INT = NULL, @Activo bit = NULL, @IdTransportadora INT = NULL)
 AS
 BEGIN
 	---

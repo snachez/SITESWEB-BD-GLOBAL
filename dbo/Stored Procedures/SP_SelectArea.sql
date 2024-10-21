@@ -1,5 +1,5 @@
 ﻿--
-CREATE   PROCEDURE usp_SelectArea  (	  @ID						INT				=	NULL
+CREATE   PROCEDURE SP_SelectArea  (	  @ID						INT				=	NULL
 											, @NOMBRE					VARCHAR(MAX)	=	NULL
                                             , @Fk_Id_Departamento       INT				=	NULL
 											, @SEARCHING				VARCHAR(MAX)	=	NULL

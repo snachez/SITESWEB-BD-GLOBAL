@@ -1,5 +1,5 @@
 ﻿---
-CREATE PROCEDURE [dbo].[usp_SelectTipoEfectivo](        @ID				NVARCHAR(MAX)  =	NULL 
+CREATE PROCEDURE [dbo].[SP_SelectTipoEfectivo](        @ID				NVARCHAR(MAX)  =	NULL 
 													, @NOMBRE			NVARCHAR(MAX)  =	NULL											
 													, @ACTIVO			NVARCHAR(MAX)  =	NULL 
 													, @PAGE				INT			   =	1

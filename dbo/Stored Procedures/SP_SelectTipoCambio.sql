@@ -1,5 +1,5 @@
 ﻿--
-CREATE   PROCEDURE usp_SelectTipoCambio (		  @ID		INT = NULL
+CREATE   PROCEDURE SP_SelectTipoCambio (		  @ID		INT = NULL
 													, @FECHA	NVARCHAR(10) = NULL
 													, @ACTIVO	BIT = NULL
 													, @NOMENCLATURA NVARCHAR(5) = NULL

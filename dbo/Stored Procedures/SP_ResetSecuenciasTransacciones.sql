@@ -1,12 +1,12 @@
 ﻿--
-CREATE PROCEDURE [dbo].[usp_ResetSecuenciasTransacciones]
+CREATE PROCEDURE [dbo].[SP_ResetSecuenciasTransacciones]
 AS
 BEGIN
   	BEGIN TRY
 	---
 
-	--EXEC [Sites.Pedidos].dbo.usp_ResetSecuenciaPEXT
-    --EXEC usp_ResetSecuenciaGestionesUsuario
+	--EXEC [Sites.Pedidos].dbo.SP_ResetSecuenciaPEXT
+    --EXEC SP_ResetSecuenciaGestionesUsuario
 
 	---
 		SELECT	  @@ROWCOUNT												AS ROWS_AFFECTED

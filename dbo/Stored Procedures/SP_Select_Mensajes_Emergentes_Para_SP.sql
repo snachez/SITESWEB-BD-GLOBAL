@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[usp_Select_Mensajes_Emergentes_Para_SP]
+﻿CREATE PROCEDURE [dbo].[SP_Select_Mensajes_Emergentes_Para_SP]
 (
     @ROWS_AFFECTED INT = 0,
 	@SUCCESS BIT = 0,

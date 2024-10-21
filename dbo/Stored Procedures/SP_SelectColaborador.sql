@@ -1,5 +1,5 @@
 ﻿
-CREATE   PROCEDURE [dbo].[usp_SelectColaborador] (	  @USER_ACTIVE_DIRECTORY VARCHAR(MAX) = NULL
+CREATE   PROCEDURE [dbo].[SP_SelectColaborador] (	  @USER_ACTIVE_DIRECTORY VARCHAR(MAX) = NULL
 													, @ACTIVO	BIT = NULL
 											   )
 AS

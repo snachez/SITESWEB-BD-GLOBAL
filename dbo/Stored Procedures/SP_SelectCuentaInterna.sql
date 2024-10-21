@@ -1,5 +1,5 @@
 ﻿--
-CREATE   PROCEDURE usp_SelectCuentaInterna(    
+CREATE   PROCEDURE SP_SelectCuentaInterna(    
 													  @ID				INT			   =	NULL
 													, @NUMERO_CUENTA	NVARCHAR(MAX)  =	NULL
 													, @CODIGO			NVARCHAR(MAX)  =	NULL
@@ -9,7 +9,7 @@ CREATE   PROCEDURE usp_SelectCuentaInterna(
 AS
 BEGIN
 	---Declaracion Variables
-    DECLARE @MetodoTemporal NVARCHAR(MAX) = 'usp_SelectCuentaInterna';
+    DECLARE @MetodoTemporal NVARCHAR(MAX) = 'SP_SelectCuentaInterna';
 	DECLARE @IdDato INT = -1;
 	----------------------------------------------------------------------------------------
 	--- V A R I A B L E S		F O R M A T E O		F E C H A . . .
@@ -48,7 +48,7 @@ BEGIN
 	BEGIN
 		---
 		
-		EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+		EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 		@ROWS_AFFECTED = @@ROWCOUNT,
 		@SUCCESS = 1,
 		@ERROR_NUMBER_SP = NULL,

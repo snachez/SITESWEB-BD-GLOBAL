@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[usp_ValidateGrupoAgencias_x_AgenciasBancarias](    
+﻿CREATE PROCEDURE [dbo].[SP_ValidateGrupoAgencias_x_AgenciasBancarias](    
                                                                           @FK_ID_GRUPO			VARCHAR(MAX)  =	NULL
 																		, @ACTIVO				VARCHAR(MAX)  =	NULL
 																	)

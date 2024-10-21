@@ -1,11 +1,11 @@
 ﻿
-CREATE PROCEDURE [dbo].[usp_HabilitarDepartamento](@JSON_IN VARCHAR(MAX) = NULL,
+CREATE PROCEDURE [dbo].[SP_HabilitarDepartamento](@JSON_IN VARCHAR(MAX) = NULL,
 	                                             @JSON_OUT  VARCHAR(MAX) OUTPUT )
 AS
 BEGIN
 
 	  ---Declaracion Variables Mensajes
-      DECLARE @MetodoTemporal VARCHAR(MAX) = 'usp_HabilitarDepartamento';
+      DECLARE @MetodoTemporal VARCHAR(MAX) = 'SP_HabilitarDepartamento';
 	  DECLARE @ErrorMensaje VARCHAR(MAX);
 	  DECLARE @ERROR_NUMBER VARCHAR(MAX);
 
@@ -85,7 +85,7 @@ BEGIN
 
 					------------------------------ RESPUESTA A LA APP  ------------------------------------
 						INSERT INTO #Mensajes 
-						EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+						EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 						@ROWS_AFFECTED = @@ROWCOUNT,
 						@SUCCESS = 1,
 						@ERROR_NUMBER_SP = NULL,
@@ -127,7 +127,7 @@ BEGIN
 						SET @ERROR_NUMBER = ERROR_NUMBER();
 
 						INSERT INTO #Mensajes 
-						EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+						EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 						@ROWS_AFFECTED = 0,
 						@SUCCESS = 0,
 						@ERROR_NUMBER_SP = @ERROR_NUMBER,
@@ -170,7 +170,7 @@ BEGIN
 						SET @ERROR_NUMBER = ERROR_NUMBER();
 
 						INSERT INTO #Mensajes 
-						EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+						EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 						@ROWS_AFFECTED = 0,
 						@SUCCESS = 0,
 						@ERROR_NUMBER_SP = @ERROR_NUMBER,

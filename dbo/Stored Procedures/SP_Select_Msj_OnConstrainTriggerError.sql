@@ -1,5 +1,5 @@
 ﻿---
-CREATE   PROCEDURE [dbo].[usp_Select_Msj_OnConstrainTriggerError] ( @ERROR_MESSAGE VARCHAR(MAX), @JSON_MODE BIT = 0 )
+CREATE   PROCEDURE [dbo].[SP_Select_Msj_OnConstrainTriggerError] ( @ERROR_MESSAGE VARCHAR(MAX), @JSON_MODE BIT = 0 )
 AS
 BEGIN
 	---

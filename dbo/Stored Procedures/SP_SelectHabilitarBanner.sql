@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[usp_SelectHabilitarBanner] 
+﻿CREATE PROCEDURE [dbo].[SP_SelectHabilitarBanner] 
 AS
 BEGIN
 	---

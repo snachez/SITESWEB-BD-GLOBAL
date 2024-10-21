@@ -1,4 +1,4 @@
-﻿CREATE   PROCEDURE [dbo].[usp_InsertModulo] 
+﻿CREATE   PROCEDURE [dbo].[SP_InsertModulo] 
 (
 @NOMBRE VARCHAR(MAX), 
 @ACTIVO BIT

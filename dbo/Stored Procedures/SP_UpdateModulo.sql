@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[usp_UpdateModulo] 
+﻿CREATE PROCEDURE [dbo].[SP_UpdateModulo] 
 (
 @ID INT, 
 @NOMBRE VARCHAR(MAX), 

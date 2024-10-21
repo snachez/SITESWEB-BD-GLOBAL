@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[usp_ValidateTipoEfectivo_UnidadMedida](    
+﻿CREATE PROCEDURE [dbo].[SP_ValidateTipoEfectivo_UnidadMedida](    
                                                                           @FK_ID_TIPOEFECTIVO	VARCHAR(MAX)  =	NULL
 																		, @ACTIVO               VARCHAR(MAX)  =	NULL
 																	)

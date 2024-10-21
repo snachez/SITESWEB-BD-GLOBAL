@@ -1,11 +1,11 @@
-﻿CREATE PROCEDURE [dbo].[usp_UpdateHabilitarBanner] (
+﻿CREATE PROCEDURE [dbo].[SP_UpdateHabilitarBanner] (
                                                 @Activo bit
 											  , @FechaModificacion VARCHAR(36)
 										     )
 AS
 BEGIN
     ---Declaracion Variables
-    DECLARE @MetodoTemporal VARCHAR(MAX) = 'usp_UpdateHabilitarBanner';
+    DECLARE @MetodoTemporal VARCHAR(MAX) = 'SP_UpdateHabilitarBanner';
     DECLARE @IdDato INT = -1;
 
 	---
@@ -24,7 +24,7 @@ BEGIN
 		END
 		---
 
-		EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+		EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 		@ROWS_AFFECTED = @@ROWCOUNT,
 		@SUCCESS = 1,
 		@ERROR_NUMBER_SP = NULL,
@@ -43,7 +43,7 @@ BEGIN
 		DECLARE @ERROR VARCHAR(MAX) = ERROR_MESSAGE();
 		DECLARE @ERROR_NUMBER VARCHAR(MAX) = ERROR_NUMBER();
 
-		EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+		EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 		@ROWS_AFFECTED = 0,
 		@SUCCESS = 0,
 		@ERROR_NUMBER_SP = @ERROR_NUMBER,

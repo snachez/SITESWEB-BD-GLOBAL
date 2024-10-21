@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[usp_ValidateDenominaciones_x_TipoPresentacion_x_Divisas](   
+﻿CREATE PROCEDURE [dbo].[SP_ValidateDenominaciones_x_TipoPresentacion_x_Divisas](   
                                                                           @ID_DENOMINACION			VARCHAR(MAX)  =	NULL,
 																		  @ACTIVO					VARCHAR(MAX)  =	NULL
 																	)

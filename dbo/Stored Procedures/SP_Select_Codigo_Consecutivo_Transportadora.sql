@@ -1,4 +1,4 @@
-﻿CREATE   PROCEDURE [dbo].[usp_Select_Codigo_Consecutivo_Transportadora](
+﻿CREATE   PROCEDURE [dbo].[SP_Select_Codigo_Consecutivo_Transportadora](
 	@JSON_OUT  VARCHAR(MAX) OUTPUT 
 )
 AS

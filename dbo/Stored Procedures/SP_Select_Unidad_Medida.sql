@@ -1,4 +1,4 @@
-﻿CREATE   PROCEDURE usp_Select_Unidad_Medida(
+﻿CREATE   PROCEDURE SP_Select_Unidad_Medida(
 														  @JSON_IN VARCHAR(MAX),
 														  @JSON_OUT  VARCHAR(MAX) OUTPUT
 														, @USUARIO_ID INT = NULL

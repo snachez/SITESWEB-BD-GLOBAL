@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[usp_ValidarFirmaRelaciones](
+﻿CREATE PROCEDURE [dbo].[SP_ValidarFirmaRelaciones](
 	@JSON_IN VARCHAR(MAX) = NULL,
 	@JSON_OUT  VARCHAR(MAX) OUTPUT 
 )

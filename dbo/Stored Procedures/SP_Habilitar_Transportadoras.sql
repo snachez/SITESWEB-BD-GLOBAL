@@ -2,7 +2,7 @@
 
 
 
-CREATE   PROCEDURE [dbo].[usp_Habilitar_Transportadoras](
+CREATE   PROCEDURE [dbo].[SP_Habilitar_Transportadoras](
 	@JSON_IN VARCHAR(MAX),
 	@JSON_OUT  VARCHAR(MAX) OUTPUT 
 )
@@ -17,7 +17,7 @@ BEGIN
 	SET @JSON_IN = REPLACE( @JSON_IN,'\','')
 
 	---Declaracion Variables Mensajes
-    DECLARE @MetodoTemporal VARCHAR(MAX) = 'usp_Habilitar_Transportadoras';
+    DECLARE @MetodoTemporal VARCHAR(MAX) = 'SP_Habilitar_Transportadoras';
 	DECLARE @ERROR_MESSAGE VARCHAR(MAX);
 	DECLARE @ERROR_NUMBER INT;
 
@@ -102,7 +102,7 @@ BEGIN
 									SET @ERROR_NUMBER = ERROR_NUMBER()
 
 									INSERT INTO #Mensajes 
-									EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+									EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 									@ROWS_AFFECTED = 0,
 									@SUCCESS = 0,
 									@ERROR_NUMBER_SP = @ERROR_NUMBER,
@@ -140,7 +140,7 @@ BEGIN
 									SET @ERROR_NUMBER = ERROR_NUMBER()
 
 									INSERT INTO #Mensajes 
-									EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+									EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 									@ROWS_AFFECTED = 0,
 									@SUCCESS = 0,
 									@ERROR_NUMBER_SP = @ERROR_NUMBER,
@@ -180,7 +180,7 @@ BEGIN
 					------------------------------ RESPUESTA A LA APP MSJ: 3223  ------------------------------------							
 							
 							INSERT INTO #Mensajes 
-							EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+							EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 							@ROWS_AFFECTED = @@ROWCOUNT,
 							@SUCCESS = 1,
 							@ERROR_NUMBER_SP = NULL,

@@ -1,5 +1,5 @@
 ﻿--
-CREATE   PROCEDURE [dbo].[usp_InsertCuentaInterna_x_GrupoAgencias](	  @FK_ID_CUENTA_INTERNA		INT
+CREATE   PROCEDURE [dbo].[SP_InsertCuentaInterna_x_GrupoAgencias](	  @FK_ID_CUENTA_INTERNA		INT
 																	, @FK_ID_GRUPO_AGENCIA		INT
 																	, @USUARIO_ID				INT = NULL
 															    )

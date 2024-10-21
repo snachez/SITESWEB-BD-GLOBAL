@@ -1,6 +1,6 @@
 ﻿
 ---
-CREATE   PROCEDURE [usp_EvalExistenciaTC_Hoy](@USUARIO_ID INT = -1)
+CREATE   PROCEDURE [SP_EvalExistenciaTC_Hoy](@USUARIO_ID INT = -1)
 AS
 BEGIN
 	---

@@ -1,5 +1,5 @@
 ﻿--
-CREATE   PROCEDURE usp_SelectCombobox_Firma_X_Matriz(@IdMatriz INT = NULL, @Nombre varchar(50) = NULL, @Activo BIT = NULL, @USUARIO_ID INT = NULL)
+CREATE   PROCEDURE SP_SelectCombobox_Firma_X_Matriz(@IdMatriz INT = NULL, @Nombre varchar(50) = NULL, @Activo BIT = NULL, @USUARIO_ID INT = NULL)
 AS
 BEGIN
 	----------------------------------------------------------------------------------------

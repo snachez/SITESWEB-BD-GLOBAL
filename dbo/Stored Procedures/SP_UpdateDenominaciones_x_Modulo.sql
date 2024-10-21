@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[usp_UpdateDenominaciones_x_Modulo] 
+﻿CREATE PROCEDURE [dbo].[SP_UpdateDenominaciones_x_Modulo] 
 (
 @ID INT, 
 @FK_ID_DENOMINACIONES	INT,

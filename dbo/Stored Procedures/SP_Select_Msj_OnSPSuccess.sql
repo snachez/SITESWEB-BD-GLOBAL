@@ -1,5 +1,5 @@
 ﻿---
-CREATE   PROCEDURE [dbo].[usp_Select_Msj_OnSPSuccess](@SP_NAME VARCHAR(MAX), @ROWS_AFFECTED__ INT = 0, @ID__ INT = -1, @ROW__ VARCHAR(MAX) = NULL, @JSON_MODE BIT = 0 )
+CREATE   PROCEDURE [dbo].[SP_Select_Msj_OnSPSuccess](@SP_NAME VARCHAR(MAX), @ROWS_AFFECTED__ INT = 0, @ID__ INT = -1, @ROW__ VARCHAR(MAX) = NULL, @JSON_MODE BIT = 0 )
 AS
 BEGIN
 	---

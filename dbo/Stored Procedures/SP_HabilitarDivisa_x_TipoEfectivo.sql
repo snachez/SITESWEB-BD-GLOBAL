@@ -1,5 +1,5 @@
 ﻿
-CREATE PROCEDURE [dbo].[usp_HabilitarDivisa_x_TipoEfectivo](@FkIdDivisa INT, @FkIdTipoEfectivo INT, @ACTIVO BIT)
+CREATE PROCEDURE [dbo].[SP_HabilitarDivisa_x_TipoEfectivo](@FkIdDivisa INT, @FkIdTipoEfectivo INT, @ACTIVO BIT)
 AS
 BEGIN
 	---

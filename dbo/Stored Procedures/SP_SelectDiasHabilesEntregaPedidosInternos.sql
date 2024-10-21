@@ -1,6 +1,6 @@
 ﻿
 
-CREATE   PROCEDURE [dbo].[usp_SelectDiasHabilesEntregaPedidosInternos](@FKIDCEDIS	INT)
+CREATE   PROCEDURE [dbo].[SP_SelectDiasHabilesEntregaPedidosInternos](@FKIDCEDIS	INT)
 AS
 BEGIN
 	---

@@ -1,5 +1,5 @@
 ﻿--
-CREATE   PROCEDURE usp_SelectDenominaciones_x_Modulo(    
+CREATE   PROCEDURE SP_SelectDenominaciones_x_Modulo(    
 																  @ID							INT  =	NULL
 																, @FK_ID_DENOMINACIONES			INT  =	NULL
 																, @FK_ID_Modulo					INT  =	NULL

@@ -1,4 +1,4 @@
-﻿CREATE   PROCEDURE usp_ValidateCuentasInternas_x_GrupoAgencias(    
+﻿CREATE   PROCEDURE SP_ValidateCuentasInternas_x_GrupoAgencias(    
 																		  @FK_ID_GRUPO				NVARCHAR(MAX)  =	NULL
 																		, @NUMERO_CUENTA			NVARCHAR(MAX)  =	NULL
 																		, @USUARIO_ID				INT			   =	NULL
@@ -17,7 +17,7 @@ BEGIN
 	----------------------------------------------------------------------------------------
 	
 	---Declaracion Variables
-    DECLARE @MetodoTemporal NVARCHAR(MAX) = 'usp_ValidateCuentasInternas_x_GrupoAgencias';
+    DECLARE @MetodoTemporal NVARCHAR(MAX) = 'SP_ValidateCuentasInternas_x_GrupoAgencias';
 	DECLARE @IdDato INT = -1;
 
 	DECLARE @NEW_ROW NVARCHAR(MAX) = (  SELECT   CGA.Id				         AS [Id]
@@ -66,7 +66,7 @@ BEGIN
 	    DECLARE @ERROR_NUMBER NVARCHAR(MAX);
 		SET @ERROR_NUMBER = ERROR_NUMBER();
 
-		EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+		EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 		@ROWS_AFFECTED = 0,
 		@SUCCESS = 1,
 		@ERROR_NUMBER_SP = @ERROR_NUMBER,
@@ -83,7 +83,7 @@ BEGIN
 	BEGIN
 		---
 		
-		EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+		EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 		@ROWS_AFFECTED = @@ROWCOUNT,
 		@SUCCESS = 1,
 		@ERROR_NUMBER_SP = NULL,

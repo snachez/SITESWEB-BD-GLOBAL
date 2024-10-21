@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[usp_UpdateDivisa_x_TipoEfectivo] 
+﻿CREATE PROCEDURE [dbo].[SP_UpdateDivisa_x_TipoEfectivo] 
 (
 @FK_ID_DIVISA    INT,
 @FK_ID_TIPOEFECTIVO INT, 

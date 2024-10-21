@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[usp_Select_Mensajes_Emergentes]
+﻿CREATE PROCEDURE [dbo].[SP_Select_Mensajes_Emergentes]
 (
     @Modulo VARCHAR(MAX) = NULL,
     @Metodo VARCHAR(MAX) = NULL,

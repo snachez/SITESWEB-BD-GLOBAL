@@ -1,5 +1,5 @@
 ﻿
-CREATE   PROCEDURE usp_Select_Divisa(
+CREATE   PROCEDURE SP_Select_Divisa(
 												  @JSON_IN VARCHAR(MAX),
 												  @JSON_OUT  VARCHAR(MAX) OUTPUT
 												, @USUARIO_ID INT = NULL

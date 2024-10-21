@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[usp_SelectCedisUnico](	@SEARCH		NVARCHAR(MAX)		=		NULL
+﻿CREATE PROCEDURE [dbo].[SP_SelectCedisUnico](	@SEARCH		NVARCHAR(MAX)		=		NULL
 											  , @PAGE		INT					=		1
 										      , @SIZE		INT					=		10
 										      , @ORDEN      INT					=		1

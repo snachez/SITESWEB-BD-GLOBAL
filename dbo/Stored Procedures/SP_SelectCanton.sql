@@ -1,5 +1,5 @@
 ﻿--
-CREATE   PROCEDURE usp_SelectCanton(@IdProvincia INT = NULL, @Nombre varchar(50) = NULL, @USUARIO_ID INT = NULL)
+CREATE   PROCEDURE SP_SelectCanton(@IdProvincia INT = NULL, @Nombre varchar(50) = NULL, @USUARIO_ID INT = NULL)
 AS
 BEGIN
 	----------------------------------------------------------------------------------------

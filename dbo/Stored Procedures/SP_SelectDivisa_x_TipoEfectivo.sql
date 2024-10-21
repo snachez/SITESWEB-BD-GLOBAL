@@ -1,5 +1,5 @@
 ﻿---
-CREATE   PROCEDURE usp_SelectDivisa_x_TipoEfectivo(    
+CREATE   PROCEDURE SP_SelectDivisa_x_TipoEfectivo(    
 															  @ID							INT  =	NULL
 															, @FK_ID_DIVISA			        INT  =	NULL
 															, @FK_ID_TIPOEFECTIVO			INT  =	NULL

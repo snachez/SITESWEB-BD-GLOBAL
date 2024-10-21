@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[usp_VALIDACION_CONTRAINT_MODIFICACION_MISMO_DIA_VALIDACIONES_tblDiasHabilesEntregaPedidosInternos](
+﻿CREATE PROCEDURE [dbo].[SP_VALIDACION_CONTRAINT_MODIFICACION_MISMO_DIA_VALIDACIONES_tblDiasHabilesEntregaPedidosInternos](
 	  @DIA                            		        INT
 	, @ID											INT
 	, @PERMITE_REMESAS								BIT

@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[usp_SelectCuentaInterna_x_AgenciaBancaria](	
+﻿CREATE PROCEDURE [dbo].[SP_SelectCuentaInterna_x_AgenciaBancaria](	
 																		  @ID						NVARCHAR(MAX)  =	NULL
 																		, @FK_ID_AGENCIA			NVARCHAR(MAX)  =	NULL
 																		, @FK_ID_CUENTA				NVARCHAR(MAX)  =	NULL

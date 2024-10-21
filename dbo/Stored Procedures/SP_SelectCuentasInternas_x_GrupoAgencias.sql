@@ -1,5 +1,5 @@
 ﻿---
-CREATE   PROCEDURE usp_SelectCuentasInternas_x_GrupoAgencias(    
+CREATE   PROCEDURE SP_SelectCuentasInternas_x_GrupoAgencias(    
 																		  @ID						NVARCHAR(MAX)  =	NULL
 																		, @FK_ID_GRUPO				NVARCHAR(MAX)  =	NULL
 																		, @FK_ID_CUENTA				NVARCHAR(MAX)  =	NULL

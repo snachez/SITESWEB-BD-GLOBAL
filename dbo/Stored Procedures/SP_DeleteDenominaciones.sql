@@ -1,4 +1,4 @@
-﻿CREATE   PROCEDURE [dbo].[usp_DeleteDenominaciones] (@ID VARCHAR(MAX))
+﻿CREATE   PROCEDURE [dbo].[SP_DeleteDenominaciones] (@ID VARCHAR(MAX))
 AS
 BEGIN
 	---
@@ -15,7 +15,7 @@ BEGIN
 	BEGIN CATCH
 		--
 		SELECT	  CAST(1 AS BIT)											AS SP_Error
-				, 'Error: error en el insert usp_DeleteDenominaciones'			AS SP_ERROR_MESSAGE_DB
+				, 'Error: error en el insert SP_DeleteDenominaciones'			AS SP_ERROR_MESSAGE_DB
 				, 0															AS ROWS_AFFECTED
 				, -1														AS pk_Id
 

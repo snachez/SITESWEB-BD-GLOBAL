@@ -1,8 +1,8 @@
-﻿CREATE   PROCEDURE [dbo].[usp_UpdateArea] (@ID INT, @NOMBRE VARCHAR(MAX) = NULL, @FK_ID_DEPARTAMENTO INT = NULL, @ACTIVO BIT = NULL)
+﻿CREATE   PROCEDURE [dbo].[SP_UpdateArea] (@ID INT, @NOMBRE VARCHAR(MAX) = NULL, @FK_ID_DEPARTAMENTO INT = NULL, @ACTIVO BIT = NULL)
 AS
 BEGIN
 	---Declaracion Variables
-    DECLARE @MetodoTemporal VARCHAR(MAX) = 'usp_UpdateArea';
+    DECLARE @MetodoTemporal VARCHAR(MAX) = 'SP_UpdateArea';
 	DECLARE @IdDato INT = -1;
 	
 	BEGIN TRY
@@ -53,7 +53,7 @@ BEGIN
 		SET @IdDato = CONVERT(INT, ISNULL(SCOPE_IDENTITY(), -1));
 		---
 		
-		EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+		EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 		@ROWS_AFFECTED = @@ROWCOUNT,
 		@SUCCESS = 1,
 		@ERROR_NUMBER_SP = NULL,
@@ -72,7 +72,7 @@ BEGIN
 		DECLARE @ERROR VARCHAR(MAX) = ERROR_MESSAGE();
 		DECLARE @ERROR_NUMBER VARCHAR(MAX) = ERROR_NUMBER();
 
-		EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+		EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 		@ROWS_AFFECTED = 0,
 		@SUCCESS = 0,
 		@ERROR_NUMBER_SP = @ERROR_NUMBER,

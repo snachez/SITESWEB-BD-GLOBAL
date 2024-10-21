@@ -1,5 +1,5 @@
 ﻿--
-CREATE   PROCEDURE usp_SelectProvincia(@Nombre varchar(50) = NULL, @USUARIO_ID INT = NULL)
+CREATE   PROCEDURE SP_SelectProvincia(@Nombre varchar(50) = NULL, @USUARIO_ID INT = NULL)
 AS
 BEGIN
 	----------------------------------------------------------------------------------------

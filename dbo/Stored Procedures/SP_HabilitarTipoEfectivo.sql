@@ -1,9 +1,9 @@
 ﻿
-CREATE   PROCEDURE [dbo].[usp_HabilitarTipoEfectivo](@ID INT, @ACTIVO BIT)
+CREATE   PROCEDURE [dbo].[SP_HabilitarTipoEfectivo](@ID INT, @ACTIVO BIT)
 AS
 BEGIN
 	---Declaracion Variables
-    DECLARE @MetodoTemporal VARCHAR(MAX) = 'usp_HabilitarTipoEfectivo';
+    DECLARE @MetodoTemporal VARCHAR(MAX) = 'SP_HabilitarTipoEfectivo';
 	DECLARE @IdDato INT = -1;
 	
 	BEGIN TRY
@@ -15,7 +15,7 @@ BEGIN
 		SET @IdDato = CONVERT(INT, ISNULL(SCOPE_IDENTITY(), -1));
 		---
 
-		EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+		EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 		@ROWS_AFFECTED = @@ROWCOUNT,
 		@SUCCESS = 1,
 		@ERROR_NUMBER_SP = NULL,
@@ -34,7 +34,7 @@ BEGIN
 		DECLARE @ERROR VARCHAR(MAX) = ERROR_MESSAGE();
 		DECLARE @ERROR_NUMBER VARCHAR(MAX) = ERROR_NUMBER();
 
-		EXEC usp_Select_Mensajes_Emergentes_Para_SP 
+		EXEC SP_Select_Mensajes_Emergentes_Para_SP 
 		@ROWS_AFFECTED = 0,
 		@SUCCESS = 0,
 		@ERROR_NUMBER_SP = @ERROR_NUMBER,

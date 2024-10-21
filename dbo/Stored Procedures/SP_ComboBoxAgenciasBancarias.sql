@@ -1,5 +1,5 @@
 ﻿
-CREATE PROCEDURE [dbo].[usp_ComboBoxAgenciasBancarias] (
+CREATE PROCEDURE [dbo].[SP_ComboBoxAgenciasBancarias] (
                                                      @IDPAISES				VARCHAR(MAX)  =	NULL
 													, @IDCEDIS				VARCHAR(MAX)  =	NULL
 													, @IDGRUPOAGENCIAS		VARCHAR(MAX)  =	NULL
