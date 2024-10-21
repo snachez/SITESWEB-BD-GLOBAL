@@ -10,9 +10,6 @@ BEGIN
 
 	  SET @JSON_IN = REPLACE( @JSON_IN,'\','');
 
-	  --DECLARACION DE VARIABLES PARA ACCEER A LAS PROPIEDADES Y VALORES QUE VIENEN DENTRO DEL JSON
-	  DECLARE @p_Id_Insert_Matriz_Atribucion INT ;
-
 	  --------------------------- DECLARACION DE TABLA PARA INSERTAR LOS REGISTROS DE FIRMAS (TABLA HIJO) ----------------------------------------
 	  DECLARE @p_Tbl_Temp_Firmas_Insert TABLE   
 	  (  
@@ -44,11 +41,9 @@ BEGIN
 	  DECLARE @p_MontoHasta_Firma_Iterador DECIMAL(38,2);
 
 	  --VARIABLES PARA DAR RESPUESTA
-	  DECLARE @Id_Matriz_Por_Firma_Insertada INT;
 
 	  DECLARE @Resp_1 VARCHAR(MAX);
 	  DECLARE @Resp_2 VARCHAR(MAX);
-	  DECLARE @ROW VARCHAR(MAX);
 
 	  BEGIN TRY	
 	 
@@ -63,28 +58,28 @@ BEGIN
 						DECLARE @Contador_Firmas_Relaciones INT = 0;
 						DECLARE @Conta INT = (SELECT COUNT(1) FROM  @p_Tbl_Temp_Firmas_Insert	 )
 
-						IF @Conta > 0 WHILE (@iter <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Firmas_Insert	 ))
-						BEGIN
+						IF @Conta > 0 BEGIN WHILE (@iter <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Firmas_Insert	 ))
+							BEGIN
 
-							--OBTIENE UN ITEM
-							SELECT 								
-							 @p_Firma_Firma_Iterador = Firma
-							,@p_MontoDesde_Firma_Iterador = MontoDesde
-							,@p_MontoHasta_Firma_Iterador = MontoHasta
-							FROM @p_Tbl_Temp_Firmas_Insert 
-							WHERE ID = @iter
+								--OBTIENE UN ITEM
+								SELECT 								
+								 @p_Firma_Firma_Iterador = Firma
+								,@p_MontoDesde_Firma_Iterador = MontoDesde
+								,@p_MontoHasta_Firma_Iterador = MontoHasta
+								FROM @p_Tbl_Temp_Firmas_Insert 
+								WHERE ID = @iter
 						
-						    SELECT @Contador_Firmas_Relaciones = COUNT(*) FROM tblFirmas F
-							INNER JOIN [tblFirmasUsuario] FU
-							ON F.Id = FU.FK_Id_Firma
-							WHERE F.Firma = @p_Firma_Firma_Iterador 
-							AND F.MontoDesde = @p_MontoDesde_Firma_Iterador 
-							AND F.MontoHasta = @p_MontoHasta_Firma_Iterador
+								SELECT @Contador_Firmas_Relaciones = COUNT(*) FROM tblFirmas F
+								INNER JOIN [tblFirmasUsuario] FU
+								ON F.Id = FU.FK_Id_Firma
+								WHERE F.Firma = @p_Firma_Firma_Iterador 
+								AND F.MontoDesde = @p_MontoDesde_Firma_Iterador 
+								AND F.MontoHasta = @p_MontoHasta_Firma_Iterador
 			    			
-							SET @Suma_Firmas_Relaciones = @Contador_Firmas_Relaciones + @Suma_Firmas_Relaciones;
-							SET @iter = @iter + 1
-						END --FIN DEL CICLO
-
+								SET @Suma_Firmas_Relaciones = @Contador_Firmas_Relaciones + @Suma_Firmas_Relaciones;
+								SET @iter = @iter + 1
+							END --FIN DEL CICLO
+						END
 					END
 
 					IF(@Suma_Firmas_Relaciones <> 0)
