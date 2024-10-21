@@ -124,61 +124,51 @@ BEGIN
 	
 	;WITH DATA_INDEXED AS (				
 								SELECT	  *
-										, CASE 
+										, CASE WHEN @ORDEN < 0 THEN
+											CASE
 													WHEN @ORDEN = -1 THEN ROW_NUMBER() OVER(ORDER BY Activo DESC)
-													WHEN @ORDEN =  1 THEN ROW_NUMBER() OVER(ORDER BY Activo ASC)
-
 													WHEN @ORDEN = -2 THEN ROW_NUMBER() OVER(ORDER BY Id DESC)
-													WHEN @ORDEN =  2 THEN ROW_NUMBER() OVER(ORDER BY Id ASC)
-
 													WHEN @ORDEN = -3 THEN ROW_NUMBER() OVER(ORDER BY Nombre DESC)
-													WHEN @ORDEN =  3 THEN ROW_NUMBER() OVER(ORDER BY Nombre ASC)														
-
 													WHEN @ORDEN = -4 THEN ROW_NUMBER() OVER(ORDER BY CodigoBranch DESC)
-													WHEN @ORDEN =  4 THEN ROW_NUMBER() OVER(ORDER BY CodigoBranch ASC)
-
 													WHEN @ORDEN = -5 THEN ROW_NUMBER() OVER(ORDER BY CodigoProvincia DESC)
-													WHEN @ORDEN =  5 THEN ROW_NUMBER() OVER(ORDER BY CodigoProvincia ASC)
-
 													WHEN @ORDEN = -6 THEN ROW_NUMBER() OVER(ORDER BY CodigoCanton DESC)
-													WHEN @ORDEN =  6 THEN ROW_NUMBER() OVER(ORDER BY CodigoCanton ASC)
-													
 													WHEN @ORDEN = -7 THEN ROW_NUMBER() OVER(ORDER BY CodigoDistrito DESC)
-													WHEN @ORDEN =  7 THEN ROW_NUMBER() OVER(ORDER BY CodigoDistrito ASC)
-
 													WHEN @ORDEN = -9 THEN ROW_NUMBER() OVER(ORDER BY Codigo_Agencia DESC)
-													WHEN @ORDEN =  9 THEN ROW_NUMBER() OVER(ORDER BY Codigo_Agencia ASC)
-
 													WHEN @ORDEN = -10 THEN ROW_NUMBER() OVER(ORDER BY Nombre_Cedis DESC)
-													WHEN @ORDEN =  10 THEN ROW_NUMBER() OVER(ORDER BY Nombre_Cedis ASC)
-
 													WHEN @ORDEN = -11 THEN ROW_NUMBER() OVER(ORDER BY Codigo_Cedis DESC)
-													WHEN @ORDEN =  11 THEN ROW_NUMBER() OVER(ORDER BY Codigo_Cedis ASC)
-
 													WHEN @ORDEN = -12 THEN ROW_NUMBER() OVER(ORDER BY Nombre_Pais DESC)
-													WHEN @ORDEN =  12 THEN ROW_NUMBER() OVER(ORDER BY Nombre_Pais ASC)
-
 													WHEN @ORDEN = -13 THEN ROW_NUMBER() OVER(ORDER BY Codigo DESC)
-													WHEN @ORDEN =  13 THEN ROW_NUMBER() OVER(ORDER BY Codigo ASC)
-
 													WHEN @ORDEN = -14 THEN ROW_NUMBER() OVER(ORDER BY Nombre_Grupo DESC)
-													WHEN @ORDEN =  14 THEN ROW_NUMBER() OVER(ORDER BY Nombre_Grupo ASC)
-
 													WHEN @ORDEN = -15 THEN ROW_NUMBER() OVER(ORDER BY SolicitaRemesas DESC)
-													WHEN @ORDEN =  15 THEN ROW_NUMBER() OVER(ORDER BY SolicitaRemesas ASC)
-
 													WHEN @ORDEN = -16 THEN ROW_NUMBER() OVER(ORDER BY Transportadora_Solicitud DESC)
-													WHEN @ORDEN =  16 THEN ROW_NUMBER() OVER(ORDER BY Transportadora_Solicitud ASC)
-
 													WHEN @ORDEN = -17 THEN ROW_NUMBER() OVER(ORDER BY EnviaRemesas DESC)
-													WHEN @ORDEN =  17 THEN ROW_NUMBER() OVER(ORDER BY EnviaRemesas ASC)
-
 													WHEN @ORDEN = -18 THEN ROW_NUMBER() OVER(ORDER BY Transportadora_Envio DESC)
-													WHEN @ORDEN =  18 THEN ROW_NUMBER() OVER(ORDER BY Transportadora_Envio ASC)
+													ELSE ROW_NUMBER() OVER(ORDER BY Id ASC)
+											END 
+											ELSE
+											CASE
 
+													WHEN @ORDEN =  1 THEN ROW_NUMBER() OVER(ORDER BY Activo ASC)
+													WHEN @ORDEN =  2 THEN ROW_NUMBER() OVER(ORDER BY Id ASC)
+													WHEN @ORDEN =  3 THEN ROW_NUMBER() OVER(ORDER BY Nombre ASC)	
+													WHEN @ORDEN =  4 THEN ROW_NUMBER() OVER(ORDER BY CodigoBranch ASC)
+													WHEN @ORDEN =  5 THEN ROW_NUMBER() OVER(ORDER BY CodigoProvincia ASC)
+													WHEN @ORDEN =  6 THEN ROW_NUMBER() OVER(ORDER BY CodigoCanton ASC)
+													WHEN @ORDEN =  7 THEN ROW_NUMBER() OVER(ORDER BY CodigoDistrito ASC)
+													WHEN @ORDEN =  9 THEN ROW_NUMBER() OVER(ORDER BY Codigo_Agencia ASC)
+													WHEN @ORDEN =  10 THEN ROW_NUMBER() OVER(ORDER BY Nombre_Cedis ASC)
+													WHEN @ORDEN =  11 THEN ROW_NUMBER() OVER(ORDER BY Codigo_Cedis ASC)
+													WHEN @ORDEN =  12 THEN ROW_NUMBER() OVER(ORDER BY Nombre_Pais ASC)
+													WHEN @ORDEN =  13 THEN ROW_NUMBER() OVER(ORDER BY Codigo ASC)
+													WHEN @ORDEN =  14 THEN ROW_NUMBER() OVER(ORDER BY Nombre_Grupo ASC)
+													WHEN @ORDEN =  15 THEN ROW_NUMBER() OVER(ORDER BY SolicitaRemesas ASC)
+													WHEN @ORDEN =  16 THEN ROW_NUMBER() OVER(ORDER BY Transportadora_Solicitud ASC)
+													WHEN @ORDEN =  17 THEN ROW_NUMBER() OVER(ORDER BY EnviaRemesas ASC)
+													WHEN @ORDEN =  18 THEN ROW_NUMBER() OVER(ORDER BY Transportadora_Envio ASC)
 													ELSE ROW_NUMBER() OVER(ORDER BY Id ASC)
 
 												END
+											END
 											AS [INDEX]
 										FROM #tblFullData AS D	
 										WHERE 	
