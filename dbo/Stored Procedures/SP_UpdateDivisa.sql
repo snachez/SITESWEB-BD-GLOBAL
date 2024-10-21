@@ -5,10 +5,35 @@
 AS
 BEGIN
 
-  IF(@JSON_IN IS NOT NULL AND @JSON_IN <> '' AND ISJSON(@JSON_IN) = 1)
-  BEGIN
+	DECLARE @Resp_1 VARCHAR(MAX)
+	DECLARE @Resp_2 VARCHAR(MAX)
 
-	  SET @JSON_IN = REPLACE( @JSON_IN,'\','')
+    -- Validar JSON de entrada
+    IF @JSON_IN IS NULL OR @JSON_IN = '' OR ISJSON(@JSON_IN) <> 1
+    BEGIN
+						SELECT @Resp_1 = 
+						(
+							  SELECT	  @@ROWCOUNT												    AS ROWS_AFFECTED
+							, CAST(0 AS BIT)														    AS SUCCESS
+							, CONCAT(ERROR_MESSAGE() ,'Error, se resivio el JSON Vacio')                AS ERROR_MESSAGE_SP
+							, ERROR_NUMBER()													        AS ERROR_NUMBER_SP
+							, NULL																	    AS ID
+							, NULL																	    AS ROW 
+							FOR JSON PATH, INCLUDE_NULL_VALUES
+						)
+
+						SELECT @Resp_2 = 
+						( 
+							SELECT CAST(@Resp_1 AS VARCHAR(MAX)) 
+						)
+						
+						SET @JSON_OUT = ( SELECT @Resp_2  )	
+        RETURN;
+    END
+
+    -- Procesar el JSON válido
+    SET @JSON_IN = REPLACE(@JSON_IN, '\', '');
+
 
 	  ---Declaracion Variables Mensajes
       DECLARE @MetodoTemporal VARCHAR(MAX) = 'SP_UpdateDivisa';
@@ -21,10 +46,6 @@ BEGIN
 	  DECLARE @p_Nomenclatura_Divisa VARCHAR(MAX)
 	  DECLARE @p_Descripcion_Divisa VARCHAR(MAX)
 	  DECLARE @p_Activo_Divisa BIT
-
-	  --AUN NO ESTAN EN USO
-	   
-	  
 
 	  --SETEANDO LOS VALORES DEL JSON (TABLA PADRE DIVISA)
 	  SELECT @p_Id_Divisa = Id FROM OPENJSON( @JSON_IN) WITH ( Id INT )
@@ -59,8 +80,6 @@ BEGIN
 	  DECLARE @p_Id_Efectivo_Iterador INT
 	  DECLARE @p_Nombre_Efectivo_Iterador VARCHAR(MAX)
 
-	  DECLARE @Resp_1 VARCHAR(MAX)
-	  DECLARE @Resp_2 VARCHAR(MAX)
 	  DECLARE @ROW VARCHAR(MAX)
 
 	   --PARA VALIDACIONES UNIDADES DE MEDIDAS
@@ -464,31 +483,4 @@ BEGIN
 	  END CATCH
 	   
 	---
-  END
-  ELSE
-  BEGIN 
-				 ------------------------------ RESPUESTA A LA APP  ------------------------------------
-						SELECT @Resp_1 = 
-						(
-							  SELECT	  @@ROWCOUNT												    AS ROWS_AFFECTED
-							, CAST(0 AS BIT)														    AS SUCCESS
-							, CONCAT(ERROR_MESSAGE() ,'Error, se resivio el JSON Vacio')                AS ERROR_MESSAGE_SP
-							, ERROR_NUMBER()													        AS ERROR_NUMBER_SP
-							, NULL																	    AS ID
-							, NULL																	    AS ROW 
-							FOR JSON PATH, INCLUDE_NULL_VALUES
-						)
-
-						SELECT @Resp_2 = 
-						( 
-							SELECT CAST(@Resp_1 AS VARCHAR(MAX)) 
-						)
-						
-						SET @JSON_OUT = ( SELECT @Resp_2  )	
-				----------------------------------------------------------------------------------------
-	  
-	   	 				
-  END
-
-  
 END

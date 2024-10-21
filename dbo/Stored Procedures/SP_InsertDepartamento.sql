@@ -25,10 +25,31 @@ BEGIN
 			ROW VARCHAR(MAX)
 		);
 
-  IF(@JSON_IN IS NOT NULL AND @JSON_IN <> '' AND ISJSON(@JSON_IN) = 1)
-  BEGIN
+    -- Validar JSON de entrada
+    IF @JSON_IN IS NULL OR @JSON_IN = '' OR ISJSON(@JSON_IN) <> 1
+    BEGIN
+        SET @ERROR_NUMBER = ERROR_NUMBER();
 
-	SET @JSON_IN = REPLACE( @JSON_IN,'\','')
+        INSERT INTO #Mensajes 
+        EXEC SP_Select_Mensajes_Emergentes_Para_SP 
+            @ROWS_AFFECTED = 0,
+            @SUCCESS = 0,
+            @ERROR_NUMBER_SP = @ERROR_NUMBER,
+            @CONSTRAINT_TRIGGER_NAME = 'Error JSON',
+            @ID = -1,
+            @ROW = NULL,
+            @Metodo = @MetodoTemporal, 
+            @TipoMensaje = 'Error', 
+            @ErrorMensaje = 'Error JSON',
+            @ModeJson = 0;
+
+        SET @JSON_OUT = (SELECT CAST((SELECT * FROM #Mensajes FOR JSON PATH, INCLUDE_NULL_VALUES) AS VARCHAR(MAX)));
+        TRUNCATE TABLE #Mensajes;
+        RETURN;
+    END
+
+    -- Procesar el JSON válido
+    SET @JSON_IN = REPLACE(@JSON_IN, '\', '');
 
 	--DECLARACION DE TABLA PARA INSERTAR LOS REGISTROS
 	DECLARE @p_Tbl_Temp_Departamento TABLE   
@@ -164,45 +185,6 @@ BEGIN
 
 	  END CATCH
 	   
-	---
-  END
-  ELSE
-  BEGIN 
-				 ------------------------------ RESPUESTA A LA APP  ------------------------------------
-
-						SET @ERROR_NUMBER = ERROR_NUMBER();
-
-						INSERT INTO #Mensajes 
-						EXEC SP_Select_Mensajes_Emergentes_Para_SP 
-						@ROWS_AFFECTED = 0,
-						@SUCCESS = 0,
-						@ERROR_NUMBER_SP = @ERROR_NUMBER,
-						@CONSTRAINT_TRIGGER_NAME = 'Error JSON',
-						@ID = -1,
-						@ROW = NULL,
-						@Metodo = @MetodoTemporal, 
-						@TipoMensaje = 'Error', 
-						@ErrorMensaje = 'Error JSON',
-						@ModeJson = 0;		
-
-						SELECT @Resp_1 = 
-						(
-							  SELECT * FROM #Mensajes FOR JSON PATH, INCLUDE_NULL_VALUES
-						)
-
-						SELECT @Resp_2 = 
-						( 
-							SELECT CAST(@Resp_1 AS VARCHAR(MAX)) 
-						)
-						
-						SET @JSON_OUT = ( SELECT @Resp_2  )	
-
-						TRUNCATE TABLE #Mensajes;
-				----------------------------------------------------------------------------------------
-	  
-	   	 				
-  END
-
-  
+	--- 
 END
 ---

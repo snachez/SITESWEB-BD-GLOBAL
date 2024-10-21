@@ -8,10 +8,27 @@ BEGIN
   DECLARE @resp_JSON_Consolidada VARCHAR(MAX)		
   DECLARE @Resp_1 VARCHAR(MAX)
 
-  IF(@JSON_IN IS NOT NULL AND @JSON_IN <> '' AND ISJSON(@JSON_IN) = 1)
-  BEGIN
+    -- Validar JSON de entrada
+    IF @JSON_IN IS NULL OR @JSON_IN = '' OR ISJSON(@JSON_IN) <> 1
+    BEGIN
+						SELECT @resp_JSON_Consolidada = 
+						(
+							  SELECT	  @@ROWCOUNT												    AS ROWS_AFFECTED
+							, CAST(0 AS BIT)														    AS SUCCESS
+							, 'Error'																	AS ERROR_TITLE_SP
+							, CONCAT(ERROR_MESSAGE() ,'Error, se resivio el JSON Vacio')                AS ERROR_MESSAGE_SP
+							, ERROR_NUMBER()													        AS ERROR_NUMBER_SP
+							, NULL																	    AS ID
+							, NULL																	    AS ROW 
+							FOR JSON PATH, INCLUDE_NULL_VALUES
+						)				
+						
+						SET @JSON_OUT = ( SELECT @resp_JSON_Consolidada  )	
+        RETURN;
+    END
 
-	  SET @JSON_IN = REPLACE( @JSON_IN,'\','')
+    -- Procesar el JSON válido
+    SET @JSON_IN = REPLACE(@JSON_IN, '\', '');
 
 	  --DECLARACION DE VARIABLES PARA ACCEER A LAS PROPIEDADES Y VALORES QUE VIENEN DENTRO DEL JSON
 	  DECLARE @p_Nombre_Modulo VARCHAR(MAX) 
@@ -130,26 +147,4 @@ BEGIN
 	  END CATCH
 	   
 	---
-  END
-  ELSE
-  BEGIN 
-				------------------------------ RESPUESTA A LA APP O A LA BD  ---------------------------
-						SELECT @resp_JSON_Consolidada = 
-						(
-							  SELECT	  @@ROWCOUNT												    AS ROWS_AFFECTED
-							, CAST(0 AS BIT)														    AS SUCCESS
-							, 'Error'																	AS ERROR_TITLE_SP
-							, CONCAT(ERROR_MESSAGE() ,'Error, se resivio el JSON Vacio')                AS ERROR_MESSAGE_SP
-							, ERROR_NUMBER()													        AS ERROR_NUMBER_SP
-							, NULL																	    AS ID
-							, NULL																	    AS ROW 
-							FOR JSON PATH, INCLUDE_NULL_VALUES
-						)				
-						
-						SET @JSON_OUT = ( SELECT @resp_JSON_Consolidada  )	
-				----------------------------------------------------------------------------------------	  
-	   	 				
-  END
-
-  
 END
