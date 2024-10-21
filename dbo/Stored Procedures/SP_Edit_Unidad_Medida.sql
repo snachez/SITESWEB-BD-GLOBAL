@@ -18,12 +18,7 @@ BEGIN
     DECLARE @p_Id_Divisa BIT;
 
     -- Variables para iterar sobre las tablas temporales
-    DECLARE @p_Id_Divisa_Iterador INT;
-    DECLARE @p_Nombre_Divisa_Iterador VARCHAR(MAX);
-    DECLARE @p_Id_Efectivo_Iterador INT;
-    DECLARE @p_Nombre_Efectivo_Iterador VARCHAR(MAX);
     DECLARE @Id_Unidad_Medida_Modificada INT;
-    DECLARE @Id_Unidad_Medida_x_Divisa_Editada INT;
 
     -- Variables para iterar en las tablas temporales
 	DECLARE @Resp_1 VARCHAR(MAX); 
@@ -164,8 +159,9 @@ BEGIN
         END TRY
         BEGIN CATCH
             -- Manejar errores
-            IF @@TRANCOUNT > 0
+            IF @@TRANCOUNT > 0 BEGIN
                 ROLLBACK TRANSACTION EDITAR;
+            END
 
             DECLARE @ERROR VARCHAR(MAX) = ERROR_MESSAGE();
             SET @ERROR_NUMBER = ERROR_NUMBER();

@@ -26,7 +26,7 @@ BEGIN
 										AND C.NumeroCuenta = ISNULL(@NUMERO_CUENTA, C.NumeroCuenta)
 										FOR JSON PATH)
 	---
-	if(ISNULL(@NEW_ROW, 'NULL') != 'NULL')
+	if(ISNULL(@NEW_ROW, 'NULL') <> 'NULL')
 	BEGIN
 		SELECT	  @@ROWCOUNT												AS ROWS_AFFECTED
 				, CAST(1 AS BIT)											AS SUCCESS

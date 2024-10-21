@@ -21,7 +21,7 @@ BEGIN
 										AND D.Activo = ISNULL(@ACTIVO,D.Activo)
 										FOR JSON PATH)
 	---
-	if(ISNULL(@NEW_ROW, 'NULL') != 'NULL')
+	if(ISNULL(@NEW_ROW, 'NULL') <> 'NULL')
 	BEGIN
 		SELECT	  @@ROWCOUNT												AS ROWS_AFFECTED
 				, CAST(0 AS BIT)											AS SUCCESS

@@ -7,7 +7,7 @@ CREATE   PROCEDURE SP_Select_Transportadora(
 AS
 BEGIN
 
-  IF(@JSON_IN IS NOT NULL AND @JSON_IN != '') BEGIN
+  IF(@JSON_IN IS NOT NULL AND @JSON_IN <> '') BEGIN
 
 	  SET @JSON_IN = REPLACE( @JSON_IN,'\','')
 
@@ -16,8 +16,8 @@ BEGIN
 	  DECLARE @p_Activo_Transportadora BIT
 
 	  --AUN NO ESTAN EN USO
-	  DECLARE @p_user_id INT 
-	  DECLARE @Action VARCHAR(1)
+	   
+	  
 
 	  --SETEANDO LOS VALORES DEL JSON (TABLA PADRE DIVISAS)
 	  SELECT @p_Id_Transportadora = Id FROM OPENJSON( @JSON_IN) WITH ( Id INT )

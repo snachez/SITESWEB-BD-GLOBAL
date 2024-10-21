@@ -130,8 +130,6 @@
     <None Include="rollback\Script.sql" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Security\UsuarioST.sql" />
-    <Build Include="Security\RoleMemberships.sql" />
     <Build Include="dbo\Tables\tblUnidadMedida_x_TipoEfectivo.sql" />
     <Build Include="dbo\Tables\tblUnidadMedida_x_Divisa.sql" />
     <Build Include="dbo\Tables\tblUnidadMedida.sql" />

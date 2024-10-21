@@ -5,7 +5,7 @@
 AS
 BEGIN
 
-  IF(@JSON_IN IS NOT NULL AND @JSON_IN != '')
+  IF(@JSON_IN IS NOT NULL AND @JSON_IN <> '')
   BEGIN
 
 	  SET @JSON_IN = REPLACE( @JSON_IN,'\','');
@@ -87,7 +87,7 @@ BEGIN
 
 					END
 
-					IF(@Suma_Firmas_Relaciones != 0)
+					IF(@Suma_Firmas_Relaciones <> 0)
 					BEGIN
 					------------------------------ RESPUESTA A LA APP  ------------------------------------
 						SELECT @Resp_1 = 

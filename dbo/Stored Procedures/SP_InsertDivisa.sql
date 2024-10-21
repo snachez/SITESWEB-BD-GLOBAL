@@ -9,7 +9,7 @@ CREATE PROCEDURE [dbo].[SP_InsertDivisa] (
 AS
 BEGIN
 	
-  IF(@JSON_IN IS NOT NULL AND @JSON_IN != '' AND ISJSON(@JSON_IN) = 1)
+  IF(@JSON_IN IS NOT NULL AND @JSON_IN <> '' AND ISJSON(@JSON_IN) = 1)
   BEGIN
 
 	  SET @JSON_IN = REPLACE( @JSON_IN,'\','')
@@ -26,8 +26,8 @@ BEGIN
 	  DECLARE @p_Activo_Divisa BIT
 
 	  --AUN NO ESTAN EN USO
-	  DECLARE @p_user_id INT 
-	  DECLARE @Action VARCHAR(1)
+	   
+	  
 
 	  --SETEANDO LOS VALORES DEL JSON (TABLA PADRE DIVISAS)
 	  SELECT @p_Nombre_Divisa = Nombre FROM OPENJSON( @JSON_IN) WITH ( Nombre VARCHAR(MAX) )

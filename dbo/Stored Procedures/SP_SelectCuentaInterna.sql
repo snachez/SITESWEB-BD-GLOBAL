@@ -44,7 +44,7 @@ BEGIN
 												AND CI.Activo = ISNULL(@ACTIVO, CI.Activo)FOR JSON PATH)
 
 	---
-	if(ISNULL(@NEW_ROW, 'NULL') != 'NULL')
+	if(ISNULL(@NEW_ROW, 'NULL') <> 'NULL')
 	BEGIN
 		---
 		

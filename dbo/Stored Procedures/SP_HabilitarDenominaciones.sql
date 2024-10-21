@@ -25,14 +25,14 @@ BEGIN
 			ROW VARCHAR(MAX)
 		);
 
-  IF(@JSON_IN IS NOT NULL AND @JSON_IN != '' AND ISJSON(@JSON_IN) = 1)
+  IF(@JSON_IN IS NOT NULL AND @JSON_IN <> '' AND ISJSON(@JSON_IN) = 1)
   BEGIN
 
 	  SET @JSON_IN = REPLACE( @JSON_IN,'\','')
 
 	  --AUN NO ESTAN EN USO
-	  DECLARE @p_user_id INT 
-	  DECLARE @Action VARCHAR(1)
+	   
+	  
 
 	  --------------------------- DECLARACION DE TABLA PARA INSERTAR LOS REGISTROS DE HABILITAR DENOMINACIONES (TABLA PADRE) ----------------------------------------
 	  DECLARE @p_Tbl_Temp_Habilitar_Denominaciones_Insert TABLE   

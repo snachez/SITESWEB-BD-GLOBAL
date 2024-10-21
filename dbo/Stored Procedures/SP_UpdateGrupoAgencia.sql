@@ -23,7 +23,7 @@ BEGIN
 			ROW VARCHAR(MAX)
 		);
 
-  IF(@JSON_IN IS NOT NULL AND @JSON_IN != '' AND ISJSON(@JSON_IN) = 1)
+  IF(@JSON_IN IS NOT NULL AND @JSON_IN <> '' AND ISJSON(@JSON_IN) = 1)
   BEGIN
 
 	  SET @JSON_IN = REPLACE( @JSON_IN,'\','');
@@ -40,8 +40,8 @@ BEGIN
 	  DECLARE @p_Iterador_Insert_Grupo_Agencia_Inactivo INT;
 
 	  --AUN NO ESTAN EN USO
-	  DECLARE @p_user_id INT 
-	  DECLARE @Action VARCHAR(1)
+	   
+	  
 
 	  --SETEANDO LOS VALORES DEL JSON (TABLA PADRE UNIDADES DE MEDIDAS)
 	  SELECT @p_Id_Grupo_Agencia =	ID FROM OPENJSON( @JSON_IN) WITH ( ID INT )

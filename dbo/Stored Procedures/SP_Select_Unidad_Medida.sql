@@ -6,7 +6,7 @@
 AS
 BEGIN
 
-  IF(@JSON_IN IS NOT NULL AND @JSON_IN != '')
+  IF(@JSON_IN IS NOT NULL AND @JSON_IN <> '')
   BEGIN
 
 	  SET @JSON_IN = REPLACE( @JSON_IN,'\','')
@@ -16,8 +16,8 @@ BEGIN
 	  DECLARE @p_Activo_Unidad_Medida BIT
 
 	  --AUN NO ESTAN EN USO
-	  DECLARE @p_user_id INT 
-	  DECLARE @Action VARCHAR(1)
+	   
+	  
 
 	  --SETEANDO LOS VALORES DEL JSON (TABLA PADRE UNIDADES DE MEDIDAS)
 	  SELECT @p_Id_Unidad_Medida = Id FROM OPENJSON( @JSON_IN) WITH ( Id INT )

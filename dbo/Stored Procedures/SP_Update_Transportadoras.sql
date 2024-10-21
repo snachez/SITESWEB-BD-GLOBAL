@@ -6,7 +6,7 @@ AS
 BEGIN
 DECLARE @Resp_1 VARCHAR(MAX)
 
-  IF(@JSON_IN IS NOT NULL AND @JSON_IN != '' AND ISJSON(@JSON_IN) = 1)
+  IF(@JSON_IN IS NOT NULL AND @JSON_IN <> '' AND ISJSON(@JSON_IN) = 1)
   BEGIN
 
 	  SET @JSON_IN = REPLACE( @JSON_IN,'\','')
@@ -35,8 +35,8 @@ DECLARE @Resp_1 VARCHAR(MAX)
 	  DECLARE @p_Activo_Transportadora BIT
 
 	  --AUN NO ESTAN EN USO
-	  DECLARE @p_user_id INT 
-	  DECLARE @Action VARCHAR(1)
+	   
+	  
 
 	  --SETEANDO LOS VALORES DEL JSON (TABLA PADRE TRANSPORTADORA)
 	  SELECT @p_Id_Transportadora = Id FROM OPENJSON( @JSON_IN) WITH ( Id INT )
@@ -237,7 +237,7 @@ DECLARE @Resp_1 VARCHAR(MAX)
 					UPDATE tblTransportadoras SET Nombre = @p_Nombre_Transportadora, Codigo = @p_Codigo_Transportadora, Activo = @p_Activo_Transportadora, Fecha_Modificacion = GETDATE()
 					WHERE tblTransportadoras.Id = @p_Id_Transportadora
 					
-				    IF(@p_Id_Transportadora IS NOT NULL OR @p_Id_Transportadora != '' OR @p_Id_Transportadora != 0)
+				    IF(@p_Id_Transportadora IS NOT NULL OR @p_Id_Transportadora <> '' OR @p_Id_Transportadora <> 0)
 					BEGIN   
 				   		
 					    ------------------------------ INICIO DEL RECORRIDO Y SETEO DE DATA DE LA TABLA TEMPORAL PAISES (TABLA HIJO) ------------------------------------

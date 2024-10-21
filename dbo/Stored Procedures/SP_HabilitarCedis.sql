@@ -135,8 +135,9 @@ BEGIN
 	  END TRY    
 	  BEGIN CATCH
 					            -- Manejar errores
-            IF @@TRANCOUNT > 0
+            IF @@TRANCOUNT > 0 BEGIN
                 ROLLBACK TRANSACTION ACTUALIZAR;
+			END
 				   ------------------------------ RESPUESTA A LA APP  ------------------------------------
 						
 						DECLARE @ERROR VARCHAR(MAX) = ERROR_MESSAGE();

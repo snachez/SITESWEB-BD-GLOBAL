@@ -21,7 +21,7 @@ BEGIN
 										TE.Activo = @ACTIVO
 										FOR JSON PATH)
 	---
-	if(ISNULL(@NEW_ROW, 'NULL') != 'NULL')
+	if(ISNULL(@NEW_ROW, 'NULL') <> 'NULL')
 	BEGIN
 		SELECT	  @@ROWCOUNT												AS ROWS_AFFECTED
 				, CAST(0 AS BIT)											AS SUCCESS

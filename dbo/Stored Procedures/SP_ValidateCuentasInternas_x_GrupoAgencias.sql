@@ -60,7 +60,7 @@ BEGIN
 												FOR JSON PATH)
 
 	---
-	IF (ISNULL(@NEW_ROW_Cuentas_x_grupos, 'NULL') != 'NULL')
+	IF (ISNULL(@NEW_ROW_Cuentas_x_grupos, 'NULL') <> 'NULL')
 	BEGIN
 
 	    DECLARE @ERROR_NUMBER NVARCHAR(MAX);
@@ -79,7 +79,7 @@ BEGIN
 		@ModeJson = 0;		
 		---
 	END
-	ELSE IF (ISNULL(@NEW_ROW, 'NULL') != 'NULL')
+	ELSE IF (ISNULL(@NEW_ROW, 'NULL') <> 'NULL')
 	BEGIN
 		---
 		
