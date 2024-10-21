@@ -163,7 +163,7 @@ BEGIN
 			   END	
 
 	  END CATCH
-	  GOTO FINALIZAR 
+	   
 	---
   END
   ELSE
@@ -200,8 +200,8 @@ BEGIN
 						TRUNCATE TABLE #Mensajes;
 				----------------------------------------------------------------------------------------
 	  
-	  GOTO FINALIZAR 	 				
+	   	 				
   END
 
-  FINALIZAR:RETURN
+  
 END

@@ -141,7 +141,7 @@ DECLARE @Resp_1 VARCHAR(MAX)
 								
 					----------------------------------------------------------------------------------------
 			
-					GOTO FINALIZAR  
+					  
 
 			END
 	       
@@ -182,7 +182,7 @@ DECLARE @Resp_1 VARCHAR(MAX)
 
 					----------------------------------------------------------------------------------------
 			
-					GOTO FINALIZAR  
+					  
 
 			END	       
 	 END  
@@ -222,7 +222,7 @@ DECLARE @Resp_1 VARCHAR(MAX)
 
 					----------------------------------------------------------------------------------------
 			
-					GOTO FINALIZAR  
+					  
 
 			END	       
 	 END  
@@ -426,7 +426,7 @@ DECLARE @Resp_1 VARCHAR(MAX)
 			   END	
 
 	  END CATCH
-	  GOTO FINALIZAR 
+	   
 	---
   END
   ELSE
@@ -447,8 +447,8 @@ DECLARE @Resp_1 VARCHAR(MAX)
 						SET @JSON_OUT = ( SELECT @Resp_1  )	
 				----------------------------------------------------------------------------------------
 	  
-	  GOTO FINALIZAR 	 				
+	   	 				
   END
 
-  FINALIZAR:RETURN
+  
 END

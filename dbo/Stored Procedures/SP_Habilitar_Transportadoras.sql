@@ -126,7 +126,7 @@ BEGIN
 								----------------------------------------------------------------------------------------
 
 								ROLLBACK TRANSACTION ACTUALIZAR
-								GOTO FINALIZAR 	
+								 	
 
 							END
 							
@@ -164,7 +164,7 @@ BEGIN
 								----------------------------------------------------------------------------------------
 
 								ROLLBACK TRANSACTION ACTUALIZAR
-								GOTO FINALIZAR 	
+								 	
 
 							END
 
@@ -234,7 +234,7 @@ BEGIN
 			   END	
 
 	  END CATCH
-	  GOTO FINALIZAR 
+	   
 	---
   END
   ELSE
@@ -253,9 +253,9 @@ BEGIN
 						)
 					
 						SET @JSON_OUT = ( SELECT @Resp_1  )	
-	  GOTO FINALIZAR 	 				
+	   	 				
   END
 
-  FINALIZAR:RETURN
+  
 END
 ---

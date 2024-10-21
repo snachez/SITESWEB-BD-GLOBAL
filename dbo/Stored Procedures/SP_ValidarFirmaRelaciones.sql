@@ -168,7 +168,7 @@ BEGIN
 			   END	
 
 	  END CATCH
-	  GOTO FINALIZAR 
+	   
 	---
   END
   ELSE
@@ -193,8 +193,8 @@ BEGIN
 						SET @JSON_OUT = ( SELECT @Resp_2  )	
 				----------------------------------------------------------------------------------------
 	  
-	  GOTO FINALIZAR 	 				
+	   	 				
   END
 
-  FINALIZAR:RETURN
+  
 END

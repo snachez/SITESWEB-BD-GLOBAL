@@ -214,7 +214,7 @@ BEGIN
 					ELSE
 					BEGIN
 					    SET @JSON_OUT = ( SELECT @Resp_2  );
-						GOTO FINALIZAR;
+						;
 					END
 				END
 				ELSE
@@ -227,7 +227,7 @@ BEGIN
 					ELSE
 					BEGIN
 					    SET @JSON_OUT = ( SELECT @Resp_2  );
-						GOTO FINALIZAR;
+						;
 					END
 				END
 			END			
@@ -315,7 +315,7 @@ BEGIN
 					ELSE
 					BEGIN
 					    SET @JSON_OUT = ( SELECT @Resp_2  );
-						GOTO FINALIZAR;
+						;
 					END
 				END
 				ELSE
@@ -328,7 +328,7 @@ BEGIN
 					ELSE
 					BEGIN
 					    SET @JSON_OUT = ( SELECT @Resp_2  );
-						GOTO FINALIZAR;
+						;
 					END
 				END
 			END
@@ -462,7 +462,7 @@ BEGIN
 			   END	
 
 	  END CATCH
-	  GOTO FINALIZAR 
+	   
 	---
   END
   ELSE
@@ -487,8 +487,8 @@ BEGIN
 						SET @JSON_OUT = ( SELECT @Resp_2  )	
 				----------------------------------------------------------------------------------------
 	  
-	  GOTO FINALIZAR 	 				
+	   	 				
   END
 
-  FINALIZAR:RETURN
+  
 END
