@@ -76,7 +76,6 @@ BEGIN
   --DECLARACION DE VARIABLES PARA RECORRER LA TABLA
   DECLARE @p_Nombre_Departamento_Cursor VARCHAR(50)	
   DECLARE @p_Activo_Cursor BIT 
-  DECLARE @p_Aux_Activo BIT	
   DECLARE @p_Id_Departamento_Insertada INT
  
   DECLARE @Resp_1 VARCHAR(MAX)

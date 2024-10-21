@@ -102,7 +102,6 @@ BEGIN
 								
 							SET @p_Aux_Activo = NULL	
 							SELECT @p_Aux_Activo = (SELECT Activo FROM tblUnidadMedida WHERE Id = @p_Id_Unidad_Medida_Cursor)	
-							--SELECT @Aux_1_Existe 
 						
 							   IF(@p_Aux_Activo = 1)
 							   BEGIN   

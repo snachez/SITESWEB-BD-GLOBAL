@@ -78,15 +78,15 @@ BEGIN
   DECLARE @p_Nombre_Cedis_Cursor VARCHAR(50)
   DECLARE @p_Fk_Id_Pais_Cursor INT
   DECLARE @p_Activo_Cursor BIT 
-  DECLARE @p_Aux_Activo BIT	
 
  
   DECLARE @Resp_1 VARCHAR(MAX)
   DECLARE @Resp_2 VARCHAR(MAX)
   DECLARE @ROW VARCHAR(MAX)
-
+  DECLARE @HoraDesde VARCHAR(MAX) = '00:00';
+  DECLARE @HoraCorteDia VARCHAR(MAX) = '23:59';
+  DECLARE @HoraLimiteAprobacion VARCHAR(MAX) = '23:59';
   DECLARE @NewCedisCodigo_Cedis VARCHAR(25);
-  DECLARE @PreFix VARCHAR(10) = 'CEDI-';
   DECLARE @Id INT;
 
 	 BEGIN TRY		
@@ -101,7 +101,6 @@ BEGIN
 						BEGIN			
  
 						 SELECT @Id = ISNULL(MAX(Id_Cedis),0) + 1 FROM tblCedis
-						 --SELECT @NewCedisCodigo_Cedis = @PreFix + RIGHT('0000' + CAST(@Id AS VARCHAR(4)), 4)
 					 		 SELECT @NewCedisCodigo_Cedis = RIGHT('0000' + CAST(@Id AS VARCHAR(4)), 4)
 
 							--OBTIENE UN ITEM
@@ -117,13 +116,13 @@ BEGIN
 						
 								DECLARE @FKIDCEDIS INT = CONVERT(INT, ISNULL(SCOPE_IDENTITY(), -1))
 								INSERT INTO tblDiasHabilesEntregaPedidosInternos(FkIdCedis, Dia, NombreDia, HoraDesde, HoraCorteDia, HoraLimiteAprobacion)
-								VALUES(	@FKIDCEDIS, '1', 'Lunes','00:00', '23:59', '23:59'),
-								(@FKIDCEDIS, '2', 'Martes', '00:00', '23:59', '23:59'),
-								(@FKIDCEDIS, '3', 'Miercoles', '00:00', '23:59', '23:59'),
-								(@FKIDCEDIS, '4', 'Jueves', '00:00', '23:59', '23:59'),
-								(@FKIDCEDIS, '5', 'Viernes', '00:00', '23:59', '23:59'),
-								(@FKIDCEDIS, '6', 'Sábado', '00:00', '23:59', '23:59'),
-								(@FKIDCEDIS, '7', 'Domingo', '00:00', '23:59', '23:59')
+								VALUES(	@FKIDCEDIS, '1', 'Lunes',@HoraDesde, @HoraCorteDia, @HoraLimiteAprobacion),
+								(@FKIDCEDIS, '2', 'Martes', @HoraDesde, @HoraCorteDia, @HoraLimiteAprobacion),
+								(@FKIDCEDIS, '3', 'Miercoles', @HoraDesde, @HoraCorteDia, @HoraLimiteAprobacion),
+								(@FKIDCEDIS, '4', 'Jueves', @HoraDesde, @HoraCorteDia, @HoraLimiteAprobacion),
+								(@FKIDCEDIS, '5', 'Viernes', @HoraDesde, @HoraCorteDia, @HoraLimiteAprobacion),
+								(@FKIDCEDIS, '6', 'Sábado', @HoraDesde, @HoraCorteDia, @HoraLimiteAprobacion),
+								(@FKIDCEDIS, '7', 'Domingo', @HoraDesde, @HoraCorteDia, @HoraLimiteAprobacion)
 							 SET @i = @i + 1
 						END --FIN DEL CICLO
 					END

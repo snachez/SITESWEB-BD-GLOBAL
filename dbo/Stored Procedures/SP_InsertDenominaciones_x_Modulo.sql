@@ -59,9 +59,10 @@ BEGIN
 	END TRY    
 	BEGIN CATCH
 	    --
-		DECLARE @ERROR_MESSAGE NVARCHAR(MAX) = ERROR_MESSAGE()
+		DECLARE @ERROR_MESSAGE NVARCHAR(MAX) = ERROR_MESSAGE();
+		DECLARE @ERROR_MESSAGE1 NVARCHAR(MAX) = '%Unique_denominacion_x_area%';
 		--
-		IF @ERROR_MESSAGE LIKE '%Unique_denominacion_x_area%' BEGIN 
+		IF @ERROR_MESSAGE LIKE @ERROR_MESSAGE1 BEGIN 
 			---
 			SET @ERROR_MESSAGE = 'La combinacion de denominacion y area ya esta registrada'
 			---

@@ -215,23 +215,23 @@ BEGIN
 						DECLARE @iter INT = 1
 						DECLARE @Conta INT = (SELECT COUNT(1) FROM  @p_Tbl_Temp_Modulo_Nuevos	 )
 
-						IF @Conta > 0 WHILE (@iter <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Modulo_Nuevos	 ))
-						BEGIN
+						IF @Conta > 0 BEGIN WHILE (@iter <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Modulo_Nuevos	 ))
+							BEGIN
 
-							--OBTIENE UN ITEM
-							SELECT 								
-							 @p_Id_Modulo_Iterador = Id_Modulo
-							,@p_Nombre_Modulo_Iterador = Nombre									
-							FROM @p_Tbl_Temp_Modulo_Nuevos 
-							WHERE ID = @iter
+								--OBTIENE UN ITEM
+								SELECT 								
+								 @p_Id_Modulo_Iterador = Id_Modulo
+								,@p_Nombre_Modulo_Iterador = Nombre									
+								FROM @p_Tbl_Temp_Modulo_Nuevos 
+								WHERE ID = @iter
 						
-							--INSERTA EN LA TABLA tblTransportadoras_x_Modulo
-							INSERT INTO dbo.[tblTransportadoras_x_Modulo] (      [Fk_Id_Transportadora],      	        [Fk_Id_Modulo],      [Activo],    [Fecha_Creacion]   )
-																   VALUES (   @p_Id_Transportadora_Insertada,    @p_Id_Modulo_Iterador,       1,            GETDATE()     )
+								--INSERTA EN LA TABLA tblTransportadoras_x_Modulo
+								INSERT INTO dbo.[tblTransportadoras_x_Modulo] (      [Fk_Id_Transportadora],      	        [Fk_Id_Modulo],      [Activo],    [Fecha_Creacion]   )
+																	   VALUES (   @p_Id_Transportadora_Insertada,    @p_Id_Modulo_Iterador,       1,            GETDATE()     )
 			    											
-							SET @iter = @iter + 1
-						END --FIN DEL CICLO
-
+								SET @iter = @iter + 1
+							END --FIN DEL CICLO
+						END
 						------------------------------ FIN DEL RECORRIDO Y SETEO DE DATA DE LA TABLA TEMPORAL MODULO (TABLA HIJO) ------------------------------------
 						SET @CONTINUAR_TRANSACCION = 1
 					END
@@ -321,23 +321,26 @@ BEGIN
 				
 						------------------------------ RESPUESTA A LA APP MSJ: 3200 3201 ------------------------------------
 					
-						SET @ERROR_NUMBER = ERROR_NUMBER()				
+						SET @ERROR_NUMBER = ERROR_NUMBER();
+						DECLARE @ERROR_NUMBER1 VARCHAR(MAX) = '%515%';		
+						DECLARE @ERROR_NUMBER2 VARCHAR(MAX) = '%2627%';
+						DECLARE @ERROR_NUMBER3 VARCHAR(MAX) = '%547%';
 
-						IF  @ERROR_NUMBER LIKE '%515%' -- SP_Insert_Transportadora_VALORES_NULL
+						IF  @ERROR_NUMBER LIKE @ERROR_NUMBER1 -- SP_Insert_Transportadora_VALORES_NULL
 						BEGIN 
 						
 							SET @ERROR_MESSAGE = 'SP_Insert_Transportadora_VALORES_NULL' 
 						
 						END	
 
-						IF  @ERROR_NUMBER LIKE '%2627%' -- Unique_Codigo_Transportadora
+						IF  @ERROR_NUMBER LIKE @ERROR_NUMBER2 -- Unique_Codigo_Transportadora
 						BEGIN 
 						
 							SET @ERROR_MESSAGE = ERROR_MESSAGE() 
 						
 						END	
 
-						IF  @ERROR_NUMBER LIKE '%547%' -- Unique_Nombre_Transportadora_By_Pais_And_Modulo
+						IF  @ERROR_NUMBER LIKE @ERROR_NUMBER3 -- Unique_Nombre_Transportadora_By_Pais_And_Modulo
 						BEGIN 
 						
 							SET @ERROR_MESSAGE = ERROR_MESSAGE() 

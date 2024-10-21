@@ -118,23 +118,23 @@ BEGIN
 						DECLARE @iter INT = 1
 						DECLARE @Conta INT = (SELECT COUNT(1) FROM  @p_Tbl_Temp_Presentaciones_Habilitadas	 )
 
-						IF @Conta > 0 WHILE (@iter <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Presentaciones_Habilitadas	 ))
-						BEGIN
+						IF @Conta > 0 BEGIN WHILE (@iter <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Presentaciones_Habilitadas	 ))
+							BEGIN
 
-							--OBTIENE UN ITEM
-							SELECT 								
-							 @p_Id_Efectivo_Iterador = Id_Efectivo
-							,@p_Nombre_Efectivo_Iterador = Nombre									
-							FROM @p_Tbl_Temp_Presentaciones_Habilitadas 
-							WHERE ID = @iter
+								--OBTIENE UN ITEM
+								SELECT 								
+								 @p_Id_Efectivo_Iterador = Id_Efectivo
+								,@p_Nombre_Efectivo_Iterador = Nombre									
+								FROM @p_Tbl_Temp_Presentaciones_Habilitadas 
+								WHERE ID = @iter
 												
-							--INSERTA EN LA TABLA tblDivisa_x_TipoEfectivo
-							INSERT INTO dbo.[tblDivisa_x_TipoEfectivo] (    [FkIdTipoEfectivo],          [FkIdDivisa],     [FechaCreacion],  [Activo], [NombreTipoEfectivo],    [NombreDivisa]   )
-															 VALUES (  @p_Id_Efectivo_Iterador, @p_Id_Divisa_Insertada,    GETDATE(),         1,    @p_Nombre_Efectivo_Iterador,   @p_Nombre_Divisa    )			    												
+								--INSERTA EN LA TABLA tblDivisa_x_TipoEfectivo
+								INSERT INTO dbo.[tblDivisa_x_TipoEfectivo] (    [FkIdTipoEfectivo],          [FkIdDivisa],     [FechaCreacion],  [Activo], [NombreTipoEfectivo],    [NombreDivisa]   )
+																 VALUES (  @p_Id_Efectivo_Iterador, @p_Id_Divisa_Insertada,    GETDATE(),         1,    @p_Nombre_Efectivo_Iterador,   @p_Nombre_Divisa    )			    												
 
-							SET @iter = @iter + 1
-						END --FIN DEL CICLO
-					
+								SET @iter = @iter + 1
+							END --FIN DEL CICLO
+						END
 						------------------------------ FIN DEL RECORRIDO Y SETEO DE DATA DE LA TABLA TEMPORAL PRESENTACIONES DEL EFECTIVO  ------------------------------------
 														
 					END

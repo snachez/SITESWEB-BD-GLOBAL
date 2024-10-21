@@ -28,9 +28,10 @@ BEGIN
 	END TRY    
 	BEGIN CATCH
 		--
-		DECLARE @ERROR_MESSAGE VARCHAR(MAX) = ERROR_MESSAGE()
+		DECLARE @ERROR_MESSAGE VARCHAR(MAX) = ERROR_MESSAGE();
+		DECLARE @ERROR_MESSAGE1 VARCHAR(MAX) = '%Unique_Divisa_x_TipoEfectivo%';
 		--
-		IF @ERROR_MESSAGE LIKE '%Unique_Divisa_x_TipoEfectivo%' BEGIN 
+		IF @ERROR_MESSAGE LIKE @ERROR_MESSAGE1 BEGIN 
 			---
 			SET @ERROR_MESSAGE = 'El tipo de efectivo y la divisa ya se encuentran asociados'
 			---

@@ -47,15 +47,18 @@ BEGIN
 	END TRY    
 	BEGIN CATCH
 		--
-		DECLARE @ERROR_MESSAGE NVARCHAR(MAX) = ERROR_MESSAGE()
+		DECLARE @ERROR_MESSAGE NVARCHAR(MAX) = ERROR_MESSAGE();
+		DECLARE @ERROR_MESSAGE1 NVARCHAR(MAX) = '%Unique_numero_cuenta%';
+		DECLARE @ERROR_MESSAGE2 NVARCHAR(MAX) = '%the value NULL%';
+		DECLARE @ERROR_MESSAGE3 NVARCHAR(MAX) = '%FkIdDivisa%';
 		--
-		IF @ERROR_MESSAGE LIKE '%Unique_numero_cuenta%' BEGIN 
+		IF @ERROR_MESSAGE LIKE @ERROR_MESSAGE1 BEGIN 
 			---
 			SET @ERROR_MESSAGE = 'El numero de cuenta que intenta ingresar ya existe'
 			---
 		END
 		--
-		IF @ERROR_MESSAGE LIKE '%the value NULL%' BEGIN 
+		IF @ERROR_MESSAGE LIKE @ERROR_MESSAGE2 BEGIN 
 			---
 			IF @ERROR_MESSAGE LIKE '%NumeroCuenta%' BEGIN 
 				---
@@ -63,7 +66,7 @@ BEGIN
 				---
 			END
 			---
-			IF @ERROR_MESSAGE LIKE '%FkIdDivisa%' BEGIN 
+			IF @ERROR_MESSAGE LIKE @ERROR_MESSAGE3 BEGIN 
 				---
 				SET @ERROR_MESSAGE = 'La divisa es requerida'
 				---

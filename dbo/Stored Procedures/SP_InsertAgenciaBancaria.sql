@@ -202,15 +202,7 @@ BEGIN
 							--VALIDACION 1(SI LA CUENTA EXISTE Y NO ESTA EN GRUPO AGENCIA Y USA CUENTAS DE GRUPO)
 							--VALIDACION 1(SI LA CUENTA EXISTE Y NO USA CUENTAS DE GRUPO)
 							--VALIDACION 3(SI LA CUENTA NO EXISTE Y  EL NUMERO DE CUENTA NO ESTA VACIO)
-							IF(@p_Id_Insert_Cuenta IS NOT NULL AND @p_Iterador_Insert_Grupo_Agencia IS NULL AND @p_UsaCuentasGrupo_Insert_Agencia_Bancaria = 1)
-							BEGIN
-
-							    --INSERTA EN LA TABLA tblCuentaInterna_x_Agencia
-							      INSERT INTO dbo.[tblCuentaInterna_x_Agencia] ( FkIdCuentaInterna, FkIdAgencia )
-																        VALUES ( @p_Id_Insert_Cuenta, @p_Id_Insert_Agencia_Bancaria )
-
-							END
-							ELSE IF(@p_Id_Insert_Cuenta IS NOT NULL AND @p_UsaCuentasGrupo_Insert_Agencia_Bancaria = 0)
+							IF((@p_Id_Insert_Cuenta IS NOT NULL AND @p_Iterador_Insert_Grupo_Agencia IS NULL AND @p_UsaCuentasGrupo_Insert_Agencia_Bancaria = 1) OR (@p_Id_Insert_Cuenta IS NOT NULL AND @p_UsaCuentasGrupo_Insert_Agencia_Bancaria = 0))
 							BEGIN
 
 							    --INSERTA EN LA TABLA tblCuentaInterna_x_Agencia

@@ -174,23 +174,23 @@ BEGIN
 						DECLARE @iter INT = 1
 						DECLARE @Conta INT = (SELECT COUNT(1) FROM  @p_Tbl_Temp_Presentaciones_Habilitadas	 )
 
-						IF @Conta > 0 WHILE (@iter <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Presentaciones_Habilitadas	 ))
-						BEGIN
+						IF @Conta > 0 BEGIN WHILE (@iter <= (SELECT MAX(ID) FROM @p_Tbl_Temp_Presentaciones_Habilitadas	 ))
+							BEGIN
 
-							--OBTIENE UN ITEM
-							SELECT 								
-							 @p_Id_Efectivo_Iterador = Id_Efectivo
-							,@p_Nombre_Efectivo_Iterador = Nombre									
-							FROM @p_Tbl_Temp_Presentaciones_Habilitadas 
-							WHERE ID = @iter
+								--OBTIENE UN ITEM
+								SELECT 								
+								 @p_Id_Efectivo_Iterador = Id_Efectivo
+								,@p_Nombre_Efectivo_Iterador = Nombre									
+								FROM @p_Tbl_Temp_Presentaciones_Habilitadas 
+								WHERE ID = @iter
 						
-							--INSERTA EN LA TABLA tblUnidadMedida_x_Divisa
-							INSERT INTO dbo.[tblUnidadMedida_x_TipoEfectivo] (    [Fk_Id_Unidad_Medida],	[Fk_Id_Divisa]       , [Fk_Id_Tipo_Efectivo],     [Activo],    [Fecha_Creacion]   )
-																      VALUES (  @Id_Unidad_Medida_Insertada,  @p_Id_Divisa_Insertada,    @p_Id_Efectivo_Iterador,       1,          GETDATE()       )
+								--INSERTA EN LA TABLA tblUnidadMedida_x_Divisa
+								INSERT INTO dbo.[tblUnidadMedida_x_TipoEfectivo] (    [Fk_Id_Unidad_Medida],	[Fk_Id_Divisa]       , [Fk_Id_Tipo_Efectivo],     [Activo],    [Fecha_Creacion]   )
+																		  VALUES (  @Id_Unidad_Medida_Insertada,  @p_Id_Divisa_Insertada,    @p_Id_Efectivo_Iterador,       1,          GETDATE()       )
 			    											
-							SET @iter = @iter + 1
-						END --FIN DEL CICLO
-
+								SET @iter = @iter + 1
+							END --FIN DEL CICLO
+						END
 					END
 
 											

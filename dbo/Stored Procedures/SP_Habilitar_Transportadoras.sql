@@ -11,10 +11,27 @@ BEGIN
 
   DECLARE @Resp_1 VARCHAR(MAX)
 
-  IF(@JSON_IN IS NOT NULL OR @JSON_IN <> '')
-  BEGIN
+    -- Validar JSON de entrada
+    IF @JSON_IN IS NULL OR @JSON_IN = '' OR ISJSON(@JSON_IN) <> 1
+    BEGIN
+						SELECT @Resp_1 = 
+						(
+							  SELECT	  @@ROWCOUNT												AS ROWS_AFFECTED
+							, CAST(0 AS BIT)														AS SUCCESS
+							, 'No Modificado!'														AS ERROR_TITLE_SP
+							, 'Error, se resivieron datos null'										AS ERROR_MESSAGE_SP
+							, NULL																	AS ERROR_NUMBER_SP
+							, CONVERT(INT, ISNULL(SCOPE_IDENTITY(), -1))							AS ID
+							, NULL																	AS ROW 
+							FOR JSON PATH, INCLUDE_NULL_VALUES
+						)
+					
+						SET @JSON_OUT = ( SELECT @Resp_1  )	
+        RETURN;
+    END
 
-	SET @JSON_IN = REPLACE( @JSON_IN,'\','')
+    -- Procesar el JSON válido
+    SET @JSON_IN = REPLACE(@JSON_IN, '\', '');
 
 	---Declaracion Variables Mensajes
     DECLARE @MetodoTemporal VARCHAR(MAX) = 'SP_Habilitar_Transportadoras';
@@ -58,10 +75,8 @@ BEGIN
 	--DECLARACION DE VARIABLES PARA RECORRER LA TABLA
 	DECLARE @p_Id_Transportadora_Cursor INT	
 	DECLARE @p_Activo_Cursor BIT 
-	DECLARE @p_Aux_Activo BIT	
- 
+    DECLARE @CONSTRAINT_TRIGGER VARCHAR(70) = 'Constrains_Validate_Valores_Activos_Inactivos_Contra_Transportadoras';
 	DECLARE @Resultado INT
- 	DECLARE @CONTINUAR_TRANSACCION INT
 	DECLARE @ROW VARCHAR(MAX)
 
 
@@ -106,12 +121,12 @@ BEGIN
 									@ROWS_AFFECTED = 0,
 									@SUCCESS = 0,
 									@ERROR_NUMBER_SP = @ERROR_NUMBER,
-									@CONSTRAINT_TRIGGER_NAME = 'Constrains_Validate_Valores_Activos_Inactivos_Contra_Transportadoras',
+									@CONSTRAINT_TRIGGER_NAME = @CONSTRAINT_TRIGGER,
 									@ID = 0,
 									@ROW = NULL,
 									@Metodo = @MetodoTemporal, 
 									@TipoMensaje = 'Error', 
-									@ErrorMensaje  = 'Constrains_Validate_Valores_Activos_Inactivos_Contra_Transportadoras',
+									@ErrorMensaje  = @CONSTRAINT_TRIGGER,
 									@ModeJson = 0;
 
 									SELECT @Resp_1 = 
@@ -144,12 +159,12 @@ BEGIN
 									@ROWS_AFFECTED = 0,
 									@SUCCESS = 0,
 									@ERROR_NUMBER_SP = @ERROR_NUMBER,
-									@CONSTRAINT_TRIGGER_NAME = 'Constrains_Validate_Valores_Activos_Inactivos_Contra_Transportadoras',
+									@CONSTRAINT_TRIGGER_NAME = @CONSTRAINT_TRIGGER,
 									@ID = 0,
 									@ROW = NULL,
 									@Metodo = @MetodoTemporal, 
 									@TipoMensaje = 'Error', 
-									@ErrorMensaje  = 'Constrains_Validate_Valores_Activos_Inactivos_Contra_Transportadoras',
+									@ErrorMensaje  = @CONSTRAINT_TRIGGER,
 									@ModeJson = 0;
 
 									SELECT @Resp_1 = 
@@ -236,26 +251,5 @@ BEGIN
 	  END CATCH
 	   
 	---
-  END
-  ELSE
-  BEGIN 
-	 
-						SELECT @Resp_1 = 
-						(
-							  SELECT	  @@ROWCOUNT												AS ROWS_AFFECTED
-							, CAST(0 AS BIT)														AS SUCCESS
-							, 'No Modificado!'														AS ERROR_TITLE_SP
-							, 'Error, se resivieron datos null'										AS ERROR_MESSAGE_SP
-							, NULL																	AS ERROR_NUMBER_SP
-							, CONVERT(INT, ISNULL(SCOPE_IDENTITY(), -1))							AS ID
-							, NULL																	AS ROW 
-							FOR JSON PATH, INCLUDE_NULL_VALUES
-						)
-					
-						SET @JSON_OUT = ( SELECT @Resp_1  )	
-	   	 				
-  END
-
-  
 END
 ---

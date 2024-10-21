@@ -94,8 +94,6 @@ BEGIN
 															FOR JSON PATH
 													)
 		---
-		DECLARE @ROW NVARCHAR(MAX) = (SELECT * FROM tblCuentaInterna_x_GrupoAgencias WHERE Id = ISNULL(SCOPE_IDENTITY(), -1) FOR JSON PATH)
-		---
 		DECLARE @ROWS_AFFECTED INT = (SELECT COUNT(*) FROM @OUT_NEW_IDs)
 		---
 		SELECT	  @ROWS_AFFECTED											AS ROWS_AFFECTED
@@ -108,9 +106,10 @@ BEGIN
 	END TRY    
 	BEGIN CATCH
 		--
-		DECLARE @ERROR_MESSAGE NVARCHAR(MAX) = ERROR_MESSAGE()
+		DECLARE @ERROR_MESSAGE NVARCHAR(MAX) = ERROR_MESSAGE();
+		DECLARE @ERROR_MESSAGE1 NVARCHAR(MAX) = '%Unique_cuenta_x_grupo%';
 		--
-		IF @ERROR_MESSAGE LIKE '%Unique_cuenta_x_grupo%' BEGIN 
+		IF @ERROR_MESSAGE LIKE @ERROR_MESSAGE1 BEGIN 
 			---
 			SET @ERROR_MESSAGE = 'El numero de cuenta y el grupo ya se encuentran asociados'
 			---
