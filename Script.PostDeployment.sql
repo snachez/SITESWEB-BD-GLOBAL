@@ -4,7 +4,7 @@ DECLARE @tableName NVARCHAR(128)
 DECLARE @schemaName NVARCHAR(128)
 DECLARE @QUERY NVARCHAR(MAX)
 
-DECLARE cur CURSOR FOR
+DECLARE cur CURSOR FOR 
 SELECT schema_name(schema_id), name
 FROM sys.external_tables 
 
