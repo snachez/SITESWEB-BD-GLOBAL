@@ -6632,11 +6632,11 @@ BEGIN
          [HoraLimiteAprobacionMismoDia]) 
         VALUES (1, 1, 1, N'Lunes', 1, 1, 0, 1, 1, 1, 0, 0, 0, 
                 CAST(@HoraDesde AS Time), CAST(@HoraHasta AS Time), 
-                CAST(N@HoraLimiteMismoDia AS Time), N'F78F76ED-C14F-46A2-9BD3-C0DC093C3715', 
+                CAST(@HoraLimiteMismoDia AS Time), N'F78F76ED-C14F-46A2-9BD3-C0DC093C3715', 
                 CAST(CURRENT_TIMESTAMP AS SmallDateTime), 
                 CAST(CURRENT_TIMESTAMP AS SmallDateTime), 
-                CAST(N@HoraLimiteAprobacion AS Time), CAST(N@HoraCorteDia AS Time), 
-                CAST(N@HoraLimiteAprobacionMismoDia AS Time))
+                CAST(@HoraLimiteAprobacion AS Time), CAST(N@HoraCorteDia AS Time), 
+                CAST(@HoraLimiteAprobacionMismoDia AS Time))
     END
 
     IF NOT EXISTS ( SELECT * FROM [dbo].[tblDiasHabilesEntregaPedidosInternos] where [Id] = 2)
@@ -6653,7 +6653,7 @@ BEGIN
                 NULL, N'7026B3B3-3ECE-4CA1-A892-950E7363DFBA', 
                 CAST(CURRENT_TIMESTAMP AS SmallDateTime), 
                 CAST(CURRENT_TIMESTAMP AS SmallDateTime), 
-                CAST(N@HoraLimiteAprobacion AS Time), CAST(N@HoraCorteDia AS Time), NULL)
+                CAST(@HoraLimiteAprobacion AS Time), CAST(@HoraCorteDia AS Time), NULL)
     END
 
     IF NOT EXISTS ( SELECT * FROM [dbo].[tblDiasHabilesEntregaPedidosInternos] where [Id] = 3)
@@ -6670,7 +6670,7 @@ BEGIN
                 NULL, N'70BD4C48-CFE1-47FA-BA86-85A3F50BC22B', 
                 CAST(CURRENT_TIMESTAMP AS SmallDateTime), 
                 CAST(CURRENT_TIMESTAMP AS SmallDateTime), 
-                CAST(N@HoraLimiteAprobacion AS Time), CAST(N@HoraCorteDia AS Time), NULL)
+                CAST(@HoraLimiteAprobacion AS Time), CAST(@HoraCorteDia AS Time), NULL)
     END
 
     IF NOT EXISTS ( SELECT * FROM [dbo].[tblDiasHabilesEntregaPedidosInternos] where [Id] = 4)
@@ -6687,7 +6687,7 @@ BEGIN
                 NULL, N'4844D405-F412-4842-838D-20B16D039B88', 
                 CAST(CURRENT_TIMESTAMP AS SmallDateTime), 
                 CAST(CURRENT_TIMESTAMP AS SmallDateTime), 
-                CAST(N@HoraLimiteAprobacion AS Time), CAST(N@HoraCorteDia AS Time), NULL)
+                CAST(@HoraLimiteAprobacion AS Time), CAST(@HoraCorteDia AS Time), NULL)
     END
 
     IF NOT EXISTS ( SELECT * FROM [dbo].[tblDiasHabilesEntregaPedidosInternos] where [Id] = 5)
@@ -6704,7 +6704,7 @@ BEGIN
                 NULL, N'B2EF2137-597F-4E31-81EE-A43AC78F1BB6', 
                 CAST(CURRENT_TIMESTAMP AS SmallDateTime), 
                 CAST(CURRENT_TIMESTAMP AS SmallDateTime), 
-                CAST(N@HoraLimiteAprobacion AS Time), CAST(N@HoraCorteDia AS Time), NULL)
+                CAST(@HoraLimiteAprobacion AS Time), CAST(@HoraCorteDia AS Time), NULL)
     END
 
     IF NOT EXISTS ( SELECT * FROM [dbo].[tblDiasHabilesEntregaPedidosInternos] where [Id] = 6)
@@ -6721,7 +6721,7 @@ BEGIN
                 NULL, N'B726D4A1-F9F9-42CA-82CA-DFB484C629DA', 
                 CAST(CURRENT_TIMESTAMP AS SmallDateTime), 
                 CAST(CURRENT_TIMESTAMP AS SmallDateTime), 
-                CAST(N@HoraLimiteAprobacion AS Time), CAST(N@HoraCorteDia AS Time), NULL)
+                CAST(@HoraLimiteAprobacion AS Time), CAST(@HoraCorteDia AS Time), NULL)
     END
 
     IF NOT EXISTS ( SELECT * FROM [dbo].[tblDiasHabilesEntregaPedidosInternos] where [Id] = 7)
