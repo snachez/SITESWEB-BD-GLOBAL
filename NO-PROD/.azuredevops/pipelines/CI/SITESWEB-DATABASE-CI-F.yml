@@ -1,0 +1,36 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+name: v1.$(BuildID)
+trigger: none
+resources:
+  repositories: 
+  - repository: ExternalTemplates
+    type: git
+    name: DEVOPS/AZURE-DEVOPS-TEMPLATES
+    ref: 'refs/heads/master'
+stages:
+- stage: 'Build'
+  jobs:
+  - job: 
+    pool: 
+      name: SITESWEB
+    steps:
+    - checkout: self
+    - task: CopyFiles@2
+      displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+      inputs:
+        SourceFolder: '$(system.DefaultWorkingDirectory)'
+        Contents: '**\rollback\*.sql'
+        TargetFolder: '$(build.artifactstagingdirectory)'
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Artifact: drop'
+    - template: 'yaml-templates/steps/GitflowBranchGateTask.yml@ExternalTemplates'
+    - template: 'yaml-templates/steps/BuildSQLServerTaskReportSonarV2.yml@ExternalTemplates'
+      parameters:
+        sonarConnection: 'SONARCLOUD ORG-CRI-GTI-SITESWEB'
+        sonarOrganization: 'org-cri-gti'
+        sonarProjectName: 'SITESWEB-BD-GLOBAL'
+        sonarProjectKey: 'ORG-CRI-GTI_SITESWEB-BD-GLOBAL'
+    

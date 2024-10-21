@@ -1,0 +1,33 @@
+parameters:
+- name: sonarAnalysis
+  type: boolean
+  default: true
+- name: nexusGroup
+  type: string
+
+resources:
+  repositories: 
+  - repository: ExternalTemplates
+    type: git
+    name: DEVOPS/AZURE-DEVOPS-TEMPLATES
+    ref: 'refs/heads/master'
+
+variables:
+- template: 'template-SITESWEB-DATABASE-CI-variables.yml'
+
+stages:
+- stage: build
+  displayName: Build
+  jobs:
+  - job: Build
+    pool:
+      name: $(BuildPoolName)
+    steps:
+      - template: 'yaml-templates/steps/GitflowBranchGateTask.yml@ExternalTemplates'
+      - ${{ if eq(parameters.sonarAnalysis, true) }}:
+        - template: 'yaml-templates/steps/BuildSonarManualScan.yml@ExternalTemplates'
+          parameters:
+            sonarQube: 'SONAR CR-TI-SITESWEB-DATABASE'
+            cliProjectKey: 'SITESWEB-DATABASE'
+
+#Incluir a continuación tareas de compilación, empaquetado publicación de los artefactos generados

@@ -1,0 +1,11 @@
+﻿CREATE   FUNCTION FN_DB_UTC_ZONE_FORMAT_NAME()
+RETURNS VARCHAR(90)
+AS
+BEGIN
+	--
+	DECLARE @OFFSET VARCHAR(30) = (SELECT TOP 1 value FROM String_Split(CAST(SYSDATETIMEOFFSET() as varchar(50)),' ') order by value)
+	DECLARE @NAME_TIME_ZONE VARCHAR(30) = (SELECT TOP 1 name FROM sys.time_zone_info WHERE current_utc_offset = @OFFSET ORDER BY name)
+	--
+	RETURN CASE WHEN @OFFSET = '-06:00' THEN 'Central America Standard Time' WHEN @OFFSET = '+00:00' THEN 'UTC' ELSE @NAME_TIME_ZONE END
+	--
+END

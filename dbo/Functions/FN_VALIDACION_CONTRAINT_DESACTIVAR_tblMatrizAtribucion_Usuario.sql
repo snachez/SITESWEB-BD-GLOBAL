@@ -1,0 +1,28 @@
+﻿CREATE FUNCTION [dbo].[FN_VALIDACION_CONTRAINT_DESACTIVAR_tblMatrizAtribucion_Usuario](@REACTIVAR BIT, @Id_Matriz INT )
+RETURNS BIT
+AS
+BEGIN
+	--
+	-- VALIDA SI UN USUARIO ESTA LIGADO PARA DESACTIVAR UNA MatrizAtribucion
+	DECLARE @RESULT BIT = 1
+    DECLARE @CANT INT 
+    DECLARE @RELACION_USUARIO INT
+	--
+	IF @REACTIVAR = 0 BEGIN
+		--
+		SET @RELACION_USUARIO = (SELECT count(*) FROM [tblUsuario] U
+							INNER JOIN [tblFirmasUsuario] FU
+							ON U.Id = FU.FK_Id_Usuario and U.Activo = 1
+							WHERE FU.FK_Id_Matriz = @Id_Matriz)
+		--
+
+		SET @CANT = @RELACION_USUARIO
+
+		SET @RESULT = IIF(@CANT > 0, 0, 1) 
+
+		--
+	END
+	--
+    RETURN(@RESULT)
+	--
+END

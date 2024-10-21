@@ -1,0 +1,32 @@
+trigger: none
+resources:
+  repositories: 
+  - repository: ExternalTemplates
+    type: git
+    name: DEVOPS/AZURE-DEVOPS-TEMPLATES
+    ref: 'refs/heads/master'
+schedules: 
+- cron: "0 0 * * *" 
+  displayName: Daily midnight build
+  branches:
+    include:
+    - refs/heads/develop
+  always: false
+
+variables:
+- group: SITESWEB.PIPELINES
+
+stages:
+- stage: build
+  displayName: Build
+  jobs:
+  - job: Build
+    pool:
+      name: $(BuildPoolName)
+    steps:      
+    - template: 'yaml-templates/steps/BuildSQLServerTaskReportSonarV2.yml@ExternalTemplates'
+      parameters:
+        sonarConnection: 'SONARCLOUD ORG-CRI-GTI-SITESWEB'
+        sonarOrganization: 'org-cri-gti'
+        sonarProjectName: 'SITESWEB-BD-GLOBAL'
+        sonarProjectKey: 'ORG-CRI-GTI_SITESWEB-BD-GLOBAL'

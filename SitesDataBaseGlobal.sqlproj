@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>SitesDataBaseGlobal</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{7720343c-b66d-44a8-b343-cf0b6ccf4daf}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureV12DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>SitesDataBaseGlobal</RootNamespace>
+    <AssemblyName>SitesDataBaseGlobal</AssemblyName>
+    <ModelCollation>3082,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Modern_Spanish_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <QueryStoreCaptureMode>All</QueryStoreCaptureMode>
+    <QueryStoreDesiredState>Off</QueryStoreDesiredState>
+    <QueryStoreFlushInterval>900</QueryStoreFlushInterval>
+    <QueryStoreStatsInterval>60</QueryStoreStatsInterval>
+    <QueryStoreMaxPlansPerQuery>200</QueryStoreMaxPlansPerQuery>
+    <QueryStoreStaleQueryThreshold>367</QueryStoreStaleQueryThreshold>
+    <QueryStoreMaxStorageSize>100</QueryStoreMaxStorageSize>
+    <DbScopedConfigLegacyCardinalityEstimation>Off</DbScopedConfigLegacyCardinalityEstimation>
+    <DbScopedConfigMaxDOP>0</DbScopedConfigMaxDOP>
+    <DbScopedConfigParameterSniffing>On</DbScopedConfigParameterSniffing>
+    <DbScopedConfigOptimizerHotfixes>Off</DbScopedConfigOptimizerHotfixes>
+    <DelayedDurability>DISABLED</DelayedDurability>
+    <AutoCreateStatisticsIncremental>False</AutoCreateStatisticsIncremental>
+    <MemoryOptimizedElevateToSnapshot>False</MemoryOptimizedElevateToSnapshot>
+    <Containment>None</Containment>
+    <IsNestedTriggersOn>True</IsNestedTriggersOn>
+    <IsTransformNoiseWordsOn>False</IsTransformNoiseWordsOn>
+    <TwoDigitYearCutoff>2049</TwoDigitYearCutoff>
+    <NonTransactedFileStreamAccess>OFF</NonTransactedFileStreamAccess>
+    <TargetRecoveryTimePeriod>0</TargetRecoveryTimePeriod>
+    <TargetRecoveryTimeUnit>SECONDS</TargetRecoveryTimeUnit>
+    <IsChangeTrackingOn>False</IsChangeTrackingOn>
+    <IsChangeTrackingAutoCleanupOn>True</IsChangeTrackingAutoCleanupOn>
+    <ChangeTrackingRetentionPeriod>2</ChangeTrackingRetentionPeriod>
+    <ChangeTrackingRetentionUnit>Days</ChangeTrackingRetentionUnit>
+    <IsEncryptionOn>False</IsEncryptionOn>
+    <IsBrokerPriorityHonored>False</IsBrokerPriorityHonored>
+    <Trustworthy>False</Trustworthy>
+    <AutoUpdateStatisticsAsynchronously>False</AutoUpdateStatisticsAsynchronously>
+    <PageVerify>NONE</PageVerify>
+    <ServiceBrokerOption>EnableBroker</ServiceBrokerOption>
+    <DateCorrelationOptimizationOn>False</DateCorrelationOptimizationOn>
+    <Parameterization>SIMPLE</Parameterization>
+    <AllowSnapshotIsolation>False</AllowSnapshotIsolation>
+    <ReadCommittedSnapshot>False</ReadCommittedSnapshot>
+    <VardecimalStorageFormatOn>True</VardecimalStorageFormatOn>
+    <SupplementalLoggingOn>False</SupplementalLoggingOn>
+    <CompatibilityMode>130</CompatibilityMode>
+    <AnsiNullDefault>True</AnsiNullDefault>
+    <AnsiNulls>True</AnsiNulls>
+    <AnsiPadding>True</AnsiPadding>
+    <AnsiWarnings>True</AnsiWarnings>
+    <ArithAbort>True</ArithAbort>
+    <ConcatNullYieldsNull>True</ConcatNullYieldsNull>
+    <QuotedIdentifier>True</QuotedIdentifier>
+    <NumericRoundAbort>False</NumericRoundAbort>
+    <RecursiveTriggersEnabled>False</RecursiveTriggersEnabled>
+    <DatabaseChaining>False</DatabaseChaining>
+    <DatabaseState>ONLINE</DatabaseState>
+    <CloseCursorOnCommitEnabled>False</CloseCursorOnCommitEnabled>
+    <DefaultCursor>LOCAL</DefaultCursor>
+    <AutoClose>False</AutoClose>
+    <AutoCreateStatistics>True</AutoCreateStatistics>
+    <AutoShrink>False</AutoShrink>
+    <AutoUpdateStatistics>True</AutoUpdateStatistics>
+    <TornPageDetection>False</TornPageDetection>
+    <DatabaseAccess>MULTI_USER</DatabaseAccess>
+    <Recovery>FULL</Recovery>
+    <EnableFullTextSearch>True</EnableFullTextSearch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DataRetentionEnabled>False</DataRetentionEnabled>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="Security\" />
+    <Folder Include="rollback" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SitesDataBaseGlobal.publish.xml" />
+    <None Include="rollback\Script.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Security\UsuarioST.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Tables\tblUnidadMedida_x_TipoEfectivo.sql" />
+    <Build Include="dbo\Tables\tblUnidadMedida_x_Divisa.sql" />
+    <Build Include="dbo\Tables\tblUnidadMedida.sql" />
+    <Build Include="dbo\Tables\tblTransportadoras_x_Pais.sql" />
+    <Build Include="dbo\Tables\tblTransportadoras_x_Modulo.sql" />
+    <Build Include="dbo\Tables\tblTransportadoras.sql" />
+    <Build Include="dbo\Tables\tblTransacciones.sql" />
+    <Build Include="dbo\Tables\tblTipoEfectivo.sql" />
+    <Build Include="dbo\Tables\tblTipoComunicado.sql" />
+    <Build Include="dbo\Tables\tblTipoCambio.sql" />
+    <Build Include="dbo\Tables\tblReportes.sql" />
+    <Build Include="dbo\Tables\tblProvincia.sql" />
+    <Build Include="dbo\Tables\tblParametros.sql" />
+    <Build Include="dbo\Tables\tblPais.sql" />
+    <Build Include="dbo\Tables\tblModulo.sql" />
+    <Build Include="dbo\Tables\tblMensajes_Emergentes_Titulo.sql" />
+    <Build Include="dbo\Tables\tblMensajes_Emergentes_Tipo_Mensaje.sql" />
+    <Build Include="dbo\Tables\tblMensajes_Emergentes_Modulo.sql" />
+    <Build Include="dbo\Tables\tblMensajes_Emergentes_Metodo.sql" />
+    <Build Include="dbo\Tables\tblMensajes_Emergentes.sql" />
+    <Build Include="dbo\Tables\tblMatrizAtribucion_Transaccion.sql" />
+    <Build Include="dbo\Tables\tblMatrizAtribucion_Firmas.sql" />
+    <Build Include="dbo\Tables\tblMatrizAtribucion.sql" />
+    <Build Include="dbo\Tables\tblHabilitarBanner.sql" />
+    <Build Include="dbo\Tables\tblGrupoAgencia.sql" />
+    <Build Include="dbo\Tables\tblFirmas.sql" />
+    <Build Include="dbo\Tables\tblDivisa_x_TipoEfectivo.sql" />
+    <Build Include="dbo\Tables\tblDivisa.sql" />
+    <Build Include="dbo\Tables\tblDistrito.sql" />
+    <Build Include="dbo\Tables\tblDiasHabilesEntregaPedidosInternos.sql" />
+    <Build Include="dbo\Tables\tblDepartamento.sql" />
+    <Build Include="dbo\Tables\tblDenominaciones_x_Modulo.sql" />
+    <Build Include="dbo\Tables\tblDenominaciones.sql" />
+    <Build Include="dbo\Tables\tblCuentaInterna_x_GrupoAgencias.sql" />
+    <Build Include="dbo\Tables\tblCuentaInterna_x_Agencia.sql" />
+    <Build Include="dbo\Tables\tblCuentaInterna.sql" />
+    <Build Include="dbo\Tables\tblComunicado.sql" />
+    <Build Include="dbo\Tables\tblColaborador.sql" />
+    <Build Include="dbo\Tables\tblCedis.sql" />
+    <Build Include="dbo\Tables\tblCanton.sql" />
+    <Build Include="dbo\Tables\tblArea.sql" />
+    <Build Include="dbo\Tables\tblAgenciaBancaria.sql" />
+    <Build Include="dbo\Functions\FN_VALIDACION_CONTRAINT_tbl001_C7.sql" />
+    <Build Include="dbo\Functions\FN_VALIDACION_CONTRAINT_tbl001_C6.sql" />
+    <Build Include="dbo\Functions\FN_VALIDACION_CONTRAINT_tbl001_C5.sql" />
+    <Build Include="dbo\Functions\FN_VALIDACION_CONTRAINT_REACTIVAR_tblMatrizAtribucion.sql" />
+    <Build Include="dbo\Functions\FN_VALIDACION_CONTRAINT_REACTIVAR_tblDivisa.sql" />
+    <Build Include="dbo\Functions\FN_VALIDACION_CONTRAINT_REACTIVAR_tblDenominaciones.sql" />
+    <Build Include="dbo\Functions\FN_VALIDACION_CONTRAINT_REACTIVAR_tblCedis_C4.sql" />
+    <Build Include="dbo\Functions\FN_VALIDACION_CONTRAINT_REACTIVAR_tblArea_T2_C4.sql" />
+    <Build Include="dbo\Functions\FN_VALIDACION_CONTRAINT_REACTIVAR_tblAgenciaBancaria_C3_4_5.sql" />
+    <Build Include="dbo\Functions\FN_VALIDACION_CONTRAINT_MAXIMO_COMUNICADOS_tblComunicado.sql" />
+    <Build Include="dbo\Functions\FN_VALIDACION_CONTRAINT_EXISTE_COMUNICADO_tblComunicado.sql" />
+    <Build Include="dbo\Functions\FN_VALIDACION_CONTRAINT_DESACTIVAR_tblTipoEfectivo.sql" />
+    <Build Include="dbo\Functions\FN_VALIDACION_CONTRAINT_DESACTIVAR_tblPais.sql" />
+    <Build Include="dbo\Functions\FN_VALIDACION_CONTRAINT_DESACTIVAR_tblMatrizAtribucion_Usuario.sql" />
+    <Build Include="dbo\Functions\FN_VALIDACION_CONTRAINT_DESACTIVAR_tblGrupoAgencia.sql" />
+    <Build Include="dbo\Functions\FN_VALIDACION_CONTRAINT_DESACTIVAR_tblDivisas.sql" />
+    <Build Include="dbo\Functions\FN_VALIDACION_CONTRAINT_DESACTIVAR_tblDepartamento.sql" />
+    <Build Include="dbo\Functions\FN_VALIDACION_CONTRAINT_DESACTIVAR_tblCedis.sql" />
+    <Build Include="dbo\Functions\FN_VALIDACION_CONTRAINT_DESACTIVAR_tblArea_T2_C5.sql" />
+    <Build Include="dbo\Functions\FN_VALIDACION_CONTRAINT_DESACTIVAR_tblAgenciaBancaria.sql" />
+    <Build Include="dbo\Functions\FN_VALIDACION_CONTRAINT_ASIGNACION_DEPARTAMENTO_ACTIVO_tblArea_T2_C3.sql" />
+    <Build Include="dbo\Functions\FN_GetNameConstraintTriggerOnError.sql" />
+    <Build Include="dbo\Functions\FN_CONTRAINT_VALIDACION_EXISTENCIA_VALORES_ACTIVOS_INACTIVOS_CONTRA_TRASPORTADORA_CUANDO_MODIFICA_AGENCIA.sql" />
+    <Build Include="dbo\Functions\FN_CONTRAINT_VALIDACION_EXISTENCIA_VALORES_ACTIVOS_INACTIVOS_CONTRA_TRASPORTADORA_CUANDO_MODIFICA.sql" />
+    <Build Include="dbo\Functions\FN_CONTRAINT_VALIDACION_EXISTENCIA_VALORES_ACTIVOS_INACTIVOS_CONTRA_TRASPORTADORA_CUANDO_HABILITA_AGENCIA.sql" />
+    <Build Include="dbo\Functions\FN_CONTRAINT_VALIDACION_EXISTENCIA_VALORES_ACTIVOS_INACTIVOS_CONTRA_TRANSPORTADORAS_CUANDO_HABILITA.sql" />
+    <Build Include="dbo\Functions\FN_CONTRAINT_VALIDACION_EXISTENCIA_TRASPORTADORA.sql" />
+    <Build Include="dbo\Functions\FN_ParseJsonTableParametrosSites.sql" />
+    <Build Include="dbo\Stored Procedures\SP_ValidateTipoEfectivo_UnidadMedida.sql" />
+    <Build Include="dbo\Stored Procedures\SP_ValidateGrupoAgencias_x_AgenciasBancarias.sql" />
+    <Build Include="dbo\Stored Procedures\SP_ValidateDivisas_x_TipoPresentacion.sql" />
+    <Build Include="dbo\Stored Procedures\SP_ValidateDivisa_x_Relaciones.sql" />
+    <Build Include="dbo\Stored Procedures\SP_ValidateDenominaciones_x_TipoPresentacion_x_Divisas.sql" />
+    <Build Include="dbo\Stored Procedures\SP_ValidateCuentasInternas_x_GrupoAgencias.sql" />
+    <Build Include="dbo\Stored Procedures\SP_ValidateCuentaInterna_x_AgenciaBancaria.sql" />
+    <Build Include="dbo\Stored Procedures\SP_ValidarFirmaRelaciones.sql" />
+    <Build Include="dbo\Stored Procedures\SP_VALIDACION_CONTRAINT_MODIFICACION_MISMO_DIA_VALIDACIONES_tblDiasHabilesEntregaPedidosInternos.sql" />
+    <Build Include="dbo\Stored Procedures\SP_UpdateTipoEfectivo.sql" />
+    <Build Include="dbo\Stored Procedures\SP_UpdatePais.sql" />
+    <Build Include="dbo\Stored Procedures\SP_UpdateModulo.sql" />
+    <Build Include="dbo\Stored Procedures\SP_UpdateMatrizAtribucion.sql" />
+    <Build Include="dbo\Stored Procedures\SP_UpdateHabilitarBanner.sql" />
+    <Build Include="dbo\Stored Procedures\SP_UpdateGrupoAgencia.sql" />
+    <Build Include="dbo\Stored Procedures\SP_UpdateDivisa_x_TipoEfectivo.sql" />
+    <Build Include="dbo\Stored Procedures\SP_UpdateDivisa.sql" />
+    <Build Include="dbo\Stored Procedures\SP_UpdateDiasHabilesEntregaPedidosInternos.sql" />
+    <Build Include="dbo\Stored Procedures\SP_UpdateDepartamento.sql" />
+    <Build Include="dbo\Stored Procedures\SP_UpdateDenominaciones_x_Modulo.sql" />
+    <Build Include="dbo\Stored Procedures\SP_UpdateDenominaciones.sql" />
+    <Build Include="dbo\Stored Procedures\SP_UpdateCedis.sql" />
+    <Build Include="dbo\Stored Procedures\SP_UpdateArea.sql" />
+    <Build Include="dbo\Stored Procedures\SP_UpdateAgenciaBancaria.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Update_Transportadoras.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectTransacciones.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectTipoEfectivo_x_Divisa.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectTipoEfectivo_con_Filtro.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectTipoEfectivo.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectTipoCambio.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectProvincia.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectPais.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectModulo.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectMatricesAtribucion.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectHabilitarBanner.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectGrupoAgencia.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectDivisa_x_TipoEfectivo.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectDivisa.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectDistrito.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectDiasHabilesEntregaPedidosInternos.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectDepartamento.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectDenominaciones_x_Modulo.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectDenominaciones.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectCuentasInternas_x_GrupoAgencias.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectCuentaInterna_x_AgenciaBancaria.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectCuentaInterna.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectComunicadoPublicado.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectComunicado.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectCombobox_Firma_X_Matriz.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectCombobox_Cedis_X_Pais.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectColaborador.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectCedisUnico.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectCedis.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectCanton.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectArea.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectAgenciasBancarias.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectAgenciaBancaria.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Select_Unidades_Medidas.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Select_Unidad_Medida.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Select_Transportadoras.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Select_Transportadora.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Select_Tipo_Efectivo_X_Divisa.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Select_Msj_OnSPSuccess.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Select_Msj_OnConstrainTriggerError.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Select_Mensajes_Emergentes_Para_SP.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Select_Mensajes_Emergentes.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Select_Divisa.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Select_Data_By_PDF_Tipo_Efectivo.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Select_Data_By_Excel_Tipo_Efectivo.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Select_Codigo_Consecutivo_Transportadora.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Select_All_Messages_By_Modulo.sql" />
+    <Build Include="dbo\Stored Procedures\SP_ResetSecuenciasTransacciones.sql" />
+    <Build Include="dbo\Stored Procedures\SP_InsertTipoEfectivo.sql" />
+    <Build Include="dbo\Stored Procedures\SP_InsertTipoCambio.sql" />
+    <Build Include="dbo\Stored Procedures\SP_InsertPais.sql" />
+    <Build Include="dbo\Stored Procedures\SP_InsertModulo.sql" />
+    <Build Include="dbo\Stored Procedures\SP_InsertMatrizAtribucion.sql" />
+    <Build Include="dbo\Stored Procedures\SP_InsertGrupoAgencia.sql" />
+    <Build Include="dbo\Stored Procedures\SP_InsertDivisa_x_TipoEfectivo.sql" />
+    <Build Include="dbo\Stored Procedures\SP_InsertDivisa.sql" />
+    <Build Include="dbo\Stored Procedures\SP_InsertDepartamento.sql" />
+    <Build Include="dbo\Stored Procedures\SP_InsertDenominaciones_x_Modulo.sql" />
+    <Build Include="dbo\Stored Procedures\SP_InsertDenominaciones.sql" />
+    <Build Include="dbo\Stored Procedures\SP_InsertCuentaInterna_x_GrupoAgenciasMultiple.sql" />
+    <Build Include="dbo\Stored Procedures\SP_InsertCuentaInterna_x_GrupoAgencias.sql" />
+    <Build Include="dbo\Stored Procedures\SP_InsertCuentaInterna_x_Agencia.sql" />
+    <Build Include="dbo\Stored Procedures\SP_InsertCuentaInterna.sql" />
+    <Build Include="dbo\Stored Procedures\SP_InsertComunicado.sql" />
+    <Build Include="dbo\Stored Procedures\SP_InsertCedis.sql" />
+    <Build Include="dbo\Stored Procedures\SP_InsertArea.sql" />
+    <Build Include="dbo\Stored Procedures\SP_InsertAgenciaBancaria.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Insert_Unidad_Medida.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Insert_Transportadora.sql" />
+    <Build Include="dbo\Stored Procedures\SP_HabilitarTipoEfectivo.sql" />
+    <Build Include="dbo\Stored Procedures\SP_HabilitarModulo.sql" />
+    <Build Include="dbo\Stored Procedures\SP_HabilitarMatrizAtribucion.sql" />
+    <Build Include="dbo\Stored Procedures\SP_HabilitarGrupoAgencia.sql" />
+    <Build Include="dbo\Stored Procedures\SP_HabilitarDivisa_x_TipoEfectivo.sql" />
+    <Build Include="dbo\Stored Procedures\SP_HabilitarDivisa.sql" />
+    <Build Include="dbo\Stored Procedures\SP_HabilitarDepartamento.sql" />
+    <Build Include="dbo\Stored Procedures\SP_HabilitarDenominaciones_x_Modulo.sql" />
+    <Build Include="dbo\Stored Procedures\SP_HabilitarDenominaciones.sql" />
+    <Build Include="dbo\Stored Procedures\SP_HabilitarCuentaInterna_x_GrupoAgencias.sql" />
+    <Build Include="dbo\Stored Procedures\SP_HabilitarCuentaInterna_x_AgenciaBancaria.sql" />
+    <Build Include="dbo\Stored Procedures\SP_HabilitarCuentaInterna.sql" />
+    <Build Include="dbo\Stored Procedures\SP_HabilitarCedis.sql" />
+    <Build Include="dbo\Stored Procedures\SP_HabilitarArea.sql" />
+    <Build Include="dbo\Stored Procedures\SP_HabilitarAgenciaBancaria.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Habilitar_Unidades_Medidas.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Habilitar_Transportadoras.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Habilitar_Paises.sql" />
+    <Build Include="dbo\Stored Procedures\SP_EvalExistenciaTC_Hoy.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Edit_Unidad_Medida.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Divisa_ValidateRelationTipoEfectivo.sql" />
+    <Build Include="dbo\Stored Procedures\SP_DeleteDenominaciones.sql" />
+    <Build Include="dbo\Stored Procedures\SP_DeleteComunicado.sql" />
+    <Build Include="dbo\Stored Procedures\SP_ComboBoxAgenciasBancarias.sql" />
+    <Build Include="dbo\Functions\FN_IS_DB_UTC_ZONE_FORMAT.sql" />
+    <Build Include="dbo\Functions\FN_GET_USER_ZONE_REGION_FORMAT.sql" />
+    <Build Include="dbo\Functions\FN_DB_UTC_ZONE_FORMAT_NAME.sql" />
+    <Build Include="dbo\Functions\FN_CastTimeZoneFormat.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SelectCombobox_Transportadoras_X_Pais.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PreDeploy Include="Script.PreDeployment.sql" />
+  </ItemGroup>
+</Project>

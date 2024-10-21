@@ -1,0 +1,11 @@
+﻿---
+CREATE   FUNCTION FN_IS_DB_UTC_ZONE_FORMAT()
+RETURNS BIT
+AS
+BEGIN
+	--
+	DECLARE @OFFSET VARCHAR(30) = (SELECT TOP 1 value FROM String_Split(CAST(SYSDATETIMEOFFSET() as varchar(50)),' ') order by value)
+	--
+	RETURN IIF(@OFFSET = '+00:00', 1, 0)
+	--
+END
