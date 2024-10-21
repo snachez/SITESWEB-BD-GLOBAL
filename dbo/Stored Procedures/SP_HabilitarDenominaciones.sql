@@ -1,7 +1,4 @@
-﻿
-
-
-CREATE   PROCEDURE [dbo].[SP_HabilitarDenominaciones](
+﻿CREATE   PROCEDURE [dbo].[SP_HabilitarDenominaciones](
 	@JSON_IN VARCHAR(MAX),
 	@JSON_OUT  VARCHAR(MAX) OUTPUT 
 )
@@ -169,7 +166,6 @@ BEGIN
 			   END	
 
 	  END CATCH
-	  GOTO FINALIZAR 
 	---
   END
   ELSE
@@ -204,10 +200,6 @@ BEGIN
 
 						TRUNCATE TABLE #Mensajes;
 				----------------------------------------------------------------------------------------
-	  
-	  GOTO FINALIZAR 	 				
   END
-
-  FINALIZAR:RETURN
 END
 ---
